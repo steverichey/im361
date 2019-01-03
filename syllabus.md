@@ -1,4 +1,5 @@
 # IM361
+
 Advanced User Experience
 
 | Info       | Detail                            |
@@ -7,6 +8,8 @@ Advanced User Experience
 | Class time | Monday/Wednesday at 5:30PM-6:45PM |
 | Location   | Duryea Parking Deck               |
 | Email      | srichey@fsmail.bradley.edu        |
+
+This syllabus, and related information about the course, is available [here](https://github.com/steverichey/im361).
 
 ## Overview
 
@@ -77,12 +80,6 @@ Academic dishonesty is a serious offense and will not be tolerated within this c
 
 Please note it is your responsibility as a student to understand what collaboration is, what the limits are, and to contact me if you are ever in doubt. Independent work is critical to the learning process. Please review your Student Handbook for more information.
 
-All work for this class will be submitted via Sakai. As part of this process, the resource Turnitin will be used to evaluate the originality of the work.
-
-## Course and Project Management
-
-Sakai will be used for grades in accordance with University policy.
-
 ## Late Work
 
 Late work will not be accepted. Submission times will be checked to make sure that assignments were received prior to the due date. Work turned in after the posted day will result in a zero. The instructor reserves the right to make exceptions under documented extenuating circumstances.
@@ -92,14 +89,14 @@ Late work will not be accepted. Submission times will be checked to make sure th
 This course is designed to present some of the basic skills necessary to develop user interfaces and experiences utilizing various applications and languages. As a result of successful completion of this course, learners will demonstrate some the following knowledge, skills, and dispositions.
 
 * Develop mobile-first websites using HTML5, CSS, and JavaScript
-* Leverage modern site development technologies like Webpack, NPM, and Vue
-* D
-* Determine an app's user location by accessing built-in geolocation capabilities of the user's smartphone.
-* Learn how to use Web Application Programming Interfaces (Web APIs) to combine different Web services to create mobile mashups.
-* Optimize an app and website for performance to make sure that it runs as fast as possible for users.
-* Learn how to convert HTML5 apps into native apps that can be submitted to app stores such as Apple's App Store and Google Play.
-* Learn how to build and optimize a cross-platform mobile application and website using HTML5 standards.
-* Learn to use the basics of Xcode and to create applications that are stored on Apple's App Store.
+* Leverage modern site development technologies like Webpack and Vue
+* Leverage open source solutions using package management tools
+* Develop mobile applications for Android writing Kotlin and Java in Android Studio
+* Leverage web APIs for mobile applications
+* Leverage device sensors to enhance mobile applications
+* Develop mobile applications for iOS writing Swift and Objective-C in Xcode
+* Leverage UI tools to create resolution-independent interfaces
+* Leverage testing frameworks to ensure code runs as expected
 
 ## Participation and Professionalism
 
@@ -113,23 +110,21 @@ It is considered professional etiquette when in a meeting to turn off your phone
 
 The Department of Interactive Media has a policy to protect student privacy and in accordance with the Family Educational Rights and Privacy Act. Questions and concerns regarding grades must be presented in person or in a written letter. Because of this policy, I will not respond to questions and concerns communicated through e-mail or telephone calls regarding grades. Additionally, I will not speak to you about your individual grades in the presence of other students.
 
-## Course Grades
+## Course Assessment
+
+Projects will be graded based on their adherence to specific criteria as well as their effectiveness. Sakai will be used for grades in accordance with University policy. Most coursework will be handled via GitHub; some coursework may be submitted via Sakai.
 
 | Letter | Meaning   | Percent     | Info                                                                 |
 | ------ | --------- | ----------- | -------------------------------------------------------------------- |
-| A      | Excellent | >= 90%      | Superior competence and performance far beyond minimum requirements. |
+| A      | Excellent | ≥ 90%       | Superior competence and performance far beyond minimum requirements. |
 | B      | Good      | <90%, ≥ 80% | Above average competence and fulfills beyond minimum.                |
 | C      | Average   | <80%, ≥ 70% | Average competence and meets minimum requirements.                   |
 | D      | Deficient | <70%, ≥ 60% | Deficient competence and partially fulfills minimum requirements.    |
 | F      | Failing   | <60%        | Minimal competence with material and minimum requirements not met.   |
 
-## Course Assessment
-
-Projects will be graded based on their adherence to specific criteria as well as their effectiveness.
-
 ## Student Privacy
 
-The Department of Interactive Media has a policy to protect student privacy and in accordance with the Family Educational Rights and Privacy Act. Questions and concerns regarding grades must be presented in person or in a written letter. Because of this policy, I will not respond to questions and concerns communicated through e-mail or telephone calls regarding grades. Additionally, I will not speak to you about your individual grades in the presence of other students.
+The [Department of Interactive Media](https://www.bradley.edu/academic/departments/interactive/) has a policy to protect student privacy and in accordance with the [Family Educational Rights and Privacy Act](https://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html). Questions and concerns regarding grades must be presented in person or in a written letter. Because of this policy, I will not respond to questions and concerns communicated through email or telephone calls regarding grades. Additionally, I will not speak to you about your individual grades in the presence of other students.
 
 We treat our students as adults, and as such, my Department Chair and I are available to discuss issues regarding your grades or classroom policies with you. Due to FERPA, faculty and staff cannot comment on any student records without a legal release, including with your parents.
 
@@ -139,11 +134,11 @@ Note that communicating about problems directly with us enables your growth and 
 1. I will cc the email that I forward to you to your parents and to my Department chair.
 1. I will not take any further course of action.
 
-# Attendance
+## Attendance
 
-Class attendance, learning, and letter grades are positively correlated. To encourage class attendance, a full letter grade will be deducted with a second unexcused absence. Each subsequent unexcused absence will result in another full letter grade deduction.
+Class attendance, learning, and letter grades are positively correlated. Unexcused absences may result in a zero for the week's work. Repeated unexcused absences may result in letter grade reductions for the project or entire course.
 
-# Excused Absence
+## Excused Absence
 
 Students are responsible for providing satisfactory evidence to the instructor to substantiate the reason for absence. Except in the case of the observance of a religious holiday, to be excused the student must notify his or her instructor in writing (acknowledged e-mail message is acceptable) prior to the date of absence if such notification is feasible. In cases where advance notification is not feasible (e.g. accident, or emergency) the student must provide notification by the end of the second working day after the absence. This notification should include an explanation of why notice could not be sent prior to the class. Accommodations sought for absences due to the observance of a religious holiday can be sought prior to the absence.
 
@@ -170,7 +165,7 @@ Among the reasons absences are considered excused by the instructor are the foll
 * Mandatory participation as a student-athlete in NCAA-sanctioned competition.
 * Other reason deemed appropriate by the student's instructor.
 
-# Video Game Addiction
+## Video Game Addiction
 
 Video Game Addiction is one of our vocational hazards. If you are finding that video games are interfering with your ability to do your work or maintain your social life, please get in touch with the professor. Some signs of video game addiction are:
 
@@ -185,6 +180,6 @@ Video Game Addiction is one of our vocational hazards. If you are finding that v
 * Losing interest in other activities and hobbies
 * Increasingly ignoring personal hygiene
 
-# Sexual Misconduct Reporting Resolution
+## Sexual Misconduct Reporting Resolution
 
-Bradley University faculty are committed to supporting students and upholding the University's non-discrimination policy. Under Title IX, discrimination based upon sex and gender is prohibited. If you experience an incident of sex- or gender-based discrimination, we encourage you to report it. While you may talk to a faculty member, understand that as a "Responsible Employee" of the College the faculty member MUST report to the college's Title IX Coordinator what you share. If you would like to speak with someone who may be able to afford you privacy or confidentiality, there are people who can meet with you. Faculty can help direct you or you may refer to [Bradley's Sexual Misconduct Policy](http://www.bradley.edu/campuslife/studenthandbook/policies/misconduct/index.dot). You do not have to go through the experience alone.
+Bradley University faculty are committed to supporting students and upholding the University's non-discrimination policy. Under Title IX, discrimination based upon sex and gender is prohibited. If you experience an incident of sex- or gender-based discrimination, we encourage you to report it. While you may talk to a faculty member, understand that as a _Responsible Employee_ of the College the faculty member MUST report to the college's Title IX Coordinator what you share. If you would like to speak with someone who may be able to afford you privacy or confidentiality, there are people who can meet with you. Faculty can help direct you or you may refer to [Bradley's Sexual Misconduct Policy](http://www.bradley.edu/campuslife/studenthandbook/policies/misconduct/index.dot). You do not have to go through the experience alone.
