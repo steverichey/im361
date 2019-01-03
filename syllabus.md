@@ -1,0 +1,190 @@
+# IM361
+Advanced User Experience
+
+| Info       | Detail                            |
+| ---------- | --------------------------------- |
+| Instructor | Steve Richey                      |
+| Class time | Monday/Wednesday at 5:30PM-6:45PM |
+| Location   | Duryea Parking Deck               |
+| Email      | srichey@fsmail.bradley.edu        |
+
+## Overview
+
+Development techniques and practices for websites and mobile application user interfaces and experiences. The course will be taught through lectures, demonstrations, and exercises using applications and scripting languages. Hands-on work will be required during class as well as considerable out of class production time.
+
+## Resources
+
+* Personal computer
+* Terminal program (included in all operating systems)
+* Text editor: BBEdit/TextWrangler, [Notepad++](https://notepad-plus-plus.org/), [Atom](https://atom.io/), Emacs, [Sublime Text](https://www.sublimetext.com/)
+* [Git](https://git-scm.com) (installation will be explained in class)
+* [NodeJS](https://nodejs.org/en) (installation will be explained in class)
+* [Android Studio](https://developer.android.com/studio) (installation will be explained in class)
+* [Xcode](https://developer.apple.com/xcode) (on own computer, or via lab)
+
+## Topics
+
+Students will learn the basis of following introductory UXD developmental practices for applications and websites. Students will perform exercises to learn the basics of mobile application development and programming.
+
+## Schedule
+
+| Dates                  | Class                                           | Assignments                | Due    | Value |
+| ---------------------- | ----------------------------------------------- | -------------------------- | ------ | ----- |
+| Wednesday, January 23  | Class Overview; What Is Computation?            | Choose First Project       | Jan 28 | 5     |
+| Monday, January 28     | Git and Github                                  | Your First Repo            | Jan 30 | 5     |
+| Wednesday, January 30  | A1. Intro to JavaScript & NodeJS                | Your First Program         | Feb 4  | 5     |
+| Monday, February 4     | A2. Package Management for Beginners            | Initial Site Repo          | Feb 6  | 5     |
+| Wednesday, February 6  | A3. Intro to Node Package Manager               | A Program with NPM         | Feb 11 | 5     |
+| Monday, February 11    | A4. Webpack, Distribution Tools, & Github Pages | Your Program As A Site     | Feb 13 | 5     |
+| Wednesday, February 13 | A5. Intro to HTML & Semantic Markup             | Advanced Website           | Feb 18 | 5     |
+| Monday, February 18    | A6. Intro to CSS & Styling                      | Styled Website             | Feb 20 | 5     |
+| Wednesday, February 20 | A7. Advanced CSS                                | Styled Site with Animation | Feb 25 | 5     |
+| Monday, February 25    | A8. Advanced JavaScript                         | Beta Site                  | Feb 27 | 5     |
+| Wednesday, February 27 | A9. QA and Code Review                          | Final Site                 | Mar 4  | 100   |
+| Monday, March 4        | B1. Intro to Android Studio                     | Initial App Repo           | Mar 6  | 5     |
+| Wednesday, March 6     | B2. Intro to Java & Kotlin                      | App With Functionality     | Mar 11 | 5     |
+| Monday, March 11       | B3. Android UIs & Interaction                   | Interactive App            | Mar 13 | 5     |
+| Wednesday, March 13    | B4. Localization, Colors, and Resources         | Styled/Localized App       | Mar 18 | 5     |
+| Monday, March 18       | B5. Intro to APIs                               | App With API Integration   | Mar 20 | 5     |
+| Wednesday, March 20    | B6. Android Animations                          | App with animation         | Mar 25 | 5     |
+| Monday, March 25       | B7. Using Device Sensors                        | App with sensor feature    | Mar 27 | 5     |
+| Wednesday, March 27    | B8. Camera Integration                          | Beta Android App           | Apr 1  | 5     |
+| Monday, April 1        | B9. QA and Code Review                          | Final Android App          | Apr 3  | 100   |
+| Wednesday, April 3     | C1. Intro to Xcode                              | Initial App Repo           | Apr 8  | 5     |
+| Monday, April 8        | C2. Intro to Objective-C & Swift                | App With Functionality     | Apr 10 | 5     |
+| Wednesday, April 10    | C3. Interface Builder                           | App with Custom UI         | Apr 15 | 5     |
+| Monday, April 15       | C4. Tables and lists                            | App With UITableView       | Apr 17 | 5     |
+| Wednesday, April 17    | C5. Application resources and localization      | App With Resources         | Apr 22 | 5     |
+| Monday, April 22       | C6. Unit Testing                                | App With Unit Tests        | Apr 24 | 5     |
+| Wednesday, April 24    | C7. UI Testing                                  | App With UI Tests          | Apr 29 | 5     |
+| Monday, April 29       | C8. App Store & TestFlight                      | Upload To TestFlight       | May 1  | 5     |
+| Wednesday, May 1       | C9. QA and Code Review                          | Beta iOS App               | May 6  | 5     |
+| Monday, May 6          | Final Review                                    | Final iOS App              | May 15 | 100   |
+
+Total available course points: 435.
+
+## Accommodation
+
+Any student who feels they may need an accommodation based on the impact of a disability should contact me privately to discuss your specific needs. Students requesting accommodations must register with Student Access Services located at 100 Heitz Hall and provide appropriate documentation to verify eligibility. You can reach the SAS at (309) 677-3654 or find more information at the Student Access Services website.
+
+In accordance with University procedures, if you have a documented disability and require accommodations to obtain equal access in this course, please contact me privately to discuss your specific needs. You must be registered with Student Access Services located at 100 Heitz Hall. You can reach the SAS at (309) 677-3654 or find more information at the Student Access Services website.
+
+Please address any special needs or special accommodations with me at the beginning of the semester. Those seeking accommodations based on documented disabilities should register with Student Access Services. The Office is located at 100 Heitz Hall and the phone number is (309) 677-3654. More information is also available at the Student Access Services website.
+
+## Academic Honesty
+
+Academic dishonesty is a serious offense and will not be tolerated within this class and within the Department of Interactive Media. Any student found plagiarizing will receive a grade of “0” for the assignment and will be subject to disciplinary action under Bradley regulations. Plagiarizing on the final exam/project will render you an F for the course.
+
+Please note it is your responsibility as a student to understand what collaboration is, what the limits are, and to contact me if you are ever in doubt. Independent work is critical to the learning process. Please review your Student Handbook for more information.
+
+All work for this class will be submitted via Sakai. As part of this process, the resource Turnitin will be used to evaluate the originality of the work.
+
+## Course and Project Management
+
+Sakai will be used for grades in accordance with University policy.
+
+## Late Work
+
+Late work will not be accepted. Submission times will be checked to make sure that assignments were received prior to the due date. Work turned in after the posted day will result in a zero. The instructor reserves the right to make exceptions under documented extenuating circumstances.
+
+## Goals and Objectives
+
+This course is designed to present some of the basic skills necessary to develop user interfaces and experiences utilizing various applications and languages. As a result of successful completion of this course, learners will demonstrate some the following knowledge, skills, and dispositions.
+
+* Develop mobile-first websites using HTML5, CSS, and JavaScript
+* Leverage modern site development technologies like Webpack, NPM, and Vue
+* D
+* Determine an app's user location by accessing built-in geolocation capabilities of the user's smartphone.
+* Learn how to use Web Application Programming Interfaces (Web APIs) to combine different Web services to create mobile mashups.
+* Optimize an app and website for performance to make sure that it runs as fast as possible for users.
+* Learn how to convert HTML5 apps into native apps that can be submitted to app stores such as Apple's App Store and Google Play.
+* Learn how to build and optimize a cross-platform mobile application and website using HTML5 standards.
+* Learn to use the basics of Xcode and to create applications that are stored on Apple's App Store.
+
+## Participation and Professionalism
+
+You can only be successful in this class if you participate and engage in the material. Participation and professionalism points are taken into consideration for individual grades (see rubrics for respective assignments). Lack of participation and professionalism may reduce your grade.
+
+## Social Media and Classroom Distractions
+
+It is considered professional etiquette when in a meeting to turn off your phone and give full attention to the subject being discussed. Students in this course are expected to do the same. If you text, use Facebook, email, etc., the instructor reserves the right to ask students engaged in this type of behavior to leave the class. It is then the student’s responsibility to make up any lost or missing work from the class dismissal. Lack of professionalism by engagement in social media during class will reduce your grade.
+
+## Communication About Grades
+
+The Department of Interactive Media has a policy to protect student privacy and in accordance with the Family Educational Rights and Privacy Act. Questions and concerns regarding grades must be presented in person or in a written letter. Because of this policy, I will not respond to questions and concerns communicated through e-mail or telephone calls regarding grades. Additionally, I will not speak to you about your individual grades in the presence of other students.
+
+## Course Grades
+
+| Letter | Meaning   | Percent     | Info                                                                 |
+| ------ | --------- | ----------- | -------------------------------------------------------------------- |
+| A      | Excellent | >= 90%      | Superior competence and performance far beyond minimum requirements. |
+| B      | Good      | <90%, ≥ 80% | Above average competence and fulfills beyond minimum.                |
+| C      | Average   | <80%, ≥ 70% | Average competence and meets minimum requirements.                   |
+| D      | Deficient | <70%, ≥ 60% | Deficient competence and partially fulfills minimum requirements.    |
+| F      | Failing   | <60%        | Minimal competence with material and minimum requirements not met.   |
+
+## Course Assessment
+
+Projects will be graded based on their adherence to specific criteria as well as their effectiveness.
+
+## Student Privacy
+
+The Department of Interactive Media has a policy to protect student privacy and in accordance with the Family Educational Rights and Privacy Act. Questions and concerns regarding grades must be presented in person or in a written letter. Because of this policy, I will not respond to questions and concerns communicated through e-mail or telephone calls regarding grades. Additionally, I will not speak to you about your individual grades in the presence of other students.
+
+We treat our students as adults, and as such, my Department Chair and I are available to discuss issues regarding your grades or classroom policies with you. Due to FERPA, faculty and staff cannot comment on any student records without a legal release, including with your parents.
+
+Note that communicating about problems directly with us enables your growth and maturity. Regardless, my course of action when I receive an email from your parents is:
+
+1. I will forward the email to you with this: “I received the attached email from your parent/caregiver/other. I will not be responding to this email due to federal regulations and my strongly held belief that this does not help you in any way. If you have questions about the course, please see me during my office hours or email me back to arrange an appointment.”
+1. I will cc the email that I forward to you to your parents and to my Department chair.
+1. I will not take any further course of action.
+
+# Attendance
+
+Class attendance, learning, and letter grades are positively correlated. To encourage class attendance, a full letter grade will be deducted with a second unexcused absence. Each subsequent unexcused absence will result in another full letter grade deduction.
+
+# Excused Absence
+
+Students are responsible for providing satisfactory evidence to the instructor to substantiate the reason for absence. Except in the case of the observance of a religious holiday, to be excused the student must notify his or her instructor in writing (acknowledged e-mail message is acceptable) prior to the date of absence if such notification is feasible. In cases where advance notification is not feasible (e.g. accident, or emergency) the student must provide notification by the end of the second working day after the absence. This notification should include an explanation of why notice could not be sent prior to the class. Accommodations sought for absences due to the observance of a religious holiday can be sought prior to the absence.
+
+If needed, the student must provide additional documentation substantiating the reason for the absence to the satisfaction of the instructor, within one week of the last date of the absence.
+
+If the absence is excused, the instructor must either provide the student an opportunity to make up any quiz, exam or other work that contributes to the final grade or provide a satisfactory alternative by a date agreed upon by the student and instructor. If an instructor has a regularly scheduled make up exam, students are expected to attend unless they have a university-approved excuse. The make-up work must be completed in a timeframe not to exceed 7 calendar days from the last day of the initial absence.
+
+The instructor is under no obligation to provide an opportunity for the student to make up work missed because of an unexcused absence.
+
+Whenever a student is absent for unknown reasons for an extended period of time, the instructor will initiate a check on the welfare of the student by reporting through the Department of Interactive Media Chair or designee of the Slane College of Communications and Fine Arts.
+
+Among the reasons absences are considered excused by the instructor are the following:
+
+* Death or major illness in a student’s immediate family. Immediate family may include:  mother, father, sister, brother, grandparents, spouse, child, spouse’s child, spouse’s parents, spouse’s grandparents, stepmother, step-father, step-sister, step-brother, step-grandparents, grandchild, step-grandchild, legal guardian, and others as deemed appropriate by faculty member or student’s academic Dean or designee.
+* Illness of a dependent family member.
+* Participation in legal proceedings or administrative procedures that require a student’s presence.
+* Religious holy day.
+* Student injury or illness that is serious enough for a student to be absent from class requires confirmation. Illness confirmation may be obtained by one or both of the following methods:
+* Confirmation by the University’s Student Health Center or Student Services.
+* Confirmation of visit to a healthcare professional affirming date and time of visit.
+* An absence for a non-acute medical service does not constitute an excused absence.
+* Required participation in military duties.
+* Mandatory admission interviews for professional or graduate school that cannot be rescheduled.
+* Mandatory participation as a student-athlete in NCAA-sanctioned competition.
+* Other reason deemed appropriate by the student's instructor.
+
+# Video Game Addiction
+
+Video Game Addiction is one of our vocational hazards. If you are finding that video games are interfering with your ability to do your work or maintain your social life, please get in touch with the professor. Some signs of video game addiction are:
+
+* Playing in secret or lying about how long he or she has been playing
+* Mulling over video games when engrossed in other activities
+* Sacrificing time at work or school in order to play
+* Using games to escape from reality
+* Anxiety or depression
+* Becoming alienated from friends and family
+* Becoming irritated if unable to play
+* Lacking enough hours of sleep
+* Losing interest in other activities and hobbies
+* Increasingly ignoring personal hygiene
+
+# Sexual Misconduct Reporting Resolution
+
+Bradley University faculty are committed to supporting students and upholding the University's non-discrimination policy. Under Title IX, discrimination based upon sex and gender is prohibited. If you experience an incident of sex- or gender-based discrimination, we encourage you to report it. While you may talk to a faculty member, understand that as a "Responsible Employee" of the College the faculty member MUST report to the college's Title IX Coordinator what you share. If you would like to speak with someone who may be able to afford you privacy or confidentiality, there are people who can meet with you. Faculty can help direct you or you may refer to [Bradley's Sexual Misconduct Policy](http://www.bradley.edu/campuslife/studenthandbook/policies/misconduct/index.dot). You do not have to go through the experience alone.
