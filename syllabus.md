@@ -17,13 +17,17 @@ Development techniques and practices for websites and mobile application user in
 
 ## Resources
 
-* Personal computer
-* Terminal program (included in all operating systems)
-* Text editor: BBEdit/TextWrangler, [Notepad++](https://notepad-plus-plus.org/), [Atom](https://atom.io/), Emacs, [Sublime Text](https://www.sublimetext.com/)
-* [Git](https://git-scm.com) (installation will be explained in class)
-* [NodeJS](https://nodejs.org/en) (installation will be explained in class)
-* [Android Studio](https://developer.android.com/studio) (installation will be explained in class)
-* [Xcode](https://developer.apple.com/xcode) (on own computer, or via lab)
+Please note that all required software will be discussed in class, including the installation process. Xcode is only available on macOS, so any student using a non-Apple computer will need to have access to an Apple computer during the final project of the course.
+
+* Personal computer, per the Interactive Media department's [laptop requirement](https://www.bradley.edu/academic/departments/interactive/laptop/)
+* Terminal program
+* Text editor: BBEdit/TextWrangler, [Notepad++](https://notepad-plus-plus.org/), [Atom](https://atom.io/), Emacs, [Sublime Text](https://www.sublimetext.com/), [Brackets](http://brackets.io/)
+* [Git](https://git-scm.com)
+* [NodeJS](https://nodejs.org/en)
+* [Android Studio](https://developer.android.com/studio)
+* [Xcode](https://developer.apple.com/xcode)
+
+Please note that while this course does not require a vast amount of technical expertise, it is expected that some technical issues may arise during the class. Students are recommended to leverage the [Technology HelpDesk](https://www.bradley.edu/sites/helpdesk/), their fellow students, and the instructor when issues arise and _before_ any technical issues prevent a student from submitting course work on time. Generally speaking, late work due to technical problems will not be accepted.
 
 ## Topics
 
@@ -33,8 +37,8 @@ Students will learn the basis of following introductory UXD developmental practi
 
 | Dates                  | Class                                           | Assignments                | Due    | Value |
 | ---------------------- | ----------------------------------------------- | -------------------------- | ------ | ----- |
-| Wednesday, January 23  | Class Overview; What Is Computation?            | Choose First Project       | Jan 28 | 5     |
-| Monday, January 28     | Git and Github                                  | Your First Repo            | Jan 30 | 5     |
+| Wednesday, January 23  | 00. Class Overview; What Is Computation?        | Choose First Project       | Jan 28 | 5     |
+| Monday, January 28     | 01. Git and Github                              | Your First Repo            | Jan 30 | 5     |
 | Wednesday, January 30  | A1. Intro to JavaScript & NodeJS                | Your First Program         | Feb 4  | 5     |
 | Monday, February 4     | A2. Package Management for Beginners            | Initial Site Repo          | Feb 6  | 5     |
 | Wednesday, February 6  | A3. Intro to Node Package Manager               | A Program with NPM         | Feb 11 | 5     |
@@ -105,10 +109,6 @@ You can only be successful in this class if you participate and engage in the ma
 ## Social Media and Classroom Distractions
 
 It is considered professional etiquette when in a meeting to turn off your phone and give full attention to the subject being discussed. Students in this course are expected to do the same. If you text, use Facebook, email, etc., the instructor reserves the right to ask students engaged in this type of behavior to leave the class. It is then the student’s responsibility to make up any lost or missing work from the class dismissal. Lack of professionalism by engagement in social media during class will reduce your grade.
-
-## Communication About Grades
-
-The Department of Interactive Media has a policy to protect student privacy and in accordance with the Family Educational Rights and Privacy Act. Questions and concerns regarding grades must be presented in person or in a written letter. Because of this policy, I will not respond to questions and concerns communicated through e-mail or telephone calls regarding grades. Additionally, I will not speak to you about your individual grades in the presence of other students.
 
 ## Course Assessment
 
