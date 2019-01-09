@@ -72,11 +72,7 @@ Total available course points: 435.
 
 ## Accommodation
 
-Any student who feels they may need an accommodation based on the impact of a disability should contact me privately to discuss your specific needs. Students requesting accommodations must register with Student Access Services located at 100 Heitz Hall and provide appropriate documentation to verify eligibility. You can reach the SAS at (309) 677-3654 or find more information at the Student Access Services website.
-
-In accordance with University procedures, if you have a documented disability and require accommodations to obtain equal access in this course, please contact me privately to discuss your specific needs. You must be registered with Student Access Services located at 100 Heitz Hall. You can reach the SAS at (309) 677-3654 or find more information at the Student Access Services website.
-
-Please address any special needs or special accommodations with me at the beginning of the semester. Those seeking accommodations based on documented disabilities should register with Student Access Services. The Office is located at 100 Heitz Hall and the phone number is (309) 677-3654. More information is also available at the Student Access Services website.
+In accordance with University procedures, any student who feels they may need an accommodation based on the impact of a disability should contact me privately to discuss your specific needs. Students requesting accommodations must register with [Student Access Services](https://www.bradley.edu/offices/student/sas/) located at 100 Heitz Hall and provide appropriate documentation to verify eligibility. You can reach the SAS at (309) 677-3654 or find more information at the Student Access Services website.
 
 ## Academic Honesty
 
@@ -167,7 +163,7 @@ Among the reasons absences are considered excused by the instructor are the foll
 
 ## Video Game Addiction
 
-Video Game Addiction is one of our vocational hazards. If you are finding that video games are interfering with your ability to do your work or maintain your social life, please get in touch with the professor. Some signs of video game addiction are:
+Video game addiction is one of our vocational hazards. If you are finding that video games are interfering with your ability to do your work or maintain your social life, please get in touch with the professor. Some signs of video game addiction are:
 
 * Playing in secret or lying about how long he or she has been playing
 * Mulling over video games when engrossed in other activities
