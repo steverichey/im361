@@ -62,8 +62,8 @@ Students will learn the basis of following introductory UXD developmental practi
 | Wednesday, April 10    | C3. Interface Builder                           | App with Custom UI         | Apr 15 | 5     |
 | Monday, April 15       | C4. Tables and lists                            | App With UITableView       | Apr 17 | 5     |
 | Wednesday, April 17    | C5. Application resources and localization      | App With Resources         | Apr 22 | 5     |
-| Monday, April 22       | C6. Unit Testing                                | App With Unit Tests        | Apr 24 | 5     |
-| Wednesday, April 24    | C7. UI Testing                                  | App With UI Tests          | Apr 29 | 5     |
+| Monday, April 22       | C6. UI Testing                                  | App With UI Tests          | Apr 24 | 5     |
+| Wednesday, April 24    | C7. Intro to Machine Learning                   | Image Classifier           | Apr 29 | 5     |
 | Monday, April 29       | C8. App Store & TestFlight                      | Upload To TestFlight       | May 1  | 5     |
 | Wednesday, May 1       | C9. QA and Code Review                          | Beta iOS App               | May 6  | 5     |
 | Monday, May 6          | Final Review                                    | Final iOS App              | May 15 | 100   |
