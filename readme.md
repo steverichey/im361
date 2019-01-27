@@ -8,7 +8,7 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 
 ## Lessons
 
-* [00. What Is Computation?](./lessons/00-what-is-computation.html)
+* [00. What Is Computation?](https://steverichey.github.io/im361/lessons/00-what-is-computation.html)
 * 01. An Introduction to Git and Github
 
 ## Info

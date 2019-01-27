@@ -35,7 +35,7 @@ Students will learn the basis of following introductory UXD developmental practi
 
 ## Schedule
 
-Lessons are available [here](./lessons).
+Lessons are available [here](https://github.com/steverichey/im361#lessons).
 
 | Dates                  | Class                                           | Assignments                | Due    | Value |
 | ---------------------- | ----------------------------------------------- | -------------------------- | ------ | ----- |
