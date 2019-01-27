@@ -5,3 +5,12 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 ## Resources
 
 * [Syllabus](./syllabus.md)
+
+## Lessons
+
+* [00. What Is Computation?](./lessons/00-what-is-computation.html)
+* 01. An Introduction to Git and Github
+
+## Info
+
+* Lessons created using [remarkjs](https://github.com/gnab/remark)

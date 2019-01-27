@@ -35,6 +35,8 @@ Students will learn the basis of following introductory UXD developmental practi
 
 ## Schedule
 
+Lessons are available [here](./lessons).
+
 | Dates                  | Class                                           | Assignments                | Due    | Value |
 | ---------------------- | ----------------------------------------------- | -------------------------- | ------ | ----- |
 | Wednesday, January 23  | 00. Class Overview; What Is Computation?        | Choose First Project       | Jan 28 | 5     |
@@ -49,26 +51,26 @@ Students will learn the basis of following introductory UXD developmental practi
 | Monday, February 25    | A8. Advanced JavaScript                         | Beta Site                  | Feb 27 | 5     |
 | Wednesday, February 27 | A9. QA and Code Review                          | Final Site                 | Mar 4  | 100   |
 | Monday, March 4        | B1. Intro to Android Studio                     | Initial App Repo           | Mar 6  | 5     |
-| Wednesday, March 6     | B2. Intro to Java & Kotlin                      | App With Functionality     | Mar 11 | 5     |
+| Wednesday, March 6     | B2. Intro to Java & Kotlin                      | Basic App                  | Mar 11 | 5     |
 | Monday, March 11       | B3. Android UIs & Interaction                   | Interactive App            | Mar 13 | 5     |
 | Wednesday, March 13    | B4. Localization, Colors, and Resources         | Styled/Localized App       | Mar 18 | 5     |
-| Monday, March 18       | B5. Intro to APIs                               | App With API Integration   | Mar 20 | 5     |
-| Wednesday, March 20    | B6. Android Animations                          | App with animation         | Mar 25 | 5     |
-| Monday, March 25       | B7. Using Device Sensors                        | App with sensor feature    | Mar 27 | 5     |
-| Wednesday, March 27    | B8. Camera Integration                          | Beta Android App           | Apr 1  | 5     |
-| Monday, April 1        | B9. QA and Code Review                          | Final Android App          | Apr 3  | 100   |
-| Wednesday, April 3     | C1. Intro to Xcode                              | Initial App Repo           | Apr 8  | 5     |
-| Monday, April 8        | C2. Intro to Objective-C & Swift                | App With Functionality     | Apr 10 | 5     |
-| Wednesday, April 10    | C3. Interface Builder                           | App with Custom UI         | Apr 15 | 5     |
-| Monday, April 15       | C4. Tables and lists                            | App With UITableView       | Apr 17 | 5     |
-| Wednesday, April 17    | C5. Application resources and localization      | App With Resources         | Apr 22 | 5     |
-| Monday, April 22       | C6. UI Testing                                  | App With UI Tests          | Apr 24 | 5     |
-| Wednesday, April 24    | C7. Intro to Machine Learning                   | Image Classifier           | Apr 29 | 5     |
-| Monday, April 29       | C8. App Store & TestFlight                      | Upload To TestFlight       | May 1  | 5     |
-| Wednesday, May 1       | C9. QA and Code Review                          | Beta iOS App               | May 6  | 5     |
+| Monday, March 18       | Spring break                                    |                            |        |       |
+| Wednesday, March 20    | Spring break                                    |                            |        |       |
+| Monday, March 25       | B5. Intro to APIs                               | API Integration            | Mar 27 | 5     |
+| Wednesday, March 27    | B6. Android Animations                          | App with animation         | Apr 1  | 5     |
+| Monday, April 1        | B7. Using Device Sensors                        | Beta Android App           | Apr 3  | 5     |
+| Wednesday, April 3     | B8. QA and Code Review                          | Final Android App          | Apr 8  | 100   |
+| Monday, April 8        | C1. Intro to Xcode                              | Initial App Repo           | Apr 10 | 5     |
+| Wednesday, April 10    | C2. Intro to Objective-C & Swift                | Basic App                  | Apr 15 | 5     |
+| Monday, April 15       | C3. Interface Builder                           | App with Custom UI         | Apr 17 | 5     |
+| Wednesday, April 17    | C4. Tables and lists                            | App with UITableView       | Apr 22 | 5     |
+| Monday, April 22       | C5. Application resources and localization      | App with Resources         | Apr 24 | 5     |
+| Wednesday, April 24    | C6. UI Testing                                  | App with UI Tests          | Apr 29 | 5     |
+| Monday, April 29       | C7. Intro to Machine Learning                   | Image Classifier           | May 1  | 5     |
+| Wednesday, May 1       | C8. App Store & TestFlight; QA and Code Review  | Beta iOS App               | May 6  | 5     |
 | Monday, May 6          | Final Review                                    | Final iOS App              | May 15 | 100   |
 
-Total available course points: 435.
+Total available course points: 425.
 
 ## Accommodation
 
