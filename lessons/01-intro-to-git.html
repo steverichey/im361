@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>An Introduction to Git and Github</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* monokai theme from https://github.com/juanpabloaj/platon/blob/master/public/style.css */
+      .remark-slide-content {
+          background-color: #282828;
+          color: #f8f8f2;
+      }
+
+      .remark-container {
+          background: #282828;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #AE81FF;
+      }
+
+      h1 {
+          color: #F92672;
+      }
+
+      h2 {
+          color: #A6E22E;
+      }
+
+      h3 {
+          color: #66D9EF;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# An Introduction to Git and Github
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# Safety
+
+* This is literally a parking garage
+* This is a night class
+* I will never be more than 10 minutes early
+* Please do not hang out in a parking garage at night by yourself
+* Weather
+  * It's bad
+  * Let's just go ahead and cancel class Wednesday
+
+---
+
+# Clarification
+
+* Computation is important because that’s what is neat about computers
+* You are not here to learn how to code
+* You are here to learn how to converse with developers and bend them to your will
+* Understanding what computers are capable of is a first step
+* All the things you will learn here are just tools to achieve your vision
+
+---
+
+# Syllabus updates
+
+* I forgot spring break exists
+* This is good, we won’t have to do the things I didn’t think would work anyway
+* First slides are online
+  * [steverichey.github.io/im361](https://github.com/steverichey/im361)
+* Pet allergies
+
+---
+
+background-image: url(https://images.unsplash.com/photo-1548400125-639ed6149e5e?auto=format&fit=crop&w=1050)
+class: center, middle
+
+# Design review
+
+[Photo by Hamza Ghobashy on Unsplash](https://unsplash.com/photos/40CJhZUjqfo)
+
+---
+
+# Welcome to version control
+
+* Design student filenames
+* Code is hundreds or thousands of files
+* Filenames are important
+* Software for tracking changes to source code
+  * git
+  * Perforce
+  * mercurial
+  * Subversion
+
+---
+
+class: center, middle
+
+# Pobody's nerfect
+
+.center[![I used to use Google Drive for version control](../images/gdrive.png)]
+
+¯\\\_(ツ)\_/¯
+
+---
+
+class: center, middle
+
+# Terminal
+
+.center[![Spotlight terminal](../images/spotlight-terminal.png)]
+
+Basically you're a hacker now.
+
+---
+
+class: center, middle
+
+# Terminal
+
+.center[![Blank terminal](../images/blank-terminal.png)]
+
+It won't bite
+
+Try not to delete everything
+
+---
+
+class: center, middle
+
+# ls
+
+.center[![ls in terminal](../images/terminal-ls.png)]
+
+Lists files in the current folder
+
+On Windows, use `dir`
+
+---
+
+class: center, middle
+
+# git --version
+
+.center[![git version](../images/terminal-gitversion.png)]
+
+Just calling `git` and asking it for version information
+
+---
+
+class: center, middle
+
+# git
+
+.center[![git webpage](../images/git-homepage.png)]
+
+[git-scm.com](https://git-scm.com)
+
+---
+
+class: center, middle
+
+# ls
+
+.center[![I used to use Google Drive for version control](../images/terminal-ls.png)]
+
+Lists files in the current folder
+
+On Windows, use `dir`
+
+---
+
+# GitHub 101
+
+* Stores your code and allows collaboration
+* Git needs permission to upload
+
+```
+ssh-keygen -t rsa -b 4096 -C "myname@example.com"
+```
+
+* Note the location!!
+* Windows: use Git Bash
+* https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+* https://help.github.com/categories/authenticating-to-github/
+
+---
+
+class: center, middle
+
+# Top right icon
+
+.center[![GitHub: open Settings](../images/github-settings.png)]
+
+Go to settings
+
+---
+
+class: center, middle
+
+# SSH and GPG keys
+
+.center[![GitHub: go to SSH and GPG keys](../images/github-keys.png)]
+
+In the left nav
+
+---
+
+class: center, middle
+
+# Adding a new SSH key
+
+.center[![GitHub: select New SSH Key](../images/github-ssh.png)]
+
+Almost done, I swear
+
+---
+
+class: center, middle
+
+# Upload public key
+
+.center[![GitHub: add new key](../images/github-addssh.png)]
+
+`/Users/myname/.ssh/id_rsa.pub`
+
+---
+
+# How to git
+
+```
+mkdir myfirstrepo
+
+cd myfirstrepo
+
+git init
+
+touch readme.md
+
+git add -A
+
+git commit -m "initial commit"
+
+git remote add origin git@github.com:myname/myfirstrepo.git
+
+git push origin master
+```
+
+---
+
+# Markdown 101
+
+```
+# Heading
+
+* Bulleted list
+* More bullets
+
+1. Numbered list
+2. More numbers
+
+[this is a link](https://youtu.be/D-UmfqFjpl0)
+```
+
+
+
+Markdown rules, literally the entire syllabus is markdown
+
+GitHub will make your markdown pretty!
+
+---
+
+# Assignment
+
+* Your first git repo
+* At least two commits
+* At least two files
+  * One readme.md, README, readme.txt, whatevs
+* Some stuff in the files
+
+---
+
+class: center, middle
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
