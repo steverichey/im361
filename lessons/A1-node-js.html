@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro to JavaScript and NodeJS</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* monokai theme from https://github.com/juanpabloaj/platon/blob/master/public/style.css */
+      .remark-slide-content {
+          background-color: #282828;
+          color: #f8f8f2;
+      }
+
+      .remark-container {
+          background: #282828;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #AE81FF;
+      }
+
+      h1 {
+          color: #F92672;
+      }
+
+      h2 {
+          color: #A6E22E;
+      }
+
+      h3 {
+          color: #66D9EF;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Intro to JavaScript and NodeJS
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# Git review
+
+* Some people like git
+* Others do not
+* Millenials respond
+
+---
+
+class: center, bottom
+
+.center[![GitHub desktop webpage](../images/github-desktop-web.png)]
+
+# There's gotta be a better way
+
+[desktop.github.com](https://desktop.github.com/)
+
+---
+
+class: center, bottom
+
+![GitHub desktop](../images/github-desktop-preview-1.png)
+
+# Github desktop
+
+Review changes, make commits, and push code
+
+---
+
+class: center, bottom
+
+![GitHub desktop: commit](../images/github-desktop-preview-2.png)
+
+# Comment and commit
+
+Good commit messages: they're good
+
+---
+
+class: center, bottom
+
+![GitHub desktop: push](../images/github-desktop-preview-3.png)
+
+# You just push a button
+
+Easier than `git push origin master`
+
+---
+
+class: center, bottom
+
+![Make a new git repo](../images/github-make-new.png)
+
+# Time to make a new git repo
+
+`im361web`
+
+---
+
+class: center, bottom
+
+![GitHub desktop: clone](../images/github-desktop-clone.png)
+
+# Clone locally
+
+---
+
+class: center, bottom
+
+![GitHub desktop: push or open](../images/github-desktop-push.png)
+
+# Push or open in Atom
+
+neat
+
+---
+
+class: center, middle
+
+# Now what?
+
+---
+
+# What is JavaScript?
+
+* Probably the world's most common programming language
+* Literally runs on every browser
+* Powers every website
+* How to use the JavaScript console
+* Why learn two programming languages when you can learn one?
+  * Enter Node.js
+
+---
+
+class: center, bottom
+
+![NodeJS website](../images/node-install.png)
+
+# Installing NodeJS
+
+[nodejs.org](https://nodejs.org/en/)
+
+---
+
+class: center, bottom
+
+![Node version](../images/node-version.png)
+
+# Checking Node and NPM
+
+```
+node --version
+npm --version
+```
+
+---
+
+# Enough JS to be dangerous
+
+```JavaScript
+// assign a variable
+var x = 10;
+// print something
+console.log("x is " + x);
+// modify a variable
+x += 10;
+// create a function
+function sum(a, b) {
+  return a + b;
+}
+// use a function
+var y = sum(10, 20);
+// create an object
+var z = {
+  one: 1,
+  two: 2
+};
+// use an object
+z.one;
+```
+
+---
+
+# More than enough JS to be dangerous
+
+```JavaScript
+// other kinds of variables
+var pi = 3.14159;
+var message = "hello";
+// checking equality
+if (message === "hello") {
+  console.log("message is hello");
+} else {
+  console.log("message is not hello");
+}
+// comparing numbers
+if (2 < 5) {
+  console.log("yes, two is less than five");
+} else {
+  console.log("something has gone horribly wrong");
+}
+```
+
+---
+
+# Create a new file
+
+* In the im361web folder
+* index.js
+* Open in a text editor
+* Add some code
+
+```
+console.log("hello, world");
+```
+
+---
+
+class: center, bottom
+
+![Running JavaScript with Node](../images/node-terminal.png)
+
+# node index.js
+
+hello, world
+
+---
+
+# Assignment
+
+* Eventually index.js will be the code that runs your site
+* For now, just make it do something interesting
+* If you use code from somewhere, provide a source!
+  * Use comments
+  * This is good actually
+  * Be aware of licensing
+    * MIT and Apache 2.0 are good
+    * StackOverflow is... iffy
+* Evaluation criteria
+
+---
+
+class: center, middle
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
