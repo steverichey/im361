@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro to Web Frameworks</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* monokai theme from https://github.com/juanpabloaj/platon/blob/master/public/style.css */
+      .remark-slide-content {
+          background-color: #282828;
+          color: #f8f8f2;
+      }
+
+      .remark-container {
+          background: #282828;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #AE81FF;
+      }
+
+      h1 {
+          color: #F92672;
+      }
+
+      h2 {
+          color: #A6E22E;
+      }
+
+      h3 {
+          color: #66D9EF;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Intro to Web Frameworks
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# JavaScript
+
+* Some people like ~git~ JavaScript
+* Others do not
+* Millenials respond
+* What interesting things did we do?
+
+* Schedule change March 6
+* How to rename a repo
+* Node vs. browser...
+
+---
+
+# Node vs Browser
+
+* Browser
+
+```js
+var amount = prompt("Enter amount of bill");
+// do stuff with "amount"
+```
+
+* Node
+
+```js
+var readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+readline.question('Enter amount of bill', (amount) => {
+  // do stuff with "amount"
+})
+```
+
+---
+
+class: center, middle
+
+# Going from "Hello World" to a website
+
+totes easy
+
+---
+
+# Modern web development
+
+![A lot of frameworks](../images/web-frameworks.png)
+
+---
+
+# Modern web development
+
+![All hail chaos](../images/all-hail-chaos.png)
+
+---
+
+# Modern web development
+
+* NPM
+* Webpack
+* [Vue.js](https://vuejs.org/)
+
+---
+
+# What is NPM?
+
+* Distributed package management
+* A lot of web problems get solved over and over
+  * Using mobile features
+  * Processing text
+  * Sound
+  * Video
+* NPM shares open source "packages" that each handle (in theory) one common problem
+* Security and...
+
+---
+
+# The left pad catastrophe
+
+[One programmer almost broke the internet by deleting 11 lines of code](https://www.businessinsider.com/npm-left-pad-controversy-explained-2016-3)
+
+---
+
+# What is webpack?
+
+* So, you have:
+  * Your code for problem A
+  * Your code for problem B
+  * 48,542 packages
+  * SVG, PNG, JPEG
+  * HTML, CSS
+* Every web request takes time
+* Webpack bundles all this into manageable bits
+* These bits can be delivered more efficiently from the server to the browser
+
+---
+
+class: middle, center
+
+![Webpack](../images/webpack.png)
+
+# Webpack
+
+I just stole this tbh
+
+---
+
+# What is Vue?
+
+* Most websites have state
+  * Your cart
+  * Your user profile
+  * Search results
+* Browsers don't handle this very well
+  * Originally designed to present static content
+  * We've been hacking on this concept ever since
+* Vue "binds" your application state to the presentation layer (the user interface)
+
+---
+
+class: center, middle
+
+![Vue in practice](../images/vue-in-practice-1.png)
+
+# Vue in practice
+
+You're gonna do this
+
+---
+
+class: center, middle
+
+![Vue in practice](../images/vue-in-practice-2.png)
+
+# Vue in practice
+
+The webpage updates in response to state changes
+
+Normally, this is extremely not fun to do
+
+---
+
+# How to do things
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+* Go to "Web project setup"
+* In your repo:
+  * Follow steps in web setup
+  * Move `index.js` to `src/index.js`
+  * Create `index.html`
+  * Create ``.gitignore`
+  * Copy info from the web setup
+* Run `npx webpack` to update
+  * Take a look at `dist/main.js` to see result
+* Open `index.html` in the browser
+  * In terminal: `open index.html`
+
+---
+
+# Adding events
+
+* Inside our "id" div:
+```html
+<button v-on:click="counter += 1">Add 1</button>
+<p>The button above has been clicked {{ counter }} times.</p>
+```
+* Inside our JS file:
+```js
+data: {
+  message: 'Hello Vue!',
+  counter: 0
+}
+```
+* In the terminal:
+```bash
+npx webpack
+```
+
+---
+
+# Assignment
+
+* Time to make the donuts
+* Commit and push all the stuff we did today
+* Update our JS app object with custom content
+  * This stuff should be relevant to your web app
+  * Cart? User? Tasks?
+  * For now, make everything strings
+  * Display this stuff in the app somewhere
+  * Have a button that does something (aside from a counter)
+* Evaluation criteria
+
+---
+
+class: center, middle
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
