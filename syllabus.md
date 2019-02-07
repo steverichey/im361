@@ -39,11 +39,11 @@ Lessons are available [here](https://github.com/steverichey/im361#lessons).
 
 | Dates                  | Class                                           | Assignments                | Due    | Value |
 | ---------------------- | ----------------------------------------------- | -------------------------- | ------ | ----- |
-| Wednesday, January 23  | 00. Class Overview; What Is Computation?        | Choose First Project       | Jan 28 | 5     |
+| Wednesday, January 23  | 00. Class Overview; What Is Computation?        | Designs                    | Jan 28 | 5     |
 | Monday, January 28     | 01. Git and Github                              | Your First Repo            | Jan 30 | 5     |
 | Wednesday, January 30  | No class due to weather                         |                            | Feb 4  |       |
-| Monday, February 4     | A1. Intro to JavaScript & NodeJS                | Initial Site Repo          | Feb 6  | 5     |
-| Wednesday, February 6  | A2. Intro to Node Package Manager               | A Program with NPM         | Feb 11 | 5     |
+| Monday, February 4     | A1. Intro to JavaScript & NodeJS                | Interesting JavaScript     | Feb 6  | 5     |
+| Wednesday, February 6  | A2. Intro to Web Frameworks                     | Website: Origins           | Feb 11 | 5     |
 | Monday, February 11    | A3. Webpack, Distribution Tools, & Github Pages | Your Program As A Site     | Feb 13 | 5     |
 | Wednesday, February 13 | A4. Intro to HTML & Semantic Markup             | Advanced Website           | Feb 18 | 5     |
 | Monday, February 18    | A5. Intro to CSS & Styling                      | Styled Website             | Feb 20 | 5     |
@@ -51,7 +51,7 @@ Lessons are available [here](https://github.com/steverichey/im361#lessons).
 | Monday, February 25    | A7. Advanced JavaScript                         | Beta Site                  | Feb 27 | 5     |
 | Wednesday, February 27 | A8. QA and Code Review                          | Final Site                 | Mar 4  | 100   |
 | Monday, March 4        | B1. Intro to Android Studio                     | Initial App Repo           | Mar 6  | 5     |
-| Wednesday, March 6     | B2. Intro to Java & Kotlin                      | Basic App                  | Mar 11 | 5     |
+| Wednesday, March 6     | B2. Intro to Java & Kotlin (may be moved)       | Basic App                  | Mar 11 | 5     |
 | Monday, March 11       | B3. Android UIs & Interaction                   | Interactive App            | Mar 13 | 5     |
 | Wednesday, March 13    | B4. Localization, Colors, and Resources         | Styled/Localized App       | Mar 18 | 5     |
 | Monday, March 18       | Spring break                                    |                            |        |       |
