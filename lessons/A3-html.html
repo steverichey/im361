@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro to Web Frameworks</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* monokai theme from https://github.com/juanpabloaj/platon/blob/master/public/style.css */
+      .remark-slide-content {
+          background-color: #282828;
+          color: #f8f8f2;
+      }
+
+      .remark-container {
+          background: #282828;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #AE81FF;
+      }
+
+      h1 {
+          color: #F92672;
+      }
+
+      h2 {
+          color: #A6E22E;
+      }
+
+      h3 {
+          color: #66D9EF;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# HTML, Semantic Markup, and GitHub Pages
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# Web Frameworks
+
+* Webpack, NPM, and Vue
+* Vue lets us update our webpage without a ton of hassle
+* Webpack makes our site easy to deliver to users
+* NPM gives us code written by a bunch of people that is generally good
+
+---
+
+class: center, middle
+
+# HTML and Semantic Markup
+
+---
+
+# What is HTML?
+
+* Hyper Text Markup Language
+  * Tim Berners-Lee
+  * CERN
+  * 1990
+* Didn't get images until 1993
+* Extremely fragmented
+  * Openly developed
+  * Browsers kind of did whatever
+  * Servers just kind of send text and hope for the best
+  * That's how Marc Andreessen added the <img> tag to Mosaic
+* HTML5 from 2008 - 2014
+
+---
+
+# Bad HTML
+
+```html
+<html>
+  <head>...</head>
+  <body>
+    <div class="button">Click me!</div>
+    <div class="menu">
+      <div class="first-option">Home</div>
+      <div class="second-option">About</div>
+      <div class="third-option">Resources</div>
+      <div class="fourth-option">Help</div>
+    </div>
+    This text is <b>important</b>, is it more <i>than this</i>?
+    <br/>
+    <br/>
+    <div class="reallybig">ABOUT US</div>
+    This is a whole different paragraph.
+    <br/>
+  </body>
+</html>
+```
+
+---
+
+# Better HTML
+
+```html
+<html>
+  <head>...</head>
+  <body>
+    <header>
+      <button>Click me!</button>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Resources</li>
+          <li>Help</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <p>This text is <em>important</em>, is it more <strong>than this</strong>?</p>
+      <h1>About Us</h1>
+      <p>This is a whole different paragraph.</p>
+    </main>
+  </body>
+</html>
+```
+
+---
+
+# All HTML Pages Should
+
+* Have exactly one `header` tag
+* Have exactly one `main` tag
+  * Usually... there are exceptions
+* Have exactly one `footer` tag
+* Have at most one `nav` tag
+* Avoid non-semantic markup
+  * `b`, `i`, `blink`, `banner`, `marquee`
+* Make sense without any CSS at all
+  * Even on mobile
+* Work well with accessibility features
+  * Use `a` tags for links, `button` tags for buttons
+* Avoid interfering with browser behavior
+* Not cheat (invisible images, tables)
+
+---
+
+# HTML Tag Cheat Sheet
+
+* `header`
+* `h1`, `h2`, `h3`, `h4`, `h5`, `h6`
+* `nav`
+* Lists
+  * `ol`
+  * `ul`
+  * `li`
+* `main`
+* `p`
+* `span`
+* `footer`
+
+---
+
+class: center, middle
+
+# GitHub Pages
+
+---
+
+class: center, middle
+
+![](../images/ghp01.png)
+
+# GitHub
+
+Open settings
+
+---
+
+class: center, middle
+
+![](../images/ghp02.png)
+
+# Settings
+
+Scroll down
+
+---
+
+class: center, middle
+
+![](../images/ghp03.png)
+
+# GitHub Pages
+
+Stop on this section
+
+---
+
+class: center, middle
+
+![](../images/ghp04.png)
+
+# Select master as source
+
+Ignore theme for now
+
+---
+
+class: center, middle
+
+![](../images/ghp05.png)
+
+# Don't forget to save!
+
+---
+
+class: center, middle
+
+![](../images/ghp06.png)
+
+# You should see this
+
+Otherwise... bad
+
+---
+
+class: center, middle
+
+![](../images/ghp07.png)
+
+# Go back to Pages settings
+
+You now have a link to your page
+
+---
+
+class: center, middle
+
+![](../images/ghp08.png)
+
+# Copy page link
+
+---
+
+class: center, middle
+
+![](../images/ghp09.png)
+
+# Go back to repo
+
+Easiest way is to probably click this
+
+---
+
+class: center, middle
+
+![](../images/ghp10.png)
+
+# Click the "edit" button
+
+---
+
+class: center, middle
+
+![](../images/ghp11.png)
+
+# Should look like this
+
+---
+
+class: center, middle
+
+![](../images/ghp12.png)
+
+# Paste in link to GitHub Pages
+
+Might want to add a description
+And save... don't forget to save!
+
+---
+
+class: center, middle
+
+![](../images/ghp13.png)
+
+# Now header has a link
+
+EZ
+
+---
+
+class: center, middle
+
+![](../images/ghp14.png)
+
+# One tiny change to our HTML
+
+Save this change
+
+---
+
+class: center, middle
+
+![](../images/ghp15.png)
+
+# One tiny change to our gitignore
+
+Save, commit, and push
+Your `dist` directory should now be tracked :\
+
+---
+
+class: center, middle
+
+![](../images/ghp16.png)
+
+# Now visit your GitHub Page
+
+Just follow the link
+
+---
+
+class: center, middle
+
+![](../images/ghp17.png)
+
+# Not working?
+
+Clear cache and hard reload
+Chrome: Cmd+Refresh, Firefox: Shift+Refresh
+
+---
+
+# Assignment
+
+* Semantically mark up one page from your design
+* Probably the "main" page
+* Text only for now: don't worry about images
+* A user should know how to use your site from this markup alone... mostly
+* What is style, or merely presentation information?
+* Put this outside of your Vue div (with id="app") for now
+  * Or, just remove the Vue div; note that Vue might complain in the JavaScript console, though
+* [https://htmlhint.io/](https://htmlhint.io/)
+
+---
+
+class: center, middle
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

@@ -44,10 +44,10 @@ Lessons are available [here](https://github.com/steverichey/im361#lessons).
 | Wednesday, January 30  | No class due to weather                         |                            | Feb 4  |       |
 | Monday, February 4     | A1. Intro to JavaScript & NodeJS                | Interesting JavaScript     | Feb 6  | 5     |
 | Wednesday, February 6  | A2. Intro to Web Frameworks                     | Website: Origins           | Feb 11 | 5     |
-| Monday, February 11    | A3. Webpack, Distribution Tools, & Github Pages | Your Program As A Site     | Feb 13 | 5     |
-| Wednesday, February 13 | A4. Intro to HTML & Semantic Markup             | Advanced Website           | Feb 18 | 5     |
-| Monday, February 18    | A5. Intro to CSS & Styling                      | Styled Website             | Feb 20 | 5     |
-| Wednesday, February 20 | A6. Advanced CSS                                | Styled Site with Animation | Feb 25 | 5     |
+| Monday, February 11    | A3. HTML, Semantic Markup, and GitHub Pages     | Semantic markup of design  | Feb 13 | 5     |
+| Wednesday, February 13 | A4. Intro to CSS and Style                      | Styled design              | Feb 18 | 5     |
+| Monday, February 18    | A5. Advanced HTML                               | Full site markup           | Feb 20 | 5     |
+| Wednesday, February 20 | A6. Advanced CSS                                | Animated site              | Feb 25 | 5     |
 | Monday, February 25    | A7. Advanced JavaScript                         | Beta Site                  | Feb 27 | 5     |
 | Wednesday, February 27 | A8. QA and Code Review                          | Final Site                 | Mar 4  | 100   |
 | Monday, March 4        | B1. Intro to Android Studio                     | Initial App Repo           | Mar 6  | 5     |
