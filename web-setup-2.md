@@ -2,7 +2,7 @@
 
 1. Add new dependencies with `npm install --save-dev style-loader css-loader`
 1. Add a `webpack.config.js` file and copy from below
-1. Add a `src/style.css` file (leave empty for now)
+1. Add a `src/style.css` file and copy from below
 1. Update your `package.json` file and add lines from below
 1. Add `import "./style.css";` to the top of your `src/index.js` file
 
@@ -29,6 +29,14 @@ module.exports = {
     ]
   }
 };
+```
+
+## `src/style.css`
+
+```css
+* {
+  color: red;
+}
 ```
 
 ## `package.json`
