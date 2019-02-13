@@ -6,6 +6,7 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 
 * [Syllabus](./syllabus.md)
 * [Web project setup](./web-setup.md)
+* [Web project setup, part 2](./web-setup-2.md)
 
 ## Lessons
 
