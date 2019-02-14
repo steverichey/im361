@@ -25,7 +25,11 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [HTMLHint](https://htmlhint.io/)
 * [HTML Validator](https://validator.w3.org/#validate_by_input)
 * [MDN web docs](https://developer.mozilla.org)
-* [https://www.w3schools.com/](https://www.w3schools.com/)
+* [w3schools](https://www.w3schools.com/)
+* [cssreference.io](https://cssreference.io/)
+* [CSS Validator](https://jigsaw.w3.org/css-validator/)
+* [CSS Tricks](https://css-tricks.com/)
+* [Mozilla Developer](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
 ## Info
 
