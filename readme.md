@@ -7,6 +7,7 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [Syllabus](./syllabus.md)
 * [Web project setup](./web-setup.md)
 * [Web project setup, part 2](./web-setup-2.md)
+* [Example web project](https://github.com/steverichey/im361web)
 
 ## Lessons
 
@@ -15,7 +16,8 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [A1. Intro to JavaScript & NodeJS](https://steverichey.github.io/im361/lessons/A1-node-js.html)
 * [A2. Intro to Web Frameworks](https://steverichey.github.io/im361/lessons/A2-web-frameworks.html)
 * [A3. HTML, Semantic Markup, and GitHub Pages](https://steverichey.github.io/im361/lessons/A3-html.html)
-* A4. Intro to CSS and Style
+* [A4. Intro to CSS and Style](https://steverichey.github.io/im361/lessons/A4-css.html)
+* A5. Advanced HTML
 
 ## Web Dev Resources
 

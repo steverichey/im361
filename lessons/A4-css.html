@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro to CSS and Style</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* monokai theme from https://github.com/juanpabloaj/platon/blob/master/public/style.css */
+      .remark-slide-content {
+          background-color: #282828;
+          color: #f8f8f2;
+      }
+
+      .remark-container {
+          background: #282828;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #AE81FF;
+      }
+
+      h1 {
+          color: #F92672;
+      }
+
+      h2 {
+          color: #A6E22E;
+      }
+
+      h3 {
+          color: #66D9EF;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Intro to CSS and Style
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# HTML
+
+* It's kind of a hack
+* It's a miracle it works at all
+* The tech industry has spent $Texas making it work
+* I hope you made it good
+
+---
+
+class: center, middle
+
+# CSS and Styling Your Content
+
+---
+
+# What is CSS?
+
+* Cascading Style Sheets
+* A set of rules for styling your content
+* Styles applied to
+  * tags (`p`, `a`, `button`, `span`)
+  * Classes e.g. `<span class="henlo">lizard</span>`
+  * IDs e.g. `<div id="app">My app</div>`
+    * Try not to do this
+* In theory, a common ruleset that neatly makes your semantic HTML pretty
+* In practice, a mess of "why isn't this centered"
+
+---
+
+# Webpack and CSS
+
+* We have to do a few things
+* First, add CSS and style loaders
+
+```bash
+npm install --save-dev style-loader css-loader
+```
+
+* Second, we need a Webpack config
+  * Wait, I thought Webpack had a zero config option?
+  * Yes, you were lied to
+
+---
+
+# Webpack Setup
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361) -> [Web project setup, part2](https://github.com/steverichey/im361/blob/master/web-setup-2.md)
+
+```js
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      }
+    ]
+  }
+};
+```
+
+webpack.config.js
+
+---
+
+# More Webpack stuff
+
+* Add a src/style.css file
+
+```css
+* {
+  color: red;
+}
+```
+
+Make this change to your package.json file:
+
+```js
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "dev": "webpack --mode development"
+}
+```
+
+Add import `"./style.css";` to the top of your index.js
+
+---
+
+# Build our new site
+
+* With the style/CSS loader, Webpack can bundle our CSS in the page neatly
+* With the development flag, our JavaScript is a bit easier to read
+* Now you can run `npm run dev`
+* Open your page in the browser
+
+---
+
+class: center, middle
+
+![](../images/nice-terminal.png)
+
+# New terminal stuff
+
+Warnings went away
+CSS got bundled
+
+---
+
+class: center, middle
+
+![](../images/red.png)
+
+# Neat, everything is red
+
+---
+
+# Mess with your CSS
+
+* Selectors
+  * `html` or `body`
+  * `a`, `li`, `ul`, `button`, `p`, `span`, `h1`, `header`, `main`, `footer`
+  * Classes (you have to add these)
+    * `<span class="applebees">Bappleees</span>`
+    * Dot prefix
+* Pseudo-classes like `a:hover`
+* Properties
+* width, font-size, color, float
+* Values
+* px, %, em, vw, vh
+* Don't forget to use `npm run dev` after changes
+* Make 👏 your 👏 site 👏 ugly
+
+---
+
+class: center, middle
+
+![](../images/help-aaa.png)
+
+# Aaaaaa
+
+Let's mess with this
+
+---
+
+class: center, middle
+
+![](../images/example-css.png)
+
+# Some example CSS
+
+Test slide do not use
+
+---
+
+# Assignment
+
+* Style your HTML
+* Don't worry about animations or anything that "seems complex"
+* Just try to get stuff in the right place and the right color
+* One page only; just use the HTML from last time
+* Good resources:
+* [cssreference.io](https://cssreference.io/)
+* [CSS Validator](https://jigsaw.w3.org/css-validator/)
+* [CSS Tricks](https://css-tricks.com/)
+* [Mozilla Developer](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
+---
+
+class: center, middle
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
