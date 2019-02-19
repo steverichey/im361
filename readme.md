@@ -17,7 +17,9 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [A2. Intro to Web Frameworks](https://steverichey.github.io/im361/lessons/A2-web-frameworks.html)
 * [A3. HTML, Semantic Markup, and GitHub Pages](https://steverichey.github.io/im361/lessons/A3-html.html)
 * [A4. Intro to CSS and Style](https://steverichey.github.io/im361/lessons/A4-css.html)
-* A5. Advanced HTML
+* [A5. Advanced HTML and Vue](https://steverichey.github.io/im361/lessons/A5-vue-and-html.html)
+* A6. Advanced CSS and Vue
+* A7. Advanced JS and Vue
 
 ## Web Dev Resources
 

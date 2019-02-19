@@ -46,9 +46,9 @@ Lessons are available [here](https://github.com/steverichey/im361#lessons).
 | Wednesday, February 6  | A2. Intro to Web Frameworks                     | Website: Origins           | Feb 11 | 5     |
 | Monday, February 11    | A3. HTML, Semantic Markup, and GitHub Pages     | Semantic markup of design  | Feb 13 | 5     |
 | Wednesday, February 13 | A4. Intro to CSS and Style                      | Styled design              | Feb 18 | 5     |
-| Monday, February 18    | A5. Advanced HTML                               | Full site markup           | Feb 20 | 5     |
-| Wednesday, February 20 | A6. Advanced CSS                                | Animated site              | Feb 25 | 5     |
-| Monday, February 25    | A7. Advanced JavaScript                         | Beta Site                  | Feb 27 | 5     |
+| Monday, February 18    | A5. Advanced HTML and Vue                       | Full site markup           | Feb 20 | 5     |
+| Wednesday, February 20 | A6. Advanced CSS and Vue                        | Animated site              | Feb 25 | 5     |
+| Monday, February 25    | A7. Advanced JS and Vue                         | Beta Site                  | Feb 27 | 5     |
 | Wednesday, February 27 | A8. QA and Code Review                          | Final Site                 | Mar 4  | 100   |
 | Monday, March 4        | B1. Intro to Android Studio                     | Initial App Repo           | Mar 6  | 5     |
 | Wednesday, March 6     | B2. Intro to Java & Kotlin (may be moved)       | Basic App                  | Mar 11 | 5     |

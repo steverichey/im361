@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro to CSS and Style</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* monokai theme from https://github.com/juanpabloaj/platon/blob/master/public/style.css */
+      .remark-slide-content {
+          background-color: #282828;
+          color: #f8f8f2;
+      }
+
+      .remark-container {
+          background: #282828;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #AE81FF;
+      }
+
+      h1 {
+          color: #F92672;
+      }
+
+      h2 {
+          color: #A6E22E;
+      }
+
+      h3 {
+          color: #66D9EF;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Advanced HTML and Vue
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# CSS
+
+* Nested rules: no bueno
+  * There are ways around this
+    * `a > b`
+    * `a.b`
+* Keep it simple
+* We'll be able to turn classes on and off later
+  * This will be important
+
+---
+
+class: center, middle
+
+# Tying It All Together: Part One
+
+---
+
+# Making everything Vue
+
+* Put everything inside of a <div id="app">
+* Basically, everything inside the body tag
+* Now Vue can control stuff
+
+---
+
+# More neat Vue stuff, part 1
+
+* Templates
+
+```html
+<span>{{ someText }}</span>
+```
+
+```js
+data: {
+  message: 'Hello Vue!',
+  isButtonDisabled: true
+}
+```
+* Events
+```html
+<button v-on:click="isButtonDisabled = false">
+  Click Me
+</button>
+```
+* Attribute binding
+```html
+<button v-bind:disabled="isButtonDisabled">
+  Click Me
+</button>
+```
+
+---
+
+# More neat Vue stuff, part 2
+
+* Expressions
+
+```
+{{ number + 1 }}
+{{ ok ? 'YES' : 'NO' }}
+```
+
+* Directives
+
+```html
+<p v-if="isVisible">Only visible if...</p>
+```
+
+* Computed properties
+
+```js
+data: {
+  firstName: "Steve",
+  lastName: "Richey"
+ },
+ computed: {
+  fullName: function () {
+   return this.firstName + ' ' + this.lastName
+  }
+ }
+}
+```
+
+---
+
+# More neat Vue stuff, part 3
+
+* Class binding
+
+```html
+<div class="static" v-bind:class="{ error: hasError }"></div>
+```
+
+* If/else
+
+```html
+<div v-if="showFirst">First</div>
+<div v-else>Second</div>
+```
+
+* List rendering
+
+```js
+options: [ "Doge", "Doggo", "Woofer", "Pup" ]
+```
+
+```html
+<ul>
+ <li v-for="option in options">
+  {{ option }}
+ </li>
+</ul>
+```
+
+Results in:
+
+```html
+<ul>
+  <li>Doge</li>
+  <li>Doggo</li>
+  <li>Woofer</li>
+  <li>Pup</li>
+</ul>
+```
+
+---
+
+# Making pages happen
+
+```js
+var app = new Vue({
+ el: '#app',
+ data: {
+  pageName: "home"
+ }
+});
+```
+
+---
+
+# Pages are so fetch
+
+```html
+<body>
+  <div id="app" class="appdiv">
+    <header>
+      <nav>
+        <a href="#home" v-on:click="pageName = 'home'">Home</a>
+      </nav>
+    </header>
+    <!-- First page -->
+    <main v-bind:hidden="pageName != 'home'">...</main>
+    <!-- Second page -->
+    <main v-bind:hidden="pageName != 'about'">...</main>
+    <footer>...</footer>
+  </div>
+</body>
+```
+
+---
+
+class: center, middle
+
+# Demo
+
+Hopefully
+
+---
+
+# Assignment
+
+* Blend Vue and your site HTML
+* Use:
+  * Templates
+  * Events
+  * Binding
+  * Expressions
+  * Directives
+  * Computed properties
+  * Class binding
+  * If/else
+  * List rendering
+
+---
+
+class: center, middle
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
