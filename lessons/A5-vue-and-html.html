@@ -111,12 +111,15 @@ data: {
 }
 ```
 * Events
+
 ```html
 <button v-on:click="isButtonDisabled = false">
   Click Me
 </button>
 ```
+
 * Attribute binding
+
 ```html
 <button v-bind:disabled="isButtonDisabled">
   Click Me
@@ -183,17 +186,6 @@ options: [ "Doge", "Doggo", "Woofer", "Pup" ]
  <li v-for="option in options">
   {{ option }}
  </li>
-</ul>
-```
-
-Results in:
-
-```html
-<ul>
-  <li>Doge</li>
-  <li>Doggo</li>
-  <li>Woofer</li>
-  <li>Pup</li>
 </ul>
 ```
 
