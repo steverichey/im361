@@ -18,7 +18,7 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [A3. HTML, Semantic Markup, and GitHub Pages](https://steverichey.github.io/im361/lessons/A3-html.html)
 * [A4. Intro to CSS and Style](https://steverichey.github.io/im361/lessons/A4-css.html)
 * [A5. Advanced HTML and Vue](https://steverichey.github.io/im361/lessons/A5-vue-and-html.html)
-* A6. Advanced CSS and Vue
+* [A6. Advanced CSS and Vue](https://steverichey.github.io/im361/lessons/A6-vue-and-css.html)
 * A7. Advanced JS and Vue
 
 ## Web Dev Resources
@@ -32,6 +32,8 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [CSS Validator](https://jigsaw.w3.org/css-validator/)
 * [CSS Tricks](https://css-tricks.com/)
 * [Mozilla Developer](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [MDN: Using CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
+* [MDN: Using CSS Transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
 
 ## Info
 

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced CSS and Vue</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* monokai theme from https://github.com/juanpabloaj/platon/blob/master/public/style.css */
+      .remark-slide-content {
+          background-color: #282828;
+          color: #f8f8f2;
+      }
+
+      .remark-container {
+          background: #282828;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #AE81FF;
+      }
+
+      h1 {
+          color: #F92672;
+      }
+
+      h2 {
+          color: #A6E22E;
+      }
+
+      h3 {
+          color: #66D9EF;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Advanced CSS and Vue
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# HTML and Vue
+
+* HTML: neat at rendering static content
+* Vue: neat at updating HTML
+  * If you're modifying elements manually, you're doing it wrong
+  * Try to write as little JavaScript as possible
+
+---
+
+class: middle, center
+
+# Tying It All Together: Part Two
+
+---
+
+# CSS and Vue
+
+* Styles defined by CSS can be applied automagically
+* Vue can toggle CSS classes based on binding
+* When CSS classes are changed, any animation parameters are applied
+* I really cannot overstate how much of a pain this was to do before we had modern web frameworks
+
+---
+
+# CSS Animations 1
+
+```css
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: inherit;
+  }
+}
+
+.animated {
+  animation-duration: 3s;
+  animation-name: fadein;
+}
+```
+
+---
+
+# CSS Animations 2
+
+```html
+<!-- First page -->
+<main v-bind:hidden="pageName != 'home'" class="animated">
+  ...
+</main>
+```
+
+---
+
+# CSS Animations 2b
+
+![](../images/css-animations-fade.gif)
+
+---
+
+# CSS Animations 3
+
+```css
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+p:hover {
+  animation: 3s infinite alternate spin;
+}
+```
+
+---
+
+# CSS Animations 4
+
+![](../images/css-animations-spin.gif)
+
+---
+
+# CSS Transitions
+
+```css
+.canShowError {
+  transition: color 1s, background-color 2s, border 3s;
+}
+
+.canShowError.hasError {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border: 2px dashed yellow;
+}
+```
+
+---
+
+# CSS Transitions 2
+
+Make sure your Vue data has an isError property
+
+```html
+<button
+  v-on:click="isError = !isError"
+  v-bind:disabled="isButtonDisabled">
+  ERROR is {{ isError ? "ON" : "OFF" }}
+</button>
+
+...
+
+<p
+  class="canShowError"
+  v-bind:class="{ hasError: isError }">
+  ...
+</p>
+```
+
+---
+
+# CSS Transitions 3
+
+![](../images/css-transitions.gif)
+
+---
+
+# Web fonts
+
+* Google Fonts
+  * Technically another URL request
+  * Pretty fast though
+  * No one actually knows why Google offers these fonts "for free"
+* Files included in your Webpack module
+  * Won't work locally unless you start a server
+  * A bit of a pain to set up
+  * Licensing
+
+---
+
+# Google Fonts
+
+* [fonts.google.com](https://fonts.google.com/)
+* Add to "cart"
+* Google gives you the CSS
+
+![](../images/google-fonts.png)
+
+---
+
+# Google Fonts CSS
+
+```css
+@import url('https://fonts.googleapis.com/css?family=Miss+Fajardose');
+
+.fancy {
+  font-family: 'Miss Fajardose', cursive;
+}
+```
+
+![](../images/google-fonts-example.png)
+
+---
+
+# Webpack Fonts
+
+* Have to add a file-loader NPM package
+* Webpack will then handle font files in source directories
+  * This could be src, fonts, whatevs
+* CSS can then reference font via @font-face
+* JS can reference font with import (as with our CSS)
+* Paths become.... messy
+  * 07592f3c41d6b637f5a8245052beda97.ttf
+  * This is actually good for browser caching IIRC
+  * Should we use dist? src? None? JS wants one thing, CSS wants another, Webpack seems to want neither
+* Encoding becomes messier
+  * Literally the entire font is turned into a base64 JS string
+  * Adds 50kb to the font???? Why??
+* Let's not
+
+---
+
+# Assignment
+
+* Add some fancy CSS
+* Control that CSS in some way from Vue
+* Try to find a natural fit for your web app
+* Focus on what you'll need to finish between now and March 4, when the full project is due
+
+---
+
+# Schedule
+
+* Come to each upcoming class with questions
+* Monday, February 25
+  * Due: Fancy CSS
+  * Lesson: Advanced JS and Vue
+* Wednesday, February 27
+  * Due: Beta Site
+  * Lesson: QA and Code Review 🐶
+* Monday, March 4
+  * Due: Final Site
+  * Start of next project
+
+---
+
+class: center, middle
+
+# Demo
+
+🤞
+
+---
+
+class: center, middle
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
