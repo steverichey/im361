@@ -19,7 +19,7 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [A4. Intro to CSS and Style](https://steverichey.github.io/im361/lessons/A4-css.html)
 * [A5. Advanced HTML and Vue](https://steverichey.github.io/im361/lessons/A5-vue-and-html.html)
 * [A6. Advanced CSS and Vue](https://steverichey.github.io/im361/lessons/A6-css-vue.html)
-* A7. Advanced JS and Vue
+* [A7. Advanced JS and Vue](https://steverichey.github.io/im361/lessons/A7-js-and-vue.html)
 
 ## Web Dev Resources
 

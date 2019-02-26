@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced JS and Vue</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* monokai theme from https://github.com/juanpabloaj/platon/blob/master/public/style.css */
+      .remark-slide-content {
+          background-color: #282828;
+          color: #f8f8f2;
+      }
+
+      .remark-container {
+          background: #282828;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #AE81FF;
+      }
+
+      h1 {
+          color: #F92672;
+      }
+
+      h2 {
+          color: #A6E22E;
+      }
+
+      h3 {
+          color: #66D9EF;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      table {
+        font-size: 0.7em;
+      }
+
+      th {
+        color: black;
+        font-weight: bold;
+        background-color: #F92672;
+      }
+
+      td:nth-child(1) {
+        color: black;
+        font-weight: bold;
+        background-color: #66D9EF;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Advanced JS and Vue
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# Web project rubric
+
+* Four evaluation categories
+  * Design
+  * Effort
+  * General technical
+  * Specific technical
+* Three (or maybe four) categories for all projects
+  * One is specific each time
+* Five elements per category
+  * Five points per element
+  * Likert scale
+* Twenty elements total
+* Remember: projects are >70% of your grade
+
+---
+
+# Web project rubric 2
+
+* Score formula
+  * Total Element Points * 3/4 + 25
+* Chosen to make  "3" average to 70%
+* All 1: 40% (F)
+* All 2: 55% (F)
+* All 3: 70% (C)
+* All 4: 85% (B)
+* All 5: 100% (A)
+
+---
+
+# Design
+
+<table>
+  <tr>
+    <th></th>
+    <th>1</th>
+    <th>3</th>
+    <th>5</th>
+  </tr>
+  <tr>
+    <td>Does the finished project match the intended design as shown by the student at the beginning of the semester?</td>
+    <td>Original design is actively mocked by the poor quality of the finished product</td>
+    <td>Design is mostly matched with some exceptions that are not a detriment to the design</td>
+    <td>Original design is well-represented and in several ways improved</td>
+  </tr>
+  <tr>
+    <td>Is the web application responsive to a variety of screen sizes?</td>
+    <td>Application has substantial visual issues at all screen sizes and resolutions</td>
+    <td>Design functions well across some common and targeted screen sizes</td>
+    <td>Application looks great at all tested screen sizes and resolutions</td>
+  </tr>
+  <tr>
+    <td>Is the design intuitive, easy to use, and comparable to what a user would expect for an application of this type?</td>
+    <td>Design actively works to thwart the user at all times, a labyrinth of dark design</td>
+    <td>Design is largely intuitive but may have a few points of confusion</td>
+    <td>Intended and available state and actions are immediately recognizable at all levels</td>
+  </tr>
+  <tr>
+    <td>Does the design reflect modern design principles, trends, and best practices?</td>
+    <td>Design is antithetical to the concept of improvements to design and usability</td>
+    <td>Modern principles are evident despite some shortcomings in a few notable places</td>
+    <td>Project leverages the state of the art in the design of applications</td>
+  </tr>
+  <tr>
+    <td>Is the design subjectively pleasing to a user familiar with the standards for this platform?</td>
+    <td>Subjectively, the design is unpleasing, confusing, and bad to look at with the eyes</td>
+    <td>Subjectively, the design is pleasing but may have some inconsistencies</td>
+    <td>Subjectively, the design is pleasing to look at and represents a student's best work</td>
+  </tr>
+</table>
+
+---
+
+# Effort
+
+<table>
+  <tr>
+    <th></th>
+    <th>1</th>
+    <th>3</th>
+    <th>5</th>
+  </tr>
+  <tr>
+    <td>Has the student applied lessons learned during the course to improve their application?</td>
+    <td>Student has seemingly ignored nearly all lessons taught during this course</td>
+    <td>The concepts taught in several, but not all, lessons are clearly visible in the work</td>
+    <td>All lessons of this portion of the course were clearly applied to improve the project</td>
+  </tr>
+  <tr>
+    <td>Has the student leveraged outside materials to solve technical challenges or add features to their application?</td>
+    <td>Student clearly spent no time using freely available resources for their project</td>
+    <td>Some effort has been made to solve problems independently with publicly available resources</td>
+    <td>Student has spent a substantial amount of time and effort leveraging outside materials</td>
+  </tr>
+  <tr>
+    <td>Has the student demonstrated attentiveness and engagement during lessons?</td>
+    <td>Did not pay attention in class or frequently accessed irrelevant resources on their computer</td>
+    <td>Student informed instructor of absences and paid some attention during class</td>
+    <td>Student informed instructor of absences and was attentive and engaged when present</td>
+  </tr>
+  <tr>
+    <td>Has the student expanded their capabilities since the beginning of the project?</td>
+    <td>Student shows no growth over the duration of the project, and maybe forgot a few things</td>
+    <td>Student has grown in the topic at hand, but no more than could be expected</td>
+    <td>Clear and significant progress and learning in this capacity since the start of the course</td>
+  </tr>
+  <tr>
+    <td>Has the student made an effort to achieve beyond what they believed they were capable of?</td>
+    <td>Student showed no interest in even a modicum of effort for the entire project</td>
+    <td>The effort put forth is evident, but is no more than the average college student</td>
+    <td>Student's effort is commendable and displays a capability and willingness to challenge oneself</td>
+  </tr>
+</table>
+
+---
+
+# General technical
+
+<table>
+  <tr>
+    <th></th>
+    <th>1</th>
+    <th>3</th>
+    <th>5</th>
+  </tr>
+  <tr>
+    <td>Does the application represent best practices for the platform and technologies which it leverages?</td>
+    <td>Project is an outright mockery of the very concept of best practices</td>
+    <td>Some attempt has been made to match best practices, but may differ in some key places</td>
+    <td>Project strictly matches best practices and published standards</td>
+  </tr>
+  <tr>
+    <td>Does the text formatting throughout the application source code reflect standards for the language it is written in?</td>
+    <td>Formatting or lack thereof confounds any attempt to parse code or markup</td>
+    <td>Much of the formatting nearly matches industry standard with some exceptions</td>
+    <td>Source formatting is nearly indistinguishable from expert work</td>
+  </tr>
+  <tr>
+    <td>Does the source code include comments to clarify the intention behind implementation to other readers?</td>
+    <td>Comments are missing or riddled with typos, outright lies, and insults to the reader</td>
+    <td>Comments are used but may be poorly written or duplicate concepts evident in code</td>
+    <td>Comments provide insight into the project that would not be viable in code alone</td>
+  </tr>
+  <tr>
+    <td>Do the variable, class, and file names in the source code clarify their purpose or match expected structure?</td>
+    <td>Naming is applied to actively prevent comprehension by the human mind</td>
+    <td>Many names are well-chosen but in some cases may be confusing or unclear</td>
+    <td>Naming makes it immediately apparent what the function of any particular object is</td>
+  </tr>
+  <tr>
+    <td>Does the build process of the application match the expected format and work as intended?</td>
+    <td>Build process is incomprehensible and/or unknowable; some dark magicks</td>
+    <td>In some cases, build process is not in the expected format, but is generally correct</td>
+    <td>Build process strictly conforms to format for platform and/or frameworks</td>
+  </tr>
+</table>
+
+---
+
+# Specific technical
+
+<table>
+  <tr>
+    <th></th>
+    <th>1</th>
+    <th>3</th>
+    <th>5</th>
+  </tr>
+  <tr>
+    <td>Does the HTML for the application leverage semantic markup with proper attributes?</td>
+    <td>HTML validation absolutely fails, leading to rendering errors in the browser</td>
+    <td>HTML validation may have some minor issues, but semantic tags are mostly correct</td>
+    <td>HTML is valid, well-formed, and easily readable with appropriate use of semantic tags</td>
+  </tr>
+  <tr>
+    <td>Is the JavaScript clear to the reader while leveraging features available in Vue?</td>
+    <td>JavaScript is not valid, semantically unclear, and the syntax is incorrect</td>
+    <td>JavaScript may have incorrect formatting or function in some places, but is mostly correct</td>
+    <td>JavaScript format aids comprehension in significant ways</td>
+  </tr>
+  <tr>
+    <td>Does the CSS properly style the content, with clear style rules, that apply evenly throughout the content?</td>
+    <td>CSS rules are extremely narrow, use overrides, or use incorrect syntax</td>
+    <td>CSS rules are logical and the proper syntax is used throughout with few exceptions</td>
+    <td>All CSS is well-written, well-formatted, and easy to understand</td>
+  </tr>
+  <tr>
+    <td>Does the application produce errors or warnings when running in the browser?</td>
+    <td>Numerous errors and warnings are produced at runtime, at all levels of the application</td>
+    <td>No errors are produced in the browser console, but some warnings may appear</td>
+    <td>When the web application is running, no errors or warnings are displayed in the console</td>
+  </tr>
+  <tr>
+    <td>Does the application's build process produce errors or warnings?</td>
+    <td>Numerous errors and warnings are produced at buildtime when using the standard build process</td>
+    <td>No errors are produced at build time, but some warnings may appear</td>
+    <td>When the web application is built, no errors or warnings are produced by the build tools</td>
+  </tr>
+</table>
+
+---
+
+# CSS and Vue
+
+* CSS
+  * Neat at applying style rules to content based on tags and classes
+* Vue
+  * Neat at updating class on elements
+  * If you're modifying elements manually, you're doing it wrong
+  * Try to write as little JavaScript as possible
+
+---
+
+# Homework review
+
+* Make sure your properties are valid (`1.5s` not `1.5`)
+  * The web inspector will provide a ⚠️
+* Make sure you `@import` all specific `font-family`
+* CSS should not include HTML e.g. `<link href ... >`
+  * Click *@import* in Google Fonts
+  * Import all at once e.g. `family=Coiny|Fjalla+One|Roboto`
+  * Use e.g. `@import url('https://fonts.googleapis.com/css?family=Taprom');`
+
+---
+
+class: center, middle
+
+# Tying It All Together: Part Three
+
+---
+
+# Putting JS in Vue
+
+* Add a methods object to your Vue app
+* Put all the complex logic in there
+* Use `this` to refer to data
+* Keep it simple; don't be afraid to look it up
+
+```js
+methods: {
+  removeOption: function () {
+    this.options.pop();
+  },
+  addOption: function() {
+    this.options.push("Pup");
+  }
+}
+```
+---
+
+# Calling JS from HTML
+
+* Within your Vue tag, calling methods is easy
+* Doesn't work outside of Vue
+
+```html
+<h5>Options: {{ optionCount }}</h5>
+<ul>
+  <li v-for="option in options">
+    {{ option }}
+  </li>
+</ul>
+<button v-on:click="removeOption">Remove Option</button>
+<button v-on:click="addOption">Add Option</button>
+```
+
+---
+
+class: center, middle
+
+![](../images/options-1.png)
+
+# Initial options
+
+State at app load
+
+---
+
+class: center, middle
+
+![](../images/options-2.png)
+
+# Remove option
+
+Rendered content updates automagically
+
+Be sure to test weird states!!!
+
+---
+
+class: center, middle
+
+![](../images/options-3.png)
+
+# Add option
+
+Again, Vue handles rendering
+
+---
+
+# Function parameters
+
+* Just add a parameter to the function, and provide one when you call it
+
+```js
+// JS
+addOption: function(name) {
+  this.options.push(name);
+}
+```
+
+```html
+// HTML
+<button v-on:click="addOption('Woofer')">Add Woofer</button>
+<button v-on:click="addOption('Doggo')">Add Doggo</button>
+<button v-on:click="addOption('Pup')">Add Pup</button>
+```
+
+---
+
+class: center, middle
+
+![](../images/options-4.png)
+
+# Add option with parameter
+
+Looks about the same...
+
+---
+
+# Arrays of objects
+
+* Arrays in your data object can be anything
+
+```js
+// JS
+options: [
+  { name: "Doge", type: "cute" },
+  { name: "Doggo", type: "large" },
+  { name: "Woofer", type: "huge" },
+  { name: "Pup", type: "tiny" }
+],
+```
+
+```html
+// HTML
+<li v-for="option in options">
+  This {{ option.name }} is very {{ option.type }}.
+</li>
+...
+<button v-on:click="addOption({ name: 'Woof', type: 'medium' })">
+  Add Woofer
+</button>
+```
+
+---
+
+class: center, middle
+
+![](../images/options-5.png)
+
+# Add object options
+
+Arrays of objects can include objects with arrays too
+
+---
+
+# Assignment
+
+* Add some JavaScript methods to your Vue object
+  * Not too fancy
+  * Feel free to crib what you find online with attribution
+  * With few exceptions, all within your methods object
+* Try to find a natural fit for your web app
+* Focus on what you'll need to finish between now and March 4, when the full project is due
+
+---
+
+# Schedule
+
+* Come to each upcoming class with questions
+* Wednesday, February 27
+  * Due: Beta Site
+  * Lesson: QA and Code Review 🐶
+* Monday, March 4
+  * Due: Final Site
+  * Start of next project
+* Wednesday, March 6
+  * No class
+  * Small assignment
+
+---
+
+class: center, middle
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
