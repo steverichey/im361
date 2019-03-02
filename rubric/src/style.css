@@ -1,0 +1,49 @@
+body {
+  font-size: 13px;
+  line-height: 1.16em;
+  font-family: sans-serif;
+}
+
+.selectedOption {
+  font-weight: bold;
+  color: red;
+}
+
+li {
+  list-style: none;
+}
+
+.grades {
+  font-weight: bolder;
+  font-size: 2em;
+}
+
+.gradeA {
+  color: #55f441;
+}
+
+.gradeB {
+  color: #d3f441;
+}
+
+.gradeC {
+  color: #f4d041;
+}
+
+.gradeD {
+  color: #f48041;
+}
+
+.gradeF {
+  color: #f45342;
+}
+
+.elementLabel {
+  color: #429ef4;
+  padding: 4px;
+  background-color: #0c2842;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 22px;
+  height: 20px;
+}

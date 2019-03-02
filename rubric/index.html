@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>IM 361 Rubric</title>
+  </head>
+  <body>
+    <div id="app" class="appdiv">
+      <header>
+        <h1>IM 361 Rubric</h1>
+        <p>A rubric for <a href="https://github.com/steverichey/im361">IM361</a>.</p>
+        <p>Enter student name: <input v-model="studentName"></p>
+      </header>
+      <main>
+        <ul>
+          <li v-for="(category, categoryIndex) in categories">
+            <h2>{{ category.name }}</h2>
+            <ul v-if="category.elements">
+              <li v-for="(element, elementIndex) in category.elements">
+                <h3 v-if="element.question"><span class="elementLabel">{{ element.label }}</span> {{ element.question }}</h3>
+                <h3 v-else>Missing question</h3>
+                <ul v-if="canShowOptions(element)">
+                  <li v-for="(option, optionIndex) in element.options">
+                    <p v-if="canShowSelected(element)">
+                      <input type="radio" v-bind:id="'option' + categoryIndex + elementIndex + optionIndex" v-bind:value="optionIndex" v-model="element.picked">
+                      <label v-bind:for="'option' + categoryIndex + elementIndex + optionIndex">{{ option }}</label>
+                    </p>
+                    <p v-else>{{ option }}</p>
+                  </li>
+                </ul>
+                <p v-else>No options</p>
+                <p v-if="canShowSelected(element)">
+                  Selected: {{ element.picked + 1 }} / {{ element.options.length }}
+                </p>
+              </li>
+            </ul>
+            <p v-else>No elements</p>
+            <p>{{ category.name }} total: {{ categoryTotal(category) }} / {{ categoryMax(category) }}</p>
+            <p>{{ category.name }} score: {{ categoryScore(category) }}%</p>
+          </li>
+        </ul>
+        <h2>Total</h2>
+        <p>Total: {{ overallTotal }} / {{ overallMax }}</p>
+        <p>Raw score: {{ overallScore }}%</p>
+        <p>Weighted score: {{ weightedScore }}%</p>
+        <p class="grades" v-bind:class="'grade' + weightedGrade">Grade: {{ weightedGrade }}</p>
+        <a v-bind:href="downloadLink" download="export.txt">Download grade summary</a>
+      </main>
+      <footer>
+        <p>Created by <a href="https://github.com/steverichey">Steve Richey</a> using <a href="https://vuejs.org/">Vue.js</a></p>
+      </footer>
+    </div>
+    <script src="./dist/main.js" type="text/javascript"></script>
+  </body>
+</html>
