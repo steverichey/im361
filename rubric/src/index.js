@@ -44,13 +44,71 @@ var app = new Vue({
               "Intended and available state and actions are immediately recognizable at all levels"
             ],
             picked: 2
+          },
+          {
+            label: "D4",
+            question: "Does the design reflect modern design principles, trends, and best practices?",
+            options: [
+              "Design is antithetical to the concept of improvements to design and usability",
+              "There is some influence from modern design principles, but with major issues",
+              "Modern principles are evident despite some shortcomings in a few notable places",
+              "The design generally leverages modern principles with few exceptions",
+              "Project leverages the state of the art in the design of applications"
+            ],
+            picked: 2
+          },
+          {
+            label: "D5",
+            question: "Is the design subjectively pleasing to a user familiar with the standards for this platform?",
+            options: [
+              "Subjectively, the design is unpleasing, confusing, and bad to look at, with the eyes",
+              "Subjectively, the design is unpleasing but in some cases very pleasant",
+              "Subjectively, the design is pleasing but may have some inconsistencies",
+              "Subjectively, the design is pleasing with very few issues",
+              "Subjectively, the design is pleasing to look at and represents a student's best work"
+            ],
+            picked: 2
           }
         ]
       },
       {
         name: "Effort",
         elements: [
-
+          {
+            label: "E1",
+            question: "",
+            options: [
+            ],
+            picked: 2
+          },
+          {
+            label: "E2",
+            question: "",
+            options: [
+            ],
+            picked: 2
+          },
+          {
+            label: "E3",
+            question: "",
+            options: [
+            ],
+            picked: 2
+          },
+          {
+            label: "E4",
+            question: "",
+            options: [
+            ],
+            picked: 2
+          },
+          {
+            label: "E5",
+            question: "",
+            options: [
+            ],
+            picked: 2
+          }
         ]
       },
       {
@@ -58,37 +116,80 @@ var app = new Vue({
         elements: [
           {
             label: "GT1",
-            question: "a question with no options"
+            question: "",
+            options: [
+            ],
+            picked: 2
           },
           {
             label: "GT2",
-            question: "a question with empty options",
+            question: "",
             options: [
-
-            ]
+            ],
+            picked: 2
           },
           {
             label: "GT3",
-            question: "a question with one option",
+            question: "",
             options: [
-              "one option"
-            ]
+            ],
+            picked: 2
           },
           {
             label: "GT4",
-            question: "a question with one option and a picked",
+            question: "",
             options: [
-              "one option"
             ],
-            picked: 0
+            picked: 2
           },
           {
-            label: "GT5"
+            label: "GT5",
+            question: "",
+            options: [
+            ],
+            picked: 2
           }
         ]
       },
       {
-        name: "Specific technical"
+        name: "Specific technical",
+        elements: [
+          {
+            label: "ST1",
+            question: "",
+            options: [
+            ],
+            picked: 2
+          },
+          {
+            label: "ST2",
+            question: "",
+            options: [
+            ],
+            picked: 2
+          },
+          {
+            label: "ST3",
+            question: "",
+            options: [
+            ],
+            picked: 2
+          },
+          {
+            label: "ST4",
+            question: "",
+            options: [
+            ],
+            picked: 2
+          },
+          {
+            label: "ST5",
+            question: "",
+            options: [
+            ],
+            picked: 2
+          }
+        ]
       }
     ]
   },
@@ -162,7 +263,7 @@ var app = new Vue({
         for (var i = 0; i < category.elements.length; i++) {
           var element = category.elements[i];
 
-          if (typeof element.picked !== 'undefined') {
+          if ((typeof element.picked !== 'undefined') && element.options && element.options.length) {
             total += element.picked + 1;
           }
         }
