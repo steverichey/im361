@@ -4,9 +4,13 @@ body {
   font-family: sans-serif;
 }
 
+.selectableOption {
+  color: #777;
+}
+
 .selectedOption {
-  font-weight: bold;
-  color: red;
+  color: #222;
+  font-weight: 500;
 }
 
 li {
@@ -39,11 +43,5 @@ li {
 }
 
 .elementLabel {
-  color: #429ef4;
-  padding: 4px;
-  background-color: #0c2842;
-  border-radius: 4px;
-  display: inline-block;
-  line-height: 22px;
-  height: 20px;
+  color: grey;
 }
