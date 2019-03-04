@@ -6,14 +6,16 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 
 * [Syllabus](./syllabus.md)
 * [Web project setup](./web-setup.md)
-* [Web project setup, part 2](./web-setup-2.md)
-* [Example web project](https://github.com/steverichey/im361web)
+* [Example web project](./examples/web)
 * [Grading rubric](./rubric)
 
 ## Lessons
 
 * [00. What Is Computation?](https://steverichey.github.io/im361/lessons/00-what-is-computation.html)
 * [01. An Introduction to Git and Github](https://steverichey.github.io/im361/lessons/01-intro-to-git.html)
+
+### Web Development Project
+
 * [A1. Intro to JavaScript & NodeJS](https://steverichey.github.io/im361/lessons/A1-node-js.html)
 * [A2. Intro to Web Frameworks](https://steverichey.github.io/im361/lessons/A2-web-frameworks.html)
 * [A3. HTML, Semantic Markup, and GitHub Pages](https://steverichey.github.io/im361/lessons/A3-html.html)
@@ -22,7 +24,17 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [A6. Advanced CSS and Vue](https://steverichey.github.io/im361/lessons/A6-css-vue.html)
 * [A7. Advanced JS and Vue](https://steverichey.github.io/im361/lessons/A7-js-and-vue.html)
 
-## Web Dev Resources
+### Android Development Project
+
+* B1. Intro to Android Studio
+* B2. Intro to Java & Kotlin
+* B3. Android UIs & Interaction
+* B4. Localization, Colors, and Resources
+* B5. Intro to APIs
+* B6. Android Animations
+* B7. Using Device Sensors
+
+## Web Development Project Resources
 
 * [Guide to Vue.js](https://vuejs.org/v2/guide/)
 * [HTMLHint](https://htmlhint.io/)

@@ -128,9 +128,9 @@ var app = new Vue({
             question: "Has the student made an effort to achieve beyond what they believed they were capable of?",
             options: [
               "Student showed no interest in even a modicum of effort for the entire project",
-              "",
+              "Student's effort was below expectations in several regards",
               "The effort put forth is evident, but is no more than the average college student",
-              "",
+              "Above average effort was put forth to complete the challenges of this project",
               "Student's effort is commendable and displays a capability and willingness to challenge oneself"
             ],
             picked: 2
