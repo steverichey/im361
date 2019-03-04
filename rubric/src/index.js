@@ -5,6 +5,7 @@ var app = new Vue({
   el: '#app',
   data: {
     studentName: "",
+    uploadedFile: null,
     categories: [
       {
         name: "Design",
@@ -76,36 +77,61 @@ var app = new Vue({
         elements: [
           {
             label: "E1",
-            question: "",
+            question: "Has the student applied lessons learned during the course to improve their application?",
             options: [
+              "Student has seemingly ignored nearly all lessons taught during this course",
+              "Several key concepts have been ignored, but a few lessons are applied",
+              "The concepts taught in several, but not all, lessons are clearly visible in the work",
+              "Most lessons of this portion of the course were likely applied to the project",
+              "All lessons of this portion of the course were clearly applied to improve the project"
             ],
             picked: 2
           },
           {
             label: "E2",
-            question: "",
+            question: "Has the student leveraged outside materials to solve technical challenges or add features to their application?",
             options: [
+              "Student clearly spent no time using freely available resources for their project",
+              "Very little effort was spent on leveraging outside resources",
+              "Some effort has been made to solve problems independently with publicly available resources",
+              "Significant effort was spent leveraging some outside materials",
+              "Student has spent a substantial amount of time and effort leveraging outside materials"
             ],
             picked: 2
           },
           {
             label: "E3",
-            question: "",
+            question: "Has the student demonstrated attentiveness and engagement during lessons?",
             options: [
+              "Did not pay attention in class or frequently accessed irrelevant resources on their computer",
+              "Paid attention in class but repeatedly failed to inform the instructor of abscences",
+              "Student informed instructor of abscences and generally paid attention during class",
+              "Student was generally attentive and engaged but may have missed a class unexcused",
+              "Student informed instructor of abscences and was attentive and engaged when present"
             ],
             picked: 2
           },
           {
             label: "E4",
-            question: "",
+            question: "Has the student expanded their capabilities since the beginning of the project?",
             options: [
+              "Student shows no growth over the duration of the project, and maybe forgot a few things",
+              "A minor amount of growth is evident, well below the intended growth",
+              "Student has grown in the topic at hand, but no more than could be expected",
+              "Some expansion of ability that is beyond the average student",
+              "Clear and significant progress and learning in this capacity since the start of the course"
             ],
             picked: 2
           },
           {
             label: "E5",
-            question: "",
+            question: "Has the student made an effort to achieve beyond what they believed they were capable of?",
             options: [
+              "Student showed no interest in even a modicum of effort for the entire project",
+              "",
+              "The effort put forth is evident, but is no more than the average college student",
+              "",
+              "Student's effort is commendable and displays a capability and willingness to challenge oneself"
             ],
             picked: 2
           }
@@ -116,36 +142,61 @@ var app = new Vue({
         elements: [
           {
             label: "GT1",
-            question: "",
+            question: "Does the application represent best practices for the platform and technologies which it leverages?",
             options: [
+              "Project is an outright mockery of the very concept of best practices",
+              "",
+              "Some attempt has been made to match best practices, but may differ in some key places",
+              "",
+              "Project strictly matches best practices and published standards"
             ],
             picked: 2
           },
           {
             label: "GT2",
-            question: "",
+            question: "Does the text formatting throughout the application source code reflect standards for the language it is written in?",
             options: [
+              "Formatting or lack thereof confounds any attempt to parse code or markup",
+              "",
+              "Much of the formatting nearly matches industry standard with some exceptions",
+              "",
+              "Source formatting is nearly indistinguishable from expert work"
             ],
             picked: 2
           },
           {
             label: "GT3",
-            question: "",
+            question: "Does the source code include comments to clarify the intention behind implementation to other readers?",
             options: [
+              "Comments are missing or riddled with typos, outright lies, and insults to the reader",
+              "",
+              "Comments are used but may be poorly written or duplicate concepts evident in code",
+              "",
+              "Comments provide insight into the project that would not be viable in code alone"
             ],
             picked: 2
           },
           {
             label: "GT4",
-            question: "",
+            question: "Do the variable, class, and file names in the source code clarify their purpose or match expected structure?",
             options: [
+              "Naming is applied to actively prevent comprehension by the human mind",
+              "",
+              "Many names are well-chosen but in some cases may be confusing or unclear",
+              "",
+              "Naming makes it immediately apparent what the function of any particular object is"
             ],
             picked: 2
           },
           {
             label: "GT5",
-            question: "",
+            question: "Does the build process of the application match the expected format and work as intended?",
             options: [
+              "Build process is incomprehensible and/or unknowable; some dark magicks",
+              "",
+              "In some cases, build process is not in the expected format, but is generally correct",
+              "",
+              "Build process strictly conforms to format for platform and/or frameworks"
             ],
             picked: 2
           }
@@ -156,36 +207,61 @@ var app = new Vue({
         elements: [
           {
             label: "ST1",
-            question: "",
+            question: "Does the HTML for the application leverage semantic markup with proper attributes?",
             options: [
+              "HTML validation absolutely fails, leading to rendering errors in the browser",
+              "",
+              "HTML validation may have some minor issues, but semantic tags are mostly correct",
+              "",
+              "HTML is valid, well-formed, and easily readable with appropriate use of semantic tags"
             ],
             picked: 2
           },
           {
             label: "ST2",
-            question: "",
+            question: "Is the JavaScript clear to the reader while leveraging features available in Vue?",
             options: [
+              "JavaScript is not valid, semantically unclear, and the syntax is incorrect",
+              "",
+              "JavaScript may have incorrect formatting or function in some places, but is mostly correct",
+              "",
+              "JavaScript format aids comprehension in significant ways"
             ],
             picked: 2
           },
           {
             label: "ST3",
-            question: "",
+            question: "Does the CSS properly style the content, with clear style rules, that apply evenly throughout the content?",
             options: [
+              "CSS rules are extremely narrow, use overrides, or use incorrect syntax",
+              "",
+              "CSS rules are logical and the proper syntax is used throughout with few exceptions",
+              "",
+              "All CSS is well-written, well-formatted, and easy to understand"
             ],
             picked: 2
           },
           {
             label: "ST4",
-            question: "",
+            question: "Does the application produce errors or warnings when running in the browser?",
             options: [
+              "Numerous errors and warnings are produced at runtime, at all levels of the application",
+              "",
+              "No errors are produced in the browser console, but some warnings may appear",
+              "",
+              "When the web application is running, no errors or warnings are displayed in the console"
             ],
             picked: 2
           },
           {
             label: "ST5",
-            question: "",
+            question: "Does the application's build process produce errors or warnings?",
             options: [
+              "Numerous errors and warnings are produced at buildtime when using the standard build process",
+              "",
+              "No errors are produced at build time, but some warnings may appear",
+              "",
+              "When the web application is built, no errors or warnings are produced by the build tools"
             ],
             picked: 2
           }
@@ -217,8 +293,14 @@ var app = new Vue({
     overallScore: function() {
       return this.computeScore(this.overallTotal, this.overallMax);
     },
+    weightMultiplier: function() {
+      return 0.75;
+    },
+    weightAdd: function() {
+      return 25;
+    },
     weightedScore: function() {
-      return Math.round(this.overallScore * 0.75 + 25);
+      return (this.overallScore * this.weightMultiplier + this.weightAdd).toFixed(2);
     },
     weightedGrade: function() {
       var score = this.weightedScore;
@@ -252,7 +334,19 @@ var app = new Vue({
       text += "raw:" + this.overallTotal + "/" + this.overallMax + "\n";
       text += "weighted:" + this.weightedScore + "%\n";
 
-      return 'data:text/plain;charset=utf-8,' + encodeURIComponent(text);
+      return "data:text/plain;charset=utf-8," + encodeURIComponent(text);
+    },
+    downloadFilename: function() {
+      var nameParts = this.studentName.split(" ");
+      var result = "";
+
+      if (nameParts.length < 2) {
+        result = nameParts[0].toLowerCase();
+      } else {
+        result = nameParts[0].toLowerCase() + "_" + nameParts[1].toLowerCase();
+      }
+
+      return result + "_grade_export.txt";
     }
   },
   methods: {
@@ -300,7 +394,39 @@ var app = new Vue({
         return 0;
       }
 
-      return Math.round(100 * total / max);
+      return (100 * total / max).toFixed(2);
+    },
+    uploadFile: function() {
+      this.uploadedFile = this.$refs.file.files[0];
+      var self = this;
+
+      var fileReader = new FileReader();
+      fileReader.onload = function(event) {
+          var fileText = event.target.result;
+          var lines = fileText.split("\n");
+
+          self.studentName = lines[0];
+
+          for (var i = 0; i < lines.length; i++) {
+            if (i == 0) continue;
+
+            var keyValue = lines[i].split(":");
+
+            for (var j = 0; j < self.categories.length; j++) {
+              var category = self.categories[j];
+
+              for (var k = 0; k < category.elements.length; k++) {
+                var element = category.elements[k];
+
+                if (element.label == keyValue[0]) {
+                  element.picked = parseInt(keyValue[1]);
+                }
+              }
+            }
+          }
+      };
+
+      fileReader.readAsText(this.uploadedFile, "UTF-8");
     }
   }
 });
