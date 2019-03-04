@@ -8,6 +8,7 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [Web project setup](./web-setup.md)
 * [Web project setup, part 2](./web-setup-2.md)
 * [Example web project](https://github.com/steverichey/im361web)
+* [Grading rubric](./rubric)
 
 ## Lessons
 
