@@ -10,6 +10,8 @@
       <header>
         <h1>IM 361 Rubric</h1>
         <p>A rubric for <a href="https://github.com/steverichey/im361">IM361</a>.</p>
+        <p>Load file: <input type="file" id="file" ref="file" accept="text/plain" v-on:change="uploadFile()"/></p>
+        <p v-if="uploadedFile">Loaded "{{ uploadedFile.name }}" with {{ uploadedFile.size }} bytes</p>
         <p>Enter student name: <input v-model="studentName"></p>
       </header>
       <main>
@@ -24,7 +26,7 @@
                   <li v-for="(option, optionIndex) in element.options">
                     <p v-if="canShowSelected(element)">
                       <input type="radio" v-bind:id="'option' + categoryIndex + elementIndex + optionIndex" v-bind:value="optionIndex" v-model="element.picked">
-                      <label v-bind:for="'option' + categoryIndex + elementIndex + optionIndex">{{ option }}</label>
+                      <label class="selectableOption" v-bind:class="{ selectedOption: optionIndex == element.picked }" v-bind:for="'option' + categoryIndex + elementIndex + optionIndex">{{ option }}</label>
                     </p>
                     <p v-else>{{ option }}</p>
                   </li>
@@ -43,9 +45,11 @@
         <h2>Total</h2>
         <p>Total: {{ overallTotal }} / {{ overallMax }}</p>
         <p>Raw score: {{ overallScore }}%</p>
+        <p>Weight formula: {{ overallScore }} * {{ weightMultiplier }} + {{ weightAdd }}</p>
         <p>Weighted score: {{ weightedScore }}%</p>
         <p class="grades" v-bind:class="'grade' + weightedGrade">Grade: {{ weightedGrade }}</p>
-        <a v-bind:href="downloadLink" download="export.txt">Download grade summary</a>
+        <a v-if="studentName" v-bind:href="downloadLink" v-bind:download="downloadFilename">Download grade summary</a>
+        <div v-else>Cannot download: no student name</div>
       </main>
       <footer>
         <p>Created by <a href="https://github.com/steverichey">Steve Richey</a> using <a href="https://vuejs.org/">Vue.js</a></p>
