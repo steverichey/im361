@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro to Android Studio</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* darcula theme from https://github.com/dracula/dracula-theme */
+      .remark-slide-content {
+          background-color: #282a36;
+          color: #f8f8f2;
+      }
+
+      .remark-container {
+          background: #282a36;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #50fa7b;
+      }
+
+      h1 {
+          color: #8be9fd;
+      }
+
+      h2 {
+          color: #ffb86c;
+      }
+
+      h3 {
+          color: #ff79c6;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      table {
+        font-size: 0.7em;
+      }
+
+      th {
+        color: black;
+        font-weight: bold;
+        background-color: #8be9fd;
+      }
+
+      td:nth-child(1) {
+        color: black;
+        font-weight: bold;
+        background-color: #8be9fd;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Intro to Android Studio
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# Web app review
+
+* 140 commits
+* 2,583 lines of code
+
+* What worked well?
+* What didn't work?
+* What was confusing?
+* How could I have facilitated success?
+
+---
+
+# Mobile development
+
+* Applications are generally delivered as a single bundle
+  * This changes somewhat with progressive web apps
+  * In large applications, a lot of content will live on the server and is downloaded on demand
+* Code is compiled ahead of time
+  * Compiler can ensure your logic is sound
+  * Now we have to worry about types
+  * Build time errors are better than run time errors
+* Interacting with mobile SDKs instead of web standards
+  * These change every year or so
+
+---
+
+# Android applications
+
+* Android is based on Linux
+* Ecosystem is manufacturer-independent, so lots of different hardware architectures
+* Traditional software is a series of instructions on the processor
+* Lots of manufacturers, lots of processors, each one is different
+* Android apps run in the Java Virtual Machine (JVM) to avoid this issue
+* Java uses a ton of memory, but is generally okay
+
+---
+
+class: center, middle
+
+![](../images/android-studio-site.png)
+
+# Installing Android Studio
+
+[developer.android.com/studio](https://developer.android.com/studio)
+
+---
+
+class: center, middle
+
+![](../images/android-studio-installer.png)
+
+# Installing Android Studio
+
+Drag and drop
+
+This is different on Windows I guess
+
+---
+
+class: center, middle
+
+![](../images/android-studio-launch.png)
+
+# Start a new Android Studio project
+
+You might get security prompts from your OS
+
+You may also be asked to do some setup
+
+---
+
+class: center, middle
+
+![](../images/project-setup-1.png)
+
+# Empty activity
+
+An activity is like a single web page
+
+---
+
+class: center, middle
+
+![](../images/project-setup-2.png)
+
+# Project configuration
+
+Choose a good name
+
+Package name format
+
+Otherwise, defaults are fine
+
+---
+
+class: center, middle
+
+![](../images/project-setup-3.png)
+
+# Welcome to your project
+
+Project navigator
+
+Code view
+
+Build output
+
+---
+
+# What is in an Android project?
+
+* manifests
+  * App configuration read by the OS
+* java
+  * Code lives here
+    * Even if it's not Java
+    * We're probably not going to write Java
+  * Package naming conventions
+  * Don't worry about androidTest and test for now
+* res
+  * App resources
+  * Icons, images, colors, layouts, localization strings
+
+---
+
+class: center, middle
+
+![](../images/android-git-1.png)
+
+# Setting up version control
+
+Android Studio set up git for you, kind of
+
+---
+
+class: center, middle
+
+![](../images/android-git-2.png)
+
+# Add to GitHub Desktop
+
+Add local is easier
+
+---
+
+class: center, middle
+
+![](../images/android-git-3.png)
+
+# Create a new repository
+
+Fields are set up for you
+
+---
+
+class: center, middle
+
+![](../images/android-git-4.png)
+
+# Publish manually or in GUI
+
+Create a new project named "im361android" in GitHub
+
+```
+git remote add origin git@github.com:example/im361android.git
+```
+
+Have to do manual if GitHub account not linked
+
+---
+
+class: center, middle
+
+![](../images/android-git-5.png)
+
+# Make sure it's live
+
+That's a lot of files!
+
+---
+
+class: center, middle
+
+![](../images/emulator-1.png)
+
+# Emulators
+
+How do they work?
+
+---
+
+class: center, middle
+
+![](../images/emulator-2.png)
+
+# You might not need this
+
+The sound of me skipping slides
+
+---
+
+class: center, middle
+
+![](../images/emulator-3.png)
+
+# This is messed up on my computer
+
+Thanks Microsoft
+
+---
+
+# Assignment
+
+Add an app icon
+
+Commit and push to GitHub
+
+Wednesday I'll just upload some slides
+
+Assignment for next week will probably be to add a few lines of code
+
+---
+
+class: center, middle
+
+![](../images/icon-1.png)
+
+# Adding an app icon
+
+Right click on res and choose new image asset
+
+---
+
+class: center, middle
+
+![](../images/icon-2.png)
+
+# Adding an app icon
+
+[Eye by anggun from the Noun Project](https://thenounproject.com/browse/?i=2120272)
+
+---
+
+class: center, middle
+
+![](../images/icon-3.png)
+
+# Defaults are fine
+
+Square icons were for before API 25
+
+Round icons are API 26
+
+Now they're sort of SVG icons with weird animations
+
+---
+
+class: center, middle
+
+![](../images/icon-4.png)
+
+# This seems fine
+
+At the current rate of expansion we will run out of letters for Android resolutions in 2032
+
+---
+
+class: center, middle
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
