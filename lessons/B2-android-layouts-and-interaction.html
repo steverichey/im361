@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Android Layouts and Interaction</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* darcula theme from https://github.com/dracula/dracula-theme */
+      .remark-slide-content {
+          background-color: #282a36;
+          color: #f8f8f2;
+      }
+
+      .remark-slide-content.imgresize img {
+        max-width: 70%;
+        max-height: 40vh;
+      }
+
+      .remark-inline-code {
+          color: #ffb86c;
+      }
+
+      .remark-container {
+          background: #282a36;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #50fa7b;
+      }
+
+      h1 {
+          color: #8be9fd;
+      }
+
+      h2 {
+          color: #ffb86c;
+      }
+
+      h3 {
+          color: #ff79c6;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      table {
+        font-size: 0.7em;
+      }
+
+      th {
+        color: black;
+        font-weight: bold;
+        background-color: #8be9fd;
+      }
+
+      td:nth-child(1) {
+        color: black;
+        font-weight: bold;
+        background-color: #8be9fd;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Android Layouts and Interaction
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# About
+
+* In place of this week's Wednesday class, please work through this lesson.
+* Follow along with your own Android Studio project.
+* Next week, we'll set everyone up to run this code.
+* Enjoy!
+
+---
+
+# Android Layouts
+
+* Instead of using HTML and CSS to layout content, Android uses XML files
+* Android Studio generated one for you at `res/layout/activity_main.xml`
+* Nearly every layout file you create will have backing code
+
+---
+
+# Interactivity in Android
+
+* Instead of defining logic using JavaScript, Android uses Java or Kotlin
+* The build pipeline can do some magic to connect our layout to our logic
+* However, as you'll see, we need to ensure a few things first
+
+---
+
+class: center, middle, imgresize
+
+![](../images/layouts-1.png)
+
+# View your layout
+
+Double-click `app -> res -> layout -> activity_main.xml` from the project view on the left.
+
+You can shrink the bottom view by pressing the minus button on the right side.
+
+---
+
+class: center, middle, imgresize
+
+![](../images/layouts-2.png)
+
+# View your code
+
+Double-click `app -> java -> [your package name] -> MainActivity` from the project view on the left.
+
+---
+
+# Adding interactivity
+
+* So far your activity only has a text field, so let's add a button.
+* Add the following lines of code immediately below `setContentView(R.layout.activity_main)`
+
+```kotlin
+var myText: TextView = findViewById(R.id.my_text_view)
+var myButton: Button = findViewById(R.id.my_button)
+myButton.setOnClickListener {
+    myText.text = "I've been clicked!"
+}
+```
+
+* Notice that we no longer need semicolons at the end of each line; Kotlin doesn't use them
+* Also, we have to define the "type" of most things we create; sometimes, Kotlin can figure out the type
+* Here we find two items in our layout, and set the button to update the text when clicked
+
+---
+
+class: center, middle, imgresize
+
+![](../images/layouts-3.png)
+
+# Android Studio is angry
+
+We couldn't run this code, because the compiler can't find `Button` or `TextView`, and it can't find the IDs we used.
+
+This is the double-edged sword of build-time checking; let's fix this!
+
+---
+
+# Adding imports
+
+* In order for our code to "know" about types, they have to be imported
+* This is similar to how we imported Vue in our JavaScript
+* Add the following lines of code immediately below `import android.os.Bundle`
+
+```kotlin
+import android.widget.Button
+import android.widget.TextView
+```
+
+* Android Studio will do this for you if you press Option+Enter when the blue popup appears
+
+---
+
+class: center, middle, imgresize
+
+![](../images/layouts-4.png)
+
+# Still kinda mad tho
+
+Android Studio is less angry, but is still highlighting our IDs in red. Let's fix that.
+
+---
+
+# Adding IDs to our layout
+
+* Our code (in `MainActivity`) needs to be able to find our UI elements (in `activity_main`)
+* To do this, we set an ID on each UI element
+* This is pretty similar to IDs in JavaScript (we didn't use those much in Vue, though)
+* Save, then open `activity_main.xml`
+* If you're not in the design view, click the "Design" tab on the bottom-left of the editor view
+* Click on `TextView - "Hello World!"` in the `Component Tree`
+* On the top-right, you can enter an ID under `Attributes`
+* Enter `my_text_view` in that field, and save
+
+---
+
+class: center, middle, imgresize
+
+![](../images/layouts-5.png)
+
+# After entering an ID
+
+Now, return to `MainActivity`
+
+---
+
+class: center, middle, imgresize
+
+![](../images/layouts-6.png)
+
+# Slightly less angry
+
+The text view ID is no longer red, but the button still won't work. Let's fix that.
+
+Return to `activity_main.xml`
+
+---
+
+class: center, middle, imgresize
+
+![](../images/layouts-7.png)
+
+# Adding a button, 1
+
+Under "Palette" select "Buttons" and then select "Button".
+
+---
+
+class: center, middle, imgresize
+
+![](../images/layouts-8.png)
+
+# Adding a button, 2
+
+Drag the button into the layout
+
+---
+
+class: center, middle, imgresize
+
+![](../images/layouts-9.png)
+
+# Adding a button, 3
+
+Now the button shows up under "Component Tree".
+
+---
+
+# Setting a button ID
+
+* Just like the text view, we can add an ID to our button
+* Under `Attributes` enter `my_button` in the ID field
+* Android Studio might have set a default there, just replace it
+
+---
+
+# Constraints
+
+* You may have noticed that there's a red icon next to your button in the "Component Tree".
+* This is because Android doesn't know where to put your button when it lays out your activity.
+* There are several ways to define position in Android
+* Your activity was set up to use a contraint layout, so let's use that for now.
+
+---
+
+class: center, middle, imgresize
+
+![](../images/layouts-10.png)
+
+# Constraints, 2
+
+Click each of these plus icons
+
+In each box that appears, you can set a number for how far away it should be from the next closest thing
+
+---
+
+class: center, middle, imgresize
+
+![](../images/layouts-11.png)
+
+# Contraints, 3
+
+I just put zero in each, so the button will be equally distant from all neighbors
+
+Note that in one direction, the neighbor is the text view, but the other directions are the activity
+
+The red icon is now a yellow icon; we'll fix that later.
+
+---
+
+class: center, middle, imgresize
+
+![](../images/layouts-12.png)
+
+# Now we're happy
+
+There's still more to do, but that's good enough for now.
+
+---
+
+# Assignment
+
+* After working through this lesson, commit your changes and push up your code.
+* For full credit, make sure you don't have any red text, red underlines, or other errors.
+* Next time, we'll resolve warnings, and actually run our code.
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

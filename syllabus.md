@@ -51,8 +51,8 @@ Lessons are available [here](https://github.com/steverichey/im361#lessons).
 | Monday, February 25    | A7. Advanced JS and Vue                         | Beta Site                  | Feb 27 | 5     |
 | Wednesday, February 27 | A8. QA and Code Review                          | Final Site                 | Mar 4  | 100   |
 | Monday, March 4        | B1. Intro to Android Studio                     | Initial App Repo           | Mar 6  | 5     |
-| Wednesday, March 6     | B2. Intro to Java & Kotlin (may be moved)       | Basic App                  | Mar 11 | 5     |
-| Monday, March 11       | B3. Android UIs & Interaction                   | Interactive App            | Mar 13 | 5     |
+| Wednesday, March 6     | B2. Android Layouts and Interaction             | Button and Layout Binding  | Mar 11 | 5     |
+| Monday, March 11       | B3. Android Emulators and Debugging             | Interactive App            | Mar 13 | 5     |
 | Wednesday, March 13    | B4. Localization, Colors, and Resources         | Styled/Localized App       | Mar 18 | 5     |
 | Monday, March 18       | Spring break                                    |                            |        |       |
 | Wednesday, March 20    | Spring break                                    |                            |        |       |

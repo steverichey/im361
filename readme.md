@@ -27,7 +27,7 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 ### Android Development Project
 
 * [B1. Intro to Android Studio](https://steverichey.github.io/im361/lessons/B1-intro-to-android-studio.html)
-* B2. Intro to Java & Kotlin
+* [B2. Android Layouts and Interaction](https://steverichey.github.io/im361/lessons/B2-android-layouts-and-interaction.html)
 * B3. Android UIs & Interaction
 * B4. Localization, Colors, and Resources
 * B5. Intro to APIs
