@@ -6,6 +6,7 @@ var app = new Vue({
   data: {
     studentName: "",
     uploadedFile: null,
+    comments: "",
     categories: [
       {
         name: "Design",
@@ -331,6 +332,7 @@ var app = new Vue({
         }
       }
 
+      text += "comments:" + this.comments + "\n";
       text += "raw:" + this.overallTotal + "/" + this.overallMax + "\n";
       text += "weighted:" + this.weightedScore + "%\n";
 
@@ -347,6 +349,9 @@ var app = new Vue({
       }
 
       return result + "_grade_export.txt";
+    },
+    isInvalidComments: function() {
+      return this.comments.includes(":");
     }
   },
   methods: {
@@ -408,9 +413,16 @@ var app = new Vue({
           self.studentName = lines[0];
 
           for (var i = 0; i < lines.length; i++) {
-            if (i == 0) continue;
+            if (i == 0) {
+              continue;
+            }
 
             var keyValue = lines[i].split(":");
+
+            if (keyValue[0] == "comments") {
+              self.comments = keyValue[1];
+              continue;
+            }
 
             for (var j = 0; j < self.categories.length; j++) {
               var category = self.categories[j];
@@ -418,7 +430,7 @@ var app = new Vue({
               for (var k = 0; k < category.elements.length; k++) {
                 var element = category.elements[k];
 
-                if (element.label == keyValue[0]) {
+                if (keyValue[0] == element.label) {
                   element.picked = parseInt(keyValue[1]);
                 }
               }
