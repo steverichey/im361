@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Android Emulators and Resources</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* darcula theme from https://github.com/dracula/dracula-theme */
+      .remark-slide-content {
+          background-color: #282a36;
+          color: #f8f8f2;
+      }
+
+      .remark-slide-content.imgresize img {
+        max-width: 70%;
+        max-height: 40vh;
+      }
+
+      .remark-inline-code {
+          color: #ffb86c;
+      }
+
+      .remark-container {
+          background: #282a36;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #50fa7b;
+      }
+
+      h1 {
+          color: #8be9fd;
+      }
+
+      h2 {
+          color: #ffb86c;
+      }
+
+      h3 {
+          color: #ff79c6;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      table {
+        font-size: 0.7em;
+      }
+
+      th {
+        color: black;
+        font-weight: bold;
+        background-color: #8be9fd;
+      }
+
+      td:nth-child(1) {
+        color: black;
+        font-weight: bold;
+        background-color: #8be9fd;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Android Emulators and Resources
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# Web project review
+
+* Average and median grade both C
+* Common issues
+  * Avoidable Vue errors / template errors
+  * Style issues on small screens
+  * HTML validation errors
+* Category averages:
+  * Designs commonly missed web standards
+  * Good level of effort across the board
+  * Source formatting was inconsistent
+  * Runtime errors
+
+---
+
+# Android so far
+
+* Do not include SVG images in your res folder
+  * This causes a build error
+* If your icon doesn't look right today, LMK
+* Gradient backgrounds got imported funny
+  * We can fix this later
+* We set up a button but didn't actually run the code
+
+---
+
+class: center, middle
+
+![](../images/play-1.png)
+
+# Run app
+
+Play button in the toolbar
+
+---
+
+class: center, middle
+
+![](../images/play-2.png)
+
+# Choose device
+
+We could use a real, actual Android phone (if developer mode is on)
+
+Let's set up an emulator
+
+---
+
+class: center, middle
+
+![](../images/play-3.png)
+
+# Device size and resolution
+
+Any options is fine
+
+Stick to a phone form factor for now
+
+---
+
+class: center, middle
+
+![](../images/play-4.png)
+
+# Choosing an API
+
+Recommended images are good
+
+Pie (API 28) is the same as Android 9.0
+
+---
+
+class: center, middle
+
+![](../images/play-5.png)
+
+# Completing setup
+
+Defaults are fine here
+
+---
+
+class: center, middle
+
+![](../images/play-6.png)
+
+# Choose your new emulator
+
+Should show up under "Available Virtual Devices"
+
+If it doesn't, let me know
+
+---
+
+class: center, middle
+
+![](../images/emulate-1.png)
+
+# After a minute or so...
+
+This used to take a very long time
+
+You'll probably have a device frame (I usually turn it off)
+
+---
+
+class: center, middle
+
+![](../images/ive-been-clicked.png)
+
+# Does your button work?
+
+---
+
+class: center, middle
+
+![](../images/emulate-icon-1.png)
+
+# Check out your icon
+
+Swipe up from screen bottom to view apps
+
+Drag the icon around to see it animate
+
+Some of our icons are borked a little
+
+---
+
+class: center, middle
+
+![](../images/bulb-1.png)
+
+# Android Studio warnings
+
+Mutable = can be changed
+
+Immutable = cannot be changed
+
+---
+
+class: center, middle
+
+![](../images/bulb-2.png)
+
+# Light bulb is friend
+
+Mutation can and will lead to bugs
+
+Try to use this when you can
+
+---
+
+class: center, middle
+
+![](../images/bulb-3.png)
+
+# Localizable resources
+
+No localization in web project
+
+Localizable resources need extracted
+
+---
+
+class: center, middle
+
+![](../images/bulb-4.png)
+
+# Thank you light bulb
+
+Choose "Extract string resource"
+
+---
+
+class: center, middle
+
+![](../images/bulb-5.png)
+
+# String resource extraction
+
+Give it a reasonable name
+
+No spaces, usually just letters and underscores
+
+---
+
+# String resource file
+
+```xml
+<resources>
+  <string name="app_name">Pokemon Builder</string>
+  <string name="has_been_clicked">I\'ve been clicked!</string>
+</resources>
+```
+
+`res/values/strings.xml`
+
+The slash is an escape
+
+---
+
+class: center, middle
+
+![](../images/layout-bulb-1.png)
+
+# Not the only localiable text
+
+Open your layout
+
+---
+
+class: center, middle
+
+![](../images/layout-bulb-2.png)
+
+# Click on warning icon
+
+Select "Fix"
+
+Same process as before
+
+We won't get this for our text view; Android Studio ignores "Hello World!"
+
+---
+
+# Updated resources
+
+```xml
+<resources>
+  <string name="app_name">Pokemon Builder</string>
+  <string name="has_been_clicked">I\'ve been clicked!</string>
+  <string name="button">Button</button>
+</resources>
+```
+
+Future user-facing text should go here
+
+We won't add other languages unless you really want to
+
+---
+
+class: center, middle
+
+![](../images/res-1.png)
+
+# Color resources
+
+Under the `res` folder
+
+---
+
+# Default color set
+
+```xml
+<resources>
+  <color name="colorPrimary">#E53935</color>
+  <color name="colorPrimaryDark">#440755</color>
+  <color name="colorAccent">#FDD835</color>
+</resources>
+```
+
+Click on the color on the left
+
+---
+
+class: center, middle
+
+![](../images/colors-1.png)
+
+# Pick some colors
+
+Ones from your design preferably
+
+---
+
+class: center, middle
+
+![](../images/bolt-1.png)
+
+# Apply changes
+
+Lightning bolt!
+
+---
+
+class: center, middle
+
+![](../images/layout-1.png)
+
+# App should update
+
+Android Studio can update your app without rebuilding
+
+This is the #1 most likely thing to break
+
+---
+
+class: center, middle
+
+![](../images/layout-2.png)
+
+# Updating button color
+
+Open layout tab
+
+Click on button
+
+Click on three dots next to "background" field
+
+---
+
+class: center, middle
+
+![](../images/colors-2.png)
+
+# Picking a color
+
+Choose the "color" option from the left
+
+Pick a color and click "OK"
+
+---
+
+class: center, middle
+
+![](../images/layout-3.png)
+
+# Layout view should update
+
+Choose "Apply changes" again
+
+Or, you can re-run your app
+
+---
+
+class: center, middle
+
+![](../images/layout-5.png)
+
+# Button color should be different
+
+After "Run" or "Apply changes"
+
+Baby steps
+
+---
+
+# Adding new colors
+
+```xml
+<resources>
+  <color name="colorPrimary">#E53935</color>
+  <color name="colorPrimaryDark">#440755</color>
+  <color name="colorAccent">#FDD835</color>
+  <color name="colorBackground">#26C6DA</color>
+</resources>
+```
+
+`res/values/colors.xml`
+
+Add a new `colorBackground`
+
+---
+
+# Using colors in styles
+
+```xml
+<resources>
+  <!-- Base application theme -->
+  <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionrBar">
+    <!-- Customize your theme here -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="android:colorBackground">@color/colorBackground</item>
+  </style>
+</resources>
+```
+
+`res/values/styles.xml`
+
+Add `android:colorBackground` and set it to `@color/colorBackground`
+
+---
+
+class: center, middle
+
+![](../images/layout-6.png)
+
+# Neat
+
+This hurts my eyes
+
+---
+
+# Add a counter
+
+```kotlin
+class MainActivity : AppCompoatActivity() {
+  var count = 0
+
+  override fun onCreate(savedInstanceState: ...
+```
+
+* Within the class, but outside our function
+* This is now a class field that any function in the class can use
+
+---
+
+# Increment the counter
+
+```kotlin
+myButton.setOnClickListener {
+  counter++
+```
+
+"Plus plus" or "plus equals one"
+
+---
+
+# Handling plurals
+
+```kotlin
+myButton.setOnClickListener {
+  counter++
+  myText.text = resources.getQuantityString(R.string.has_been_clicked, counter, counter)
+}
+```
+
+* Change to: `resources.getQuantityString(R.string.has_been_clicked, counter, counter)`
+* Android Studio doesn't like that
+
+---
+
+# Change your string to a plural
+
+```xml
+<resources>
+  <string name="app_name">Pokemon Builder</string>
+  <plurals name="has_been_clicked">
+    <item quantity="one">I\'ve been clicked %d time!</item>
+    <item quantity="other">I\'ve been clicked %d times!</item>
+  </plurals>
+  <string name="button">Button</button>
+</resources>
+```
+
+* Change `string` to `plurals`
+* Add two items: `one` and `other`
+* Use `%d` to inject the number
+
+---
+
+# Is Android Studio happy?
+
+```kotlin
+myText.text = resources.getQuantityString(R.plurals.has_been_clicked, counter, counter)
+```
+
+* Change `string` to `plurals`
+* The first `counter` chooses singular or plural
+* The second injects the number into the string
+
+---
+
+class: center, middle
+
+![](../images/layout-5.png)
+
+# Apply changes
+
+Basically a finished app
+
+---
+
+# Assignment
+
+* Finish everything we covered in class
+* If your app icon has an issue, fix it
+  * If you didn't get a 5 on the icon assignment and you fix it, I'll retroactively give you a 5 (remind me if I don't)
+* Add some colors
+  * Text color?
+  * View background?
+* Change some text
+  * Literally just change the text to be something unique
+* Save, test, commit, and push
+
+---
+
+class: center, middle
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
