@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Android Layouts</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* darcula theme from https://github.com/dracula/dracula-theme */
+      .remark-slide-content {
+          background-color: #282a36;
+          color: #f8f8f2;
+      }
+
+      .remark-slide-content.imgresize img {
+        max-width: 70%;
+        max-height: 40vh;
+      }
+
+      .remark-inline-code {
+          color: #ffb86c;
+      }
+
+      .remark-container {
+          background: #282a36;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #50fa7b;
+      }
+
+      h1 {
+          color: #8be9fd;
+      }
+
+      h2 {
+          color: #ffb86c;
+      }
+
+      h3 {
+          color: #ff79c6;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      table {
+        font-size: 0.7em;
+      }
+
+      th {
+        color: black;
+        font-weight: bold;
+        background-color: #8be9fd;
+      }
+
+      td:nth-child(1) {
+        color: black;
+        font-weight: bold;
+        background-color: #8be9fd;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Android Layouts
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# Android to date
+
+* App icons
+* Button listeners
+* String resources, including plurals
+* Color resources
+* Layouts.... kinda?
+  * How do things get positioned?
+  * How do different device sizes get handled?
+  * How do we handle variable-length text?
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-1.png)
+
+# What layout is?
+
+Layouts are defined in XML
+
+Android Studio has a design view so you don't have to mess with this
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-2.png)
+
+# Design view
+
+Drag and drop interface for design
+
+Provides a preview (it might be inaccurate)
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-3.png)
+
+# Palette
+
+Reusable view components
+
+You can make your own, but these are pretty good
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-4.png)
+
+# Design and/or blueprint
+
+Design shows how your app will look on device
+
+Blueprint is... a blueprint
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-5.png)
+
+# View modes
+
+Portrait and landscape are the most important
+
+Android has a "night mode" but we don't have to worry about that
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-6.png)
+
+# Choose device size
+
+Good for rapid testing
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-7.png)
+
+# Constraints
+
+These spring things
+
+Let's mess 'em up
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-8.png)
+
+# Destroy all constraints
+
+Just on the button thought
+
+Click on the blue X that appears in these circles
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-9.png)
+
+# There's also this
+
+Your constraints can and will get messed up
+
+Sometimes a clean slate is best
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-10.png)
+
+# Drag-and-drop constraints
+
+Hover over the handles in the blueprint view
+
+You can use the plus buttons in the attributes tab too
+
+This is better IMO
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-11.png)
+
+# Drag to other element
+
+By constraining this button to the bottom of the text view, the top of the button will "stick" (be constrained) to the text
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-12.png)
+
+# Now they're friends
+
+But...
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-13.png)
+
+# Android Studio is angry
+
+Not constrained horizontally?
+
+What is this
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-14.png)
+
+# Drag button left constraint to the left edge
+
+Now button will stick to the left
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-15.png)
+
+# Button is constrained both ways
+
+The curvy line is a bit hard to parse but... this is good
+
+Button is basically left-aligned
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-16.png)
+
+# How do we center?
+
+I'm seeing double
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-17.png)
+
+# Horzontal bias
+
+Drag this left or right to off-center your view
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-18.png)
+
+# 20% horizontal bias
+
+I'm a monster
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-19.png)
+
+# Also: margin
+
+This is not a percent (like bias) it's in DP (device pixels)
+
+Margin start and end vs. left and right
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-20.png)
+
+# Drop in an image view
+
+Anywhere is fine
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-21.png)
+
+# Sample data
+
+Provided as design-time examples
+
+Avatars start smaller
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-22.png)
+
+# We got an image
+
+How about constraints?
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-23.png)
+
+# Simple constraints
+
+I just added one for each side
+
+What if we want our image to fill the available space?
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-24.png)
+
+# View attributes
+
+Wrap content: make the view as small as the content
+
+Match constraint: expand the view to fill the constraint
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-25.png)
+
+# Match constraint width
+
+Image view expands to fill the view
+
+The image itself _does not do this however_
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-26.png)
+
+# Image scale types
+
+Default is none
+
+This is basically `fitCenter`
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-27.png)
+
+# Center crop scale type
+
+Image is now center and... cropped
+
+---
+
+class: center, middle
+
+![](../images/more-layouts-28.png)
+
+# You can, and will, get froggy
+
+In fact, please do
+
+---
+
+# Assignment
+
+* Layout one view from your app
+* Don't worry about functionality
+  * Buttons that don't work: fine
+  * Progress bars that never animate: cool
+  * Pickers that don't do anything: great
+* Constraints should be able to do almost everything
+* Feel free to look up other layout options
+* Set colors, strings, etc
+* This will be the foundation for your Android project
+
+---
+
+class: center, middle
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
