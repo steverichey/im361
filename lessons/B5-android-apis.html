@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Android Layouts</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* darcula theme from https://github.com/dracula/dracula-theme */
+      .remark-slide-content {
+          background-color: #282a36;
+          color: #f8f8f2;
+      }
+
+      .remark-slide-content.imgresize img {
+        max-width: 70%;
+        max-height: 40vh;
+      }
+
+      .remark-inline-code {
+          color: #ffb86c;
+      }
+
+      .remark-container {
+          background: #282a36;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #50fa7b;
+      }
+
+      h1 {
+          color: #8be9fd;
+      }
+
+      h2 {
+          color: #ffb86c;
+      }
+
+      h3 {
+          color: #ff79c6;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      table {
+        font-size: 0.7em;
+      }
+
+      th {
+        color: black;
+        font-weight: bold;
+        background-color: #8be9fd;
+      }
+
+      td:nth-child(1) {
+        color: black;
+        font-weight: bold;
+        background-color: #8be9fd;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Using APIs in Android Applications
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# What were we doing?
+
+* Android application
+  * App icon
+  * Resources
+  * Interactive button
+  * Layouts
+  * Constraints
+
+---
+
+class: center, middle
+
+# Remember package management?
+
+Android does things a little differently
+
+---
+
+class: center, middle
+
+![](../images/apis-1.png)
+
+# Today's goal
+
+Adding one map view
+
+---
+
+# Android build system
+
+* Written in Groovy
+* Uses Gradle
+* Has several extremely similar files that are very important to keep distinct
+
+---
+
+class: center, middle
+
+![](../images/apis-2.png)
+
+# Build.gradle
+
+Build.gradle
+
+---
+
+class: center, middle
+
+![](../images/apis-3.png)
+
+# Project-level settings
+
+One project could have multiple apps
+
+Settings here apply to all
+
+---
+
+class: center, middle
+
+![](../images/apis-4.png)
+
+# App-level settings
+
+Package identifier, API level, version info
+
+Also: dependencies
+
+---
+
+class: center, middle
+
+![](../images/apis-5.png)
+
+# SDK Manager
+
+Installing Google Play services
+
+---
+
+class: center, middle
+
+![](../images/apis-6.png)
+
+# Select SDK Tools
+
+Things that are not specifically Android SDKs
+
+---
+
+class: center, middle
+
+![](../images/apis-7.png)
+
+# Select Google Play services
+
+Leave the rest as their default value
+
+---
+
+class: center, middle
+
+![](../images/apis-8.png)
+
+# OK to install
+
+---
+
+class: center, middle
+
+![](../images/apis-9.png)
+
+# Installing components
+
+When done, hit "Finish"
+
+---
+
+class: center, middle
+
+# Adding a new dependency
+
+```groovy
+implementation 'com.google.android.gms:play-services-maps:16.1.0'
+```
+After adding, sync your project
+You will get a red squiggle under appcompat; ignore it
+
+---
+
+# Add a fragment to your layout
+
+* Fragments are fancy views
+* These handle lifecycle methods for us
+  * onCreate
+  * onDestroy
+  * etc
+* This is easiest to add in the text mode
+
+```xml
+<fragment
+  class="com.google.android.gms.maps.SupportMapFragment" />
+```
+
+---
+
+class: center, middle
+
+![](../images/apis-10.png)
+
+# Back to design mode
+
+Select your fragment
+
+Android Studio is confused
+
+---
+
+class: center, middle
+
+![](../images/apis-11.png)
+
+# Assign ID and size
+
+Any ID you want
+
+Wrap content is easiest to work with for now
+
+---
+
+class: center, middle
+
+![](../images/apis-12.png)
+
+# Create some constraints
+
+Very small tbh
+
+---
+
+class: center, middle
+
+![](../images/apis-13.png)
+
+# Something like this
+
+Your layout will be different, of course
+
+---
+
+class: center, middle
+
+![](../images/apis-14.png)
+
+# Recommended layout
+
+We want our map view to fill available space
+
+Use "match constraint" for this
+
+---
+
+class: center, middle
+
+![](../images/apis-15.png)
+
+# This will be our map
+
+Let's wire up the code
+
+---
+
+# MainActivity updates
+
+```kotlin
+package com.steverichey.pokemonbuilder
+
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+
+class MainActivity : AppCompatActivity() {
+    var counter = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val myText: TextView = findViewById(R.id.my_text_view)
+        val myButton: Button = findViewById(R.id.my_button)
+        myButton.setOnClickListener {
+            counter++
+            myText.text = resources.getQuantityString(R.plurals.has_been_clicked, counter, counter)
+        }
+    }
+}
+```
+
+---
+
+# Referencing fragments
+
+* Inside of `onCreate`
+* After the closing bracket for `setOnClickListener`
+* We can use `as` to specify a type when Kotlin isn't sure
+
+```kotlin
+val mapFragment = supportFragmentManager.findFragmentById(R.id.my_map_view) as SupportMapFragment
+mapFragment.getMapAsync(this)
+```
+
+---
+
+class: center, middle
+
+![](../images/apis-16.png)
+
+# Required imports
+
+Option-click to include
+
+---
+
+class: center, middle
+
+![](../images/apis-17.png)
+
+# Red squiggles: bad
+
+Type mismatch?
+
+Our activity is not able to handle a map ready call
+
+---
+
+class: center, middle
+
+![](../images/apis-18.png)
+
+# Light bulb
+
+We can use this to make our activity be two things
+
+Not just an activity, but also a "callback" for the map
+
+---
+
+class: center, middle
+
+![](../images/apis-19.png)
+
+# Required methods
+
+In order to fulfill this type, we need a method
+
+Android Studio makes it for us
+
+---
+
+class: center, middle
+
+![](../images/apis-20.png)
+
+# Updated activity
+
+Added `OnMapReadyCallback`
+
+Added a placeholder method (which would crash)
+
+---
+
+class: center, middle
+
+![](../images/apis-21.png)
+
+# Adding a log statement
+
+I moved the callback below `onCreate`
+
+Also, changed parameter name to `map`
+
+---
+
+# Now we can run it?
+
+* Press play
+* What happens?
+* Where can we find more info?
+
+---
+
+class: center, middle
+
+![](../images/apis-22.png)
+
+# Logcat
+
+Tab at the bottom of Android Studio
+
+---
+
+# What happened?
+
+* Thankfully, this error message is helpful:
+
+```
+API key not found.
+Check that <meta-data android:name="com.google.android.geo.API_KEY"
+android:value="your API key"/> is in the <application> element of AndroidManifest.xml
+```
+
+---
+
+# API Keys
+
+* Unique identifiers used when communicating with a service
+* If you abuse the service, they invalidate the key
+* This can also be used for rate limiting, access control, and so on
+* Generally speaking, do not let other people get access to your API key
+  * This means it should not be in a public git repo!
+
+---
+
+class: center, middle
+
+# Getting a Google Maps key
+
+[cloud.google.com/maps-platform/#get-started](https://cloud.google.com/maps-platform/#get-started)
+
+---
+
+class: center, middle
+
+![](../images/apis-23.png)
+
+# API Key
+
+Select "Maps" and continue
+
+---
+
+class: center, middle
+
+![](../images/apis-24.png)
+
+# API Key
+
+Create a new project
+
+Enter a name and hit "next"
+
+---
+
+class: center, middle
+
+![](../images/apis-25.png)
+
+# API Key
+
+---
+
+class: center, middle
+
+![](../images/apis-26.png)
+
+# API Key
+
+Enable maps
+
+You might get several overlapping dialogs
+
+---
+
+class: center, middle
+
+![](../images/apis-27.png)
+
+# API Key
+
+Finally!
+
+---
+
+# How to hide in plain sight
+
+* If your API key is in your git repo, it's public
+* If someone else accesses it, they could rack up fees
+* Instead, create a new file at:
+  * /Users/yourname/.gradle
+  * C:\Users\yourname\.gradle
+* Name it gradle.properties
+* Add a line like this:
+
+```
+pokemon_builder_maps_api_key="<insert key>"
+```
+
+* Now we can reference this from other Gradle places
+
+---
+
+# Referencing hidden keys
+
+* Open your app-level (not project-level) build.gradle
+* You should see something like this:
+
+```groovy
+buildTypes {
+    release {
+        minifyEnabled false
+        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+}
+```
+
+* Add a new "all" build type with your key:
+
+```groovy
+buildTypes {
+    all {
+        resValue 'string', "maps_api_key", pokemon_builder_maps_api_key
+    }
+
+    ...
+}
+```
+
+---
+
+class: center, middle
+
+![](../images/apis-28.png)
+
+# Open your manifest
+
+Project navigator on the left
+
+---
+
+class: center, middle
+
+![](../images/apis-29.png)
+
+# Add metadata
+
+This is all a gross yellow but you can ignore that
+We need to add this _inside_ the application tag
+
+---
+
+# Metadata format
+
+```xml
+<meta-data
+    android:name="com.google.android.geo.API_KEY"
+    android:value="@string/maps_api_key"
+    />
+```
+
+---
+
+# Great, now what?
+
+* Your app should launch
+* The map view should be an interactive map
+* Let's interact with the API a little
+
+---
+
+# Move the map
+
+* Edit our onMapReady function
+* Add a few lines of code:
+
+```kotlin
+override fun onMapReady(map: GoogleMap?) {
+    val morton = LatLng(40.6091693, -89.5392298)
+    map?.addMarker(MarkerOptions().position(morton).title("Pumpkin capital of the world"))
+    map?.moveCamera(CameraUpdateFactory.newLatLng(morton))
+}
+```
+
+* Import any needed items
+* Check for typos
+* Run or apply changes
+
+---
+
+class: center, middle
+
+![](../images/apis-30.png)
+
+# Map moved
+
+85 percent of the world's canned pumpkin is produced in Morton
+
+---
+
+# Assignment
+
+* Save, commit, and push code from today's class
+
+---
+
+class: center, middle
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

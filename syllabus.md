@@ -56,8 +56,8 @@ Lessons are available [here](https://github.com/steverichey/im361#lessons).
 | Wednesday, March 13    | B4. Intro to Android Layouts                    | First View Layout          | Mar 18 | 5     |
 | Monday, March 18       | Spring break                                    |                            |        |       |
 | Wednesday, March 20    | Spring break                                    |                            |        |       |
-| Monday, March 25       | B5. Intro to APIs                               | API Integration            | Mar 27 | 5     |
-| Wednesday, March 27    | B6. Android Animations                          | App with animation         | Apr 1  | 5     |
+| Monday, March 25       | B5. Using APIs in Android Applications          | In-class API code          | Mar 27 | 5     |
+| Wednesday, March 27    | B6. APIs, Animations, and Multiple Activities   | App with animation         | Apr 1  | 5     |
 | Monday, April 1        | B7. Using Device Sensors                        | Beta Android App           | Apr 3  | 5     |
 | Wednesday, April 3     | B8. QA and Code Review                          | Final Android App          | Apr 8  | 100   |
 | Monday, April 8        | C1. Intro to Xcode                              | Initial App Repo           | Apr 10 | 5     |
