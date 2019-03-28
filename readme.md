@@ -31,7 +31,7 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [B3. Android Emulators and Resources](https://steverichey.github.io/im361/lessons/B3-android-emulators-and-resources.html)
 * [B4. Intro to Android Layouts](https://steverichey.github.io/im361/lessons/B4-android-layouts.html)
 * [B5. Using APIs in Android Applications](https://steverichey.github.io/im361/lessons/B5-android-apis.html)
-* B6. APIs, Animations, and Multiple Activities
+* [B6. APIs, Animations, and Multiple Activities](https://steverichey.github.io/im361/lessons/B6-android-anims-activities.html)
 * B7. Using Device Sensors
 
 ## Web Development Project Resources

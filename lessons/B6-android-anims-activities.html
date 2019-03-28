@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Android APIs, Animations, and Activities</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* darcula theme from https://github.com/dracula/dracula-theme */
+      .remark-slide-content {
+          background-color: #282a36;
+          color: #f8f8f2;
+      }
+
+      .remark-slide-content.imgresize img {
+        max-width: 70%;
+        max-height: 40vh;
+      }
+
+      .remark-inline-code {
+          color: #ffb86c;
+      }
+
+      .remark-container {
+          background: #282a36;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #50fa7b;
+      }
+
+      h1 {
+          color: #8be9fd;
+      }
+
+      h2 {
+          color: #ffb86c;
+      }
+
+      h3 {
+          color: #ff79c6;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      table {
+        font-size: 0.7em;
+      }
+
+      th {
+        color: black;
+        font-weight: bold;
+        background-color: #8be9fd;
+      }
+
+      td:nth-child(1) {
+        color: black;
+        font-weight: bold;
+        background-color: #8be9fd;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Using APIs in Android Applications
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+class: center, middle
+
+![](../images/apis-27.png)
+
+# API Key
+
+Finally!
+
+---
+
+# How to hide in plain sight
+
+* If your API key is in your git repo, it's public
+* If someone else accesses it, they could rack up fees
+* Instead, create a new file at:
+  * /Users/yourname/.gradle
+  * C:\Users\yourname\.gradle
+* Name it gradle.properties
+* Add a line like this:
+
+```
+pokemon_builder_maps_api_key="<insert key>"
+```
+
+* Now we can reference this from other Gradle places
+
+---
+
+# Referencing hidden keys
+
+* Open your app-level (not project-level) build.gradle
+* You should see something like this:
+
+```groovy
+buildTypes {
+    release {
+        minifyEnabled false
+        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+}
+```
+
+* Add a new "all" build type with your key:
+
+```groovy
+buildTypes {
+    all {
+        resValue 'string', "maps_api_key", pokemon_builder_maps_api_key
+    }
+
+    ...
+}
+```
+
+---
+
+class: center, middle
+
+![](../images/apis-28.png)
+
+# Open your manifest
+
+Project navigator on the left
+
+---
+
+class: center, middle
+
+![](../images/apis-29.png)
+
+# Add metadata
+
+This is all a gross yellow but you can ignore that
+We need to add this _inside_ the application tag
+
+---
+
+# Metadata format
+
+```xml
+<meta-data
+    android:name="com.google.android.geo.API_KEY"
+    android:value="@string/maps_api_key"
+    />
+```
+
+---
+
+# Great, now what?
+
+* Your app should launch
+* The map view should be an interactive map
+* Let's interact with the API a little
+
+---
+
+# Move the map
+
+* Edit our onMapReady function
+* Add a few lines of code:
+
+```kotlin
+override fun onMapReady(map: GoogleMap?) {
+    val morton = LatLng(40.6091693, -89.5392298)
+    map?.addMarker(MarkerOptions().position(morton).title("Pumpkin capital of the world"))
+    map?.moveCamera(CameraUpdateFactory.newLatLng(morton))
+}
+```
+
+* Import any needed items
+* Check for typos
+* Run or apply changes
+
+---
+
+class: center, middle
+
+![](../images/apis-30.png)
+
+# Map moved
+
+85 percent of the world's canned pumpkin is produced in Morton
+
+---
+
+class: center, middle
+
+# Animations
+
+Like most of Android, there are 10 ways to do this
+
+---
+
+# Animated drawables
+
+* Kind of a time sink tbh
+* Vector drawable needs paths and groups named
+  * Cannot use ic_launcher drawable
+* Some vector objects cannot be animated certain ways
+  * Paths cannot be rotated, for example
+  * To work around this, put everything in a group
+* Path morph is easily the coolest animation and the hardest to get right
+* Basically every path needs to have zero as its origin and be transformed to the right position
+  * This could be a lot of work; I don't even know if Illustrator has a way to do this
+
+---
+
+# Vector drawable markup
+
+*res/drawable/monster.xml*
+
+```xml
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="178.33333"
+    android:viewportHeight="178.33333">
+    <group
+        android:name="monster"
+        android:translateX="52.866665"
+        android:translateY="46.366665" >
+        <group
+            android:name="pupil_group">
+            <path
+                android:name="pupil"
+                android:pathData="M36.3,32.8m-5.8,0a5.8,5.8 0,1 1,11.6 0a5.8,5.8 0,1 1,-11.6 0"
+                android:fillColor="#5C58A6" />
+        </group>
+        <group
+            android:name="eye_group">
+            <path
+                android:name="eye"
+                android:pathData="..."
+                android:fillColor="#5C58A6" />
+        </group>
+        <group
+            android:name="pants_group" >
+            <path
+                android:name="pants"
+                android:pathData="..."
+                android:fillColor="#5C58A6" />
+        </group>
+```
+
+---
+
+# Animator markup
+
+*res/animator/rotation.xml*
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <objectAnimator
+        android:duration="6000"
+        android:propertyName="rotation"
+        android:valueFrom="0"
+        android:valueTo="360"
+        android:repeatCount="infinite" />
+</set>
+```
+
+---
+
+# Animated vector markup
+
+*res/drawable/monster_anim.xml*
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/monster" >
+    <target
+        android:name="pupil_group"
+        android:animation="@animator/rotation" />
+    <target
+        android:name="eye_group"
+        android:animation="@animator/rotation" />
+    <target
+        android:name="left_horn_group"
+        android:animation="@animator/rotation" />
+    <target
+        android:name="right_horn_group"
+        android:animation="@animator/rotation" />
+    <target
+        android:name="left_arm_group"
+        android:animation="@animator/rotation" />
+    <target
+        android:name="right_arm_group"
+        android:animation="@animator/rotation" />
+    <target
+        android:name="pants_group"
+        android:animation="@animator/rotation" />
+</animated-vector>
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-1.png)
+
+# Assigning to ImageView
+
+Just like any other drawable resource
+
+---
+
+# Starting your animation
+
+```kotlin
+val myImageView: ImageView = findViewById(R.id.my_image_view)
+val spinAnimation = myImageView.drawable as AnimatedVectorDrawable
+
+myImageView.setOnClickListener {
+    spinAnimation.start()
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-2.gif)
+
+# The result
+
+This is just rotation
+
+All the available examples on this are super outdated
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-3.gif)
+
+# A better example
+
+Uses path morph, the much more interesting feature
+developer.android.com/training/animation/overview
+
+---
+
+# Useful tools
+
+* SVG Re-originizer
+  * [phrogz.net/SVG/svg_reoriginizer.html](http://phrogz.net/SVG/svg_reoriginizer.html)
+  * Claims to be able to recenter SVG paths
+  * In my experience, does not work great
+* Shape Shifter
+  * [shapeshifter.design](https://shapeshifter.design/)
+  * Extremely detailed
+  * Great for SVG morph animations
+* Android Developer
+  * [developer.android.com/guide/topics/graphics/drawable-animation](https://developer.android.com/guide/topics/graphics/drawable-animation.html)
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-4.png)
+
+# Shape Shifter example
+
+Attempting to go from the pupil to the eye
+Paths need to be compatible
+
+---
+
+# Layout update animations
+
+* Android can automatically update changes to your layout
+* This is pretty simple in theory:
+
+```xml
+<LinearLayout android:id="@+id/container"
+    android:animateLayoutChanges="true"
+    ...
+/>
+```
+
+* You can add views in code to trigger the animation:
+
+```kotlin
+containerView.addView(newView, 0)
+```
+
+* See [developer.android.com/training/animation/layout](https://developer.android.com/training/animation/layout)
+
+---
+
+# Physics-based animations
+
+* Pretty easy to get working
+* Pretty difficult to get right
+* Need to add animation library:
+
+```groovy
+implementation 'com.android.support:support-dynamic-animation:28.0.0'
+```
+
+* Then create and start an animation:
+
+```kotlin
+val myText: TextView = findViewById(R.id.my_text_view)
+val myButton: Button = findViewById(R.id.my_button)
+val anim = SpringAnimation(myText, DynamicAnimation.TRANSLATION_Y, -100f)
+anim.setStartValue(0f)
+
+myButton.setOnClickListener {
+    counter++
+    myText.text = "..."
+    anim.start()
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-5.gif)
+
+# Result
+
+Extremely simple, but pretty neat
+
+---
+
+class: center, middle
+
+# Multiple activities
+
+Everyone should need this
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-6.png)
+
+# Creating a new activity class
+
+This will hold the code, like `MainActivity.kt`
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-7.png)
+
+# Name your new class
+
+Something distinctive and unique to the project
+
+---
+
+# Required code
+
+* Have to create a class that is an `AppCompatActivity`
+* You will almost certainly need to add `onCreate` logic
+* Android Studio is mad two times
+
+```kotlin
+package com.steverichey.pokemonbuilder
+
+import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+
+class ScenicActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_scenic)
+    }
+}
+```
+
+---
+
+# Our current manifest
+
+* Application with one activity
+* Metadata (our Google Maps API key)
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.steverichey.pokemonbuilder">
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/maps_api_key"
+            />
+    </application>
+
+</manifest>
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-8.png)
+
+# Adding an activity to the manifest
+
+* Autocomplete should show available activities
+
+---
+
+# After adding
+
+* Our main activity is tagged `MAIN` and `LAUNCHER` so it's the first thing the user sees
+
+```xml
+<activity android:name=".MainActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="android.intent.category.LAUNCHER"/>
+    </intent-filter>
+</activity>
+<activity android:name=".ScenicActivity" />
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-9.png)
+
+# Still mad one time
+
+We don't have a layout file
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-10.png)
+
+# Adding a new layout
+
+Right-click on `res/layout`
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-11.png)
+
+# New resource file
+
+Give it a name, I recommend `activity_something`
+Make sure root element is `ConstraintLayout`
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-12.png)
+
+# I'm not even mad
+
+Android Studio has been appeased
+
+---
+
+# Transitioning to the activity
+
+* In Android, this is handled via an "intent"
+* Create an intent with the current activity as context
+* The other thing is a mess, just add `::class.java` after your activity name
+
+```kotlin
+myButton.setOnClickListener {
+    val intent = Intent(this, ScenicActivity::class.java)
+    startActivity(intent)
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-13.png)
+
+# The result
+
+Very cool, but... we're stuck
+
+How do we get the user back?
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-14.png)
+
+# Parent activity
+
+Set in the manifest
+Autocomplete can help; use the main activity
+
+---
+
+# All done
+
+* This should work...
+
+```xml
+<activity android:name=".ScenicActivity"
+    android:parentActivityName=".MainActivity"
+    />
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-15.png)
+
+# The result
+
+Android mostly handles back navigation for us
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-16.png)
+
+# Animating activity transitions
+
+I've added just one text view to the new activity
+Most importantly, I gave it a transition name
+
+---
+
+# Update the intent
+
+* We use `ActivityOptions` to create an animation
+* We give it a view and a transition name
+* Then pass this to `startActivity` (using `toBundle()` to get it in the right format)
+
+```kotlin
+myButton.setOnClickListener {
+    val intent = Intent(this, ScenicActivity::class.java)
+    val options = ActivityOptions.makeSceneTransitionAnimation(this, myText, "my_text_view")
+    startActivity(intent, options.toBundle())
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/anims-17.gif)
+
+# The result
+
+This pretty much owns
+Back navigation doesn't get the animation sadly
+Adding more views to transition is complicated
+
+---
+
+# Assignment
+
+* Layout a second activity
+* Add navigation between activities
+* Ensure you can get back to the first activity
+* For full credit, animate at least one view during the transition
+* Other animations are encouraged but not required
+* Next week:
+  * Monday - Using device sensors
+  * Wednesday - QA and Code Review
+  * Saturday - Office hours?
+* Week after next:
+  * Monday - Android project due
+
+---
+
+class: center, middle
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
