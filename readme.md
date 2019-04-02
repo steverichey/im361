@@ -34,6 +34,16 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [B6. APIs, Animations, and Multiple Activities](https://steverichey.github.io/im361/lessons/B6-android-anims-activities.html)
 * [B7. Using Android Device Sensors](https://steverichey.github.io/im361/lessons/B7-android-sensors.html)
 
+### iOS Development Project
+
+* C1. Intro to Xcode
+* C2. Intro to Interface Builder
+* C3. Intro to Swift
+* C4. Working with Tables
+* C5. Application Resources and Localization
+* C6. Automated UI Testing
+* C7. CreateML and Machine Learning
+
 ## Web Development Project Resources
 
 * [Guide to Vue.js](https://vuejs.org/v2/guide/)
