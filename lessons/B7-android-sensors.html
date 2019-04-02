@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Using Android Device Sensors (and more)</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* darcula theme from https://github.com/dracula/dracula-theme */
+      .remark-slide-content {
+          background-color: #282a36;
+          color: #f8f8f2;
+      }
+
+      .remark-slide-content.imgresize img {
+        max-width: 70%;
+        max-height: 40vh;
+      }
+
+      .remark-inline-code {
+          color: #ffb86c;
+      }
+
+      .remark-container {
+          background: #282a36;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #50fa7b;
+      }
+
+      h1 {
+          color: #8be9fd;
+      }
+
+      h2 {
+          color: #ffb86c;
+      }
+
+      h3 {
+          color: #ff79c6;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      table {
+        font-size: 0.7em;
+      }
+
+      th {
+        color: black;
+        font-weight: bold;
+        background-color: #8be9fd;
+      }
+
+      td:nth-child(1) {
+        color: black;
+        font-weight: bold;
+        background-color: #8be9fd;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Using Android Device Sensors (and more)
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# Device sensors
+
+* Accelerometer
+* Temperature
+* Gravity
+* Gyroscope
+* Light
+* Linear acceleration
+* Magnetic field
+* Orientation
+* Pressure
+* Proximity
+* Humidity
+* Rotation
+
+---
+
+# Registering for sensor events
+
+```kotlin
+class MainActivity : AppCompatActivity(), SensorEventListener {
+    private lateinit var sensorManager: SensorManager
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        val sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
+        sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL)
+    }
+```
+
+* Continued on next slide
+
+---
+
+# Registering for sensor events, part 2
+
+* Continued from previous slide
+
+```kotlin
+  override fun onPause() {
+      super.onPause()
+
+      sensorManager.unregisterListener(this)
+  }
+
+  override fun onSensorChanged(event: SensorEvent?) {
+      ...
+  }
+}
+```
+
+---
+
+# Checking if a sensor exists
+
+```kotlin
+val sensor = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE)
+
+if (sensor != null) {
+    // sensor is found
+} else {
+    // no sensor available
+}
+```
+
+---
+
+# Getting a list of sensors
+
+```kotlin
+val sensorList = sensorManager.getSensorList(Sensor.TYPE_ALL)
+
+for (sensor in sensorList) {
+    Log.i("MainActivity", "Sensor name: ${sensor.name}")
+}
+```
+
+* Logcat:
+
+```
+I/MainActivity: Sensor name: Goldfish 3-axis Accelerometer
+I/MainActivity: Sensor name: Goldfish 3-axis Gyroscope
+I/MainActivity: Sensor name: Goldfish 3-axis Magnetic field sensor
+I/MainActivity: Sensor name: Goldfish Orientation sensor
+I/MainActivity: Sensor name: Goldfish Ambient Temperature sensor
+I/MainActivity: Sensor name: Goldfish Proximity sensor
+I/MainActivity: Sensor name: Goldfish Light sensor
+I/MainActivity: Sensor name: Goldfish Pressure sensor
+I/MainActivity: Sensor name: Goldfish Humidity sensor
+I/MainActivity: Sensor name: Goldfish 3-axis Magnetic field sensor (uncalibrated)
+I/MainActivity: Sensor name: Game Rotation Vector Sensor
+I/MainActivity: Sensor name: GeoMag Rotation Vector Sensor
+I/MainActivity: Sensor name: Gravity Sensor
+I/MainActivity: Sensor name: Linear Acceleration Sensor
+I/MainActivity: Sensor name: Rotation Vector Sensor
+I/MainActivity: Sensor name: Orientation Sensor
+```
+
+---
+
+# The problem with sensors
+
+* In the simulator, you probably get some default value
+* This is unlikely to be useful
+* You are not required to buy an Android phone for this course
+
+---
+
+class: center, middle
+
+# Odds and ends
+
+---
+
+# Kotlin enums
+
+```kotlin
+enum class Direction {
+    North,
+    East,
+    South,
+    West
+}
+
+val north = Direction.valueOf("North")
+
+if (north == Direction.North) {
+    // yep
+}
+```
+
+---
+
+# Kotlin enums, part 2
+
+```kotlin
+enum class PokemonType {
+    Bug,
+    Dragon,
+    Electric,
+    Fighting,
+    Fire,
+    Flying,
+    Ghost,
+    Grass,
+    Ground,
+    Ice,
+    Normal,
+    Poison,
+    Psychic,
+    Rock,
+    Water
+}
+```
+
+---
+
+# Kotlin data classes
+
+```kotlin
+data class Pokemon(val number: Int, val name: String, val type: PokemonType)
+
+val raichu = Pokemon(26, "Raichu", PokemonType.Electric)
+val dragonite = Pokemon(149, "Dragonite", PokemonType.Dragon)
+```
+
+---
+
+# Kotlin arrays
+
+* Array lists are mutable (you can add and remove items)
+* Arrays are typed (using alligators)
+
+```kotlin
+val pokemonList = arrayListOf<Pokemon>()
+pokemonList.add(Pokemon(1, "Bulbasaur", PokemonType.Grass))
+val length = pokemonList.size // 1
+```
+
+* Arrays are immutable (cannot change)
+* Types are not needed if objects are provided
+
+```kotlin
+val otherList = arrayOf(
+    Pokemon(2, "Bulbadude", PokemonType.Grass),
+    Pokemon(3, "Bulbatortoise", PokemonType.Grass)
+)
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/sensors-1.png)
+
+# Linear layout
+
+Good for a list of views to layout in order
+
+Can be horizontal or vertical
+
+---
+
+class: center, middle, imgresize
+
+![](../images/sensors-2.png)
+
+# Linear settings
+
+Gravity decides where views "fall"
+
+---
+
+class: center, middle, imgresize
+
+![](../images/sensors-3.png)
+
+# Linear layout elements
+
+Android will do its best to put things in order
+
+---
+
+class: center, middle, imgresize
+
+![](../images/sensors-4.png)
+
+# Runtime linear layout
+
+You can play with constraints, spacing and so on
+
+---
+
+# SeekBar, part 1
+
+* Layout:
+
+```xml
+<SeekBar
+    android:id="@+id/seekBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:max="151"
+    android:progress="1" />
+```
+
+* On change listener:
+
+```kotlin
+val seekText: TextView = findViewById(R.id.seekText)
+val seekBar: SeekBar = findViewById(R.id.seekBar)
+seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
+    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+        seekText.text = progress.toString()
+    }
+
+    override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+    override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+})
+```
+
+---
+
+# SeekBar, part 2
+
+* Get current progress:
+
+```kotlin
+val index = seekBar.progress
+```
+
+---
+
+# Spinners
+
+* Layout:
+
+```xml
+<Spinner
+    android:id="@+id/spinner"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+```
+
+* Connect to adapter:
+
+```kotlin
+val spinner: Spinner = findViewById(R.id.spinner)
+spinner.adapter = ArrayAdapter<PokemonType>(this,
+            android.R.layout.simple_spinner_item, PokemonType.values())
+```
+
+* Get current item:
+
+```kotlin
+val type = spinner.selectedItem as PokemonType
+```
+
+---
+
+# Parcelable types
+
+* Most basic types (strings, numbers, etc) are "parcelable"
+* All data in a bundle must be parcelable
+* To pass data between activities, it must be in a bundle
+* Making data classes parcelable
+* In app-level build.gradle:
+
+```groovy
+androidExtensions {
+    experimental = true
+}
+```
+
+* Changes to data class:
+
+```
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class Pokemon(val number: Int, val name: String, val type: PokemonType):Parcelable
+```
+
+---
+
+# Passing data between activities, part 1
+
+* Parcelable types
+* Sending activity:
+
+```kotlin
+val viewButton: Button = findViewById(R.id.viewButton)
+
+viewButton.setOnClickListener {
+    val intent = Intent(this, PokedexActivity::class.java)
+    intent.putParcelableArrayListExtra("pokedex", pokemonList)
+    startActivity(intent)
+}
+```
+
+---
+
+# Passing data between activities, part 2
+
+* Receiving activity:
+
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_pokedex)
+
+    val pokemonList = intent.getParcelableArrayListExtra<Pokemon>("pokedex")
+}
+```
+
+---
+
+# RecyclerView
+
+* Layout:
+
+```xml
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/my_recycler_view" />
+```
+
+* Activity code:
+
+```kotlin
+class PokedexActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_pokedex)
+
+        val pokemonList = intent.getParcelableArrayListExtra<Pokemon>("pokedex")
+        val recyclerView: RecyclerView = findViewById(R.id.my_recycler_view)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = PokedexRecyclerAdapter(this, pokemonList.toTypedArray())
+    }
+}
+```
+
+---
+
+# Recyclers: View holders
+
+* Recycler views need view holders
+* These... hold a view
+* I'd like if Android didn't need these tbh
+
+```kotlin
+import android.support.v7.widget.RecyclerView
+import android.widget.TextView
+
+class PokedexViewHolder(val textView: TextView) : RecyclerView.ViewHolder(textView)
+```
+
+---
+
+# Recyclers: Adapters
+
+* Adapters convert objects (e.g. a data class) to views
+
+```kotlin
+import android.content.Context
+import android.support.v7.widget.RecyclerView
+import android.view.ViewGroup
+import android.widget.TextView
+
+class PokedexRecyclerAdapter(val context: Context, val pokedex: Array<Pokemon>):
+        RecyclerView.Adapter<PokedexViewHolder>() {
+
+    override fun onCreateViewHolder(group: ViewGroup, index: Int): PokedexViewHolder {
+        val textView = TextView(context)
+        return PokedexViewHolder(textView)
+    }
+
+    override fun onBindViewHolder(holder: PokedexViewHolder, index: Int) {
+        holder.textView.text = "Pokemon: ${pokedex[index]}"
+    }
+
+    override fun getItemCount(): Int {
+        return pokedex.size
+    }
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/sensors-5.gif)
+
+# All together
+
+---
+
+# Assignment
+
+* Use anything we covered today in your app
+  * Literally anything
+  * It should work, though
+* This week:
+  * Wednesday - QA and Code Review
+  * Saturday - Office hours?
+* Week after next:
+  * Monday - Android project due
+
+---
+
+class: center, middle
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
