@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Pokemon Builder</string>
+    <plurals name="has_been_clicked">
+        <item quantity="one">I\'ve been clicked %d time!</item>
+        <item quantity="other">I\'ve been clicked %d times!</item>
+    </plurals>
+    <string name="button">Add to Pokedex</string>
+    <string name="a_weird_eye_fella">A weird eye fella</string>
+    <string name="hello_from_the_scenic_activity">Hello from the scenic activity!</string>
+    <string name="pumpkin_capital">Pumpkin capital of the world</string>
+    <string name="number_of_pokemon">%d Pokemon in Pokedex</string>
+</resources>

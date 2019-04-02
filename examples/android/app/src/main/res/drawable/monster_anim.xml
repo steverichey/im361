@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/monster" >
+    <target
+        android:name="pupil_group"
+        android:animation="@animator/rotation" />
+    <target
+        android:name="eye_group"
+        android:animation="@animator/rotation" />
+    <target
+        android:name="left_horn_group"
+        android:animation="@animator/rotation" />
+    <target
+        android:name="right_horn_group"
+        android:animation="@animator/rotation" />
+    <target
+        android:name="left_arm_group"
+        android:animation="@animator/rotation" />
+    <target
+        android:name="right_arm_group"
+        android:animation="@animator/rotation" />
+    <target
+        android:name="pants_group"
+        android:animation="@animator/rotation" />
+</animated-vector>
