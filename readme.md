@@ -36,7 +36,7 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 
 ### iOS Development Project
 
-* C1. Intro to Xcode
+* [C1. Intro to Xcode](https://steverichey.github.io/im361/lessons/C1-intro-to-xcode.html)
 * C2. Intro to Interface Builder
 * C3. Intro to Swift
 * C4. Working with Tables

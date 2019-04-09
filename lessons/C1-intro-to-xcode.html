@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro to Xcode</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* theme cloned from Xcode's "Dusk" theme */
+      .remark-slide-content {
+          background-color: #1E2028;
+          color: #FFFFFF;
+      }
+
+      .remark-slide-content.imgresize img {
+        max-width: 70%;
+        max-height: 40vh;
+      }
+
+      .remark-inline-code {
+          color: #41B645;
+      }
+
+      .remark-container {
+          background: #1E2028;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #4155D1;
+      }
+
+      h1 {
+          color: #DB2C38;
+      }
+
+      h2 {
+          color: #786DC4;
+      }
+
+      h3 {
+          color: #C67C48;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      table {
+        font-size: 0.7em;
+      }
+
+      th {
+        color: black;
+        font-weight: bold;
+        background-color: #DB2C38;
+      }
+
+      td:nth-child(1) {
+        color: black;
+        font-weight: bold;
+        background-color: #DB2C38;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, imgresize, imgresize
+
+# Intro to Xcode
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# Android app review
+
+* 76 commits
+* 5,693 lines of code
+* Code issues will be graded leniently
+  * In the future, more time dedicated to debugging
+* What worked well?
+* What didn't work?
+* What was confusing?
+* How could I have facilitated success?
+
+---
+
+# Installing Xcode
+
+* macOS is required
+* macOS Mojave 10.14.3 strongly recommended
+  * Xcode 10.2 requires this
+  * You can install an older version (I think)
+* Apple account is required
+* iOS simulators are required
+* This is not a small download
+  * 5.6GB
+* Mac App Store or direct download
+
+---
+
+class: center, middle, imgresize, imgresize
+
+![](../images/xcode-1.png)
+
+# Installing Xcode
+
+[developer.apple.com](https://developer.apple.com/)
+
+---
+
+class: center, middle, imgresize, imgresize
+
+![](../images/xcode-2.png)
+
+# Software downloads
+
+Scroll to bottom
+
+Click "Download Resources"
+
+---
+
+class: center, middle, imgresize, imgresize
+
+![](../images/xcode-3.png)
+
+# Sign in with your Apple ID
+
+Create one if you don't have it already
+
+---
+
+class: center, middle, imgresize, imgresize
+
+![](../images/xcode-4.png)
+
+# Creating an Apple ID
+
+It's free... now
+
+---
+
+class: center, middle, imgresize, imgresize
+
+![](../images/xcode-5.png)
+
+# Apple developer agreement
+
+I will now allow 37 minutes of reading time
+
+---
+
+class: center, middle, imgresize, imgresize
+
+![](../images/xcode-6.png)
+
+# Downloads page
+
+Click this button to download via the Mac App Store
+
+If you don't want this (used a different Apple ID than on your machine) scroll down
+
+---
+
+class: center, middle, imgresize, imgresize
+
+![](../images/xcode-7.png)
+
+# View in Mac App Store
+
+This is the recommended method
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-8.png)
+
+# App Store download
+
+Xcode will auto-update which is... fine
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-9.png)
+
+# Downloads page again
+
+This is what you get when you scroll down
+
+Click "See more downloads"
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-10.png)
+
+# More downloads
+
+Search for "xcode"
+Expand Xcode 10.2 and download the xip file
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-11.png)
+
+# Alternate method
+
+Welcome to the sneakernet
+
+[Photo by chuttersnap on Unsplash](https://unsplash.com/photos/qmusKxOAL24)
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-12.png)
+
+# Running Xcode
+
+You may need to install command-line tools
+
+You may need to log in to your Apple ID
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-13.png)
+
+# Creating a new project
+
+Single View App
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-14.png)
+
+# Project settings
+
+Product name is recommended to be CamelCase
+
+Include Unit Tests and UI Tests
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-15.png)
+
+# Creating a git repository
+
+Check the box
+
+Select a location to save the files
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-16.png)
+
+# Welcome to your project
+
+Make sure "Automatically manage signing" is enabled
+
+App signing on iOS is rough
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-17.png)
+
+# Running your app
+
+Choose a scheme
+
+Complex apps might have development, staging, and release schemes
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-18.png)
+
+# Choosing a simulator
+
+Any phone device is fine
+
+Probably don't want to use a tablet
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-19.png)
+
+# Run the app
+
+Just like Android, the play button builds then runs
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-20.png)
+
+# Behold
+
+You should get this in a new window
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-21.png)
+
+# Stop your app
+
+What it says on the tin
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-22.png)
+
+# The iOS simulator
+
+Your app has a default icon
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-23.png)
+
+# Add repo to Github Desktop
+
+Top-left corner
+Select "Add Existing Repository"
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-24.png)
+
+# Choose file path
+
+Can also drag-and-drop the folder
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-25.png)
+
+# Select folder with xcodeproj file
+
+Also has source, Tests, and UITests folders
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-26.png)
+
+# Should look like this
+
+Let me know if it does not
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-27.png)
+
+# Check history
+
+Xcode created an initial commit for you
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-28.png)
+
+# Publish repository as "im361ios"
+
+Create a new project named "im361ios" in GitHub
+```
+git remote add origin git@github.com:example/im361ios.git
+```
+Have to do manual if GitHub account not linked
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-29.png)
+
+# A brief overview of your project
+
+Source code, storyboards, and assets
+
+Tests will be covered later
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-30.png)
+
+# Assets
+
+Select "Assets.xcassets" and then "AppIcon"
+
+---
+
+class: center, middle, imgresize
+
+![](../images/xcode-31.png)
+
+# iOS app icon sizes
+
+20pt x 3x = 60 pixels, etc
+
+Xcode doesn't generate these for you
+
+---
+
+class: imgresize
+
+![](../images/xcode-32.png)
+
+# Assignment
+
+* Add all app icons
+  * Illustrator's export sizes options are good
+  * Drag-and-drop output images into Xcode
+  * Xcode will warn you if images are the wrong size
+* Ensure your project is saved, committed, and pushed
+
+---
+
+class: center, middle, imgresize
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
