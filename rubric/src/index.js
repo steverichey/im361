@@ -25,7 +25,7 @@ var app = new Vue({
           },
           {
             label: "D2",
-            question: "Is the web application responsive to a variety of screen sizes?",
+            question: "Is the application responsive to a variety of screen sizes?",
             options: [
               "Application has substantial visual issues at all screen sizes and resolutions",
               "Application has noticable design errors at several screen sizes and resolutions",
@@ -146,9 +146,9 @@ var app = new Vue({
             question: "Does the application represent best practices for the platform and technologies which it leverages?",
             options: [
               "Project is an outright mockery of the very concept of best practices",
-              "",
+              "Best practices are generally ignored, but may be present occasionally",
               "Some attempt has been made to match best practices, but may differ in some key places",
-              "",
+              "The project mostly matches best practices with few exceptions",
               "Project strictly matches best practices and published standards"
             ],
             picked: 2
@@ -158,9 +158,9 @@ var app = new Vue({
             question: "Does the text formatting throughout the application source code reflect standards for the language it is written in?",
             options: [
               "Formatting or lack thereof confounds any attempt to parse code or markup",
-              "",
+              "Formatting is largely improperly applied, making code difficult to read",
+              "Formatting of the code mostly aids understanding",
               "Much of the formatting nearly matches industry standard with some exceptions",
-              "",
               "Source formatting is nearly indistinguishable from expert work"
             ],
             picked: 2
@@ -170,9 +170,9 @@ var app = new Vue({
             question: "Does the source code include comments to clarify the intention behind implementation to other readers?",
             options: [
               "Comments are missing or riddled with typos, outright lies, and insults to the reader",
-              "",
+              "Comments are sparse and, when present, do not provide additional insight",
               "Comments are used but may be poorly written or duplicate concepts evident in code",
-              "",
+              "Comments are applied in several places to clarify intention somewhat",
               "Comments provide insight into the project that would not be viable in code alone"
             ],
             picked: 2
@@ -182,9 +182,9 @@ var app = new Vue({
             question: "Do the variable, class, and file names in the source code clarify their purpose or match expected structure?",
             options: [
               "Naming is applied to actively prevent comprehension by the human mind",
-              "",
+              "Names are mostly unclear, terse, or confusing",
               "Many names are well-chosen but in some cases may be confusing or unclear",
-              "",
+              "Nearly all names clarify purpose and intention",
               "Naming makes it immediately apparent what the function of any particular object is"
             ],
             picked: 2
@@ -194,20 +194,23 @@ var app = new Vue({
             question: "Does the build process of the application match the expected format and work as intended?",
             options: [
               "Build process is incomprehensible and/or unknowable; some dark magicks",
-              "",
+              "In some cases, build process is in the expected format, but is generaly incorrect",
+              "Build process is mostly correct, but deviates in some places",
               "In some cases, build process is not in the expected format, but is generally correct",
-              "",
               "Build process strictly conforms to format for platform and/or frameworks"
             ],
             picked: 2
           }
         ]
-      },
+      }
+    ],
+    currentSpecificTechnicalOptionIndex: 0,
+    specificTechnicalOptions: [
       {
-        name: "Specific technical",
+        name: "Specific Technical - Web",
         elements: [
           {
-            label: "ST1",
+            label: "ST1W",
             question: "Does the HTML for the application leverage semantic markup with proper attributes?",
             options: [
               "HTML validation absolutely fails, leading to rendering errors in the browser",
@@ -219,7 +222,7 @@ var app = new Vue({
             picked: 2
           },
           {
-            label: "ST2",
+            label: "ST2W",
             question: "Is the JavaScript clear to the reader while leveraging features available in Vue?",
             options: [
               "JavaScript is not valid, semantically unclear, and the syntax is incorrect",
@@ -231,7 +234,7 @@ var app = new Vue({
             picked: 2
           },
           {
-            label: "ST3",
+            label: "ST3W",
             question: "Does the CSS properly style the content, with clear style rules, that apply evenly throughout the content?",
             options: [
               "CSS rules are extremely narrow, use overrides, or use incorrect syntax",
@@ -243,26 +246,91 @@ var app = new Vue({
             picked: 2
           },
           {
-            label: "ST4",
+            label: "ST4W",
             question: "Does the application produce errors or warnings when running in the browser?",
             options: [
               "Numerous errors and warnings are produced at runtime, at all levels of the application",
               "",
               "No errors are produced in the browser console, but some warnings may appear",
               "",
-              "When the web application is running, no errors or warnings are displayed in the console"
+              "When the application is running, no errors or warnings are displayed in the console"
             ],
             picked: 2
           },
           {
-            label: "ST5",
+            label: "ST5W",
             question: "Does the application's build process produce errors or warnings?",
             options: [
               "Numerous errors and warnings are produced at buildtime when using the standard build process",
               "",
               "No errors are produced at build time, but some warnings may appear",
               "",
-              "When the web application is built, no errors or warnings are produced by the build tools"
+              "When the application is built, no errors or warnings are produced by the build tools"
+            ],
+            picked: 2
+          }
+        ]
+      },
+      {
+        name: "Specific Technical - Android",
+        elements: [
+          {
+            label: "ST1A",
+            question: "Are all layouts properly constructed, with no errors in the design view?",
+            options: [
+              "Layouts have numerous warnings and do not properly render",
+              "",
+              "Layouts may have some warnings that do not detract from runtime behavior",
+              "",
+              "Layouts are properly formatted with no errors or warnings"
+            ],
+            picked: 2
+          },
+          {
+            label: "ST2A",
+            question: "Is all Kotlin well-written, and does it properly leverage Android APIs?",
+            options: [
+              "Kotlin fails to compile or does not function as intended",
+              "",
+              "Kotlin compilation may produce minor warnings, but does function properly",
+              "",
+              "Kotlin compiles without errors and is well formatted"
+            ],
+            picked: 2
+          },
+          {
+            label: "ST3A",
+            question: "Are styles and colors applied to all views properly using themes and color resources?",
+            options: [
+              "Resources are properly referenced, causing the code to fail to compile",
+              "",
+              "Resources are present and properly used, but some strings or colors are not resources",
+              "",
+              "All resources and colors are properly applied to layouts"
+            ],
+            picked: 2
+          },
+          {
+            label: "ST4A",
+            question: "Does the application produce warnings or errors when running in the simulator?",
+            options: [
+              "The application crashes when running in the simulator",
+              "",
+              "Some warnings appear while the app is running, but they do not substantially impact the app",
+              "",
+              "The application runs with no significant warnings or errors"
+            ],
+            picked: 2
+          },
+          {
+            label: "ST5A",
+            question: "Does the application's build process produce warnings or errors?",
+            options: [
+              "The application completely fails to build",
+              "",
+              "The application builds with some warnings that do not prevent the build from completing",
+              "",
+              "The application builds with no warnings or errors"
             ],
             picked: 2
           }
@@ -439,7 +507,17 @@ var app = new Vue({
       };
 
       fileReader.readAsText(this.uploadedFile, "UTF-8");
+    },
+    onSpecificTechnicalChange: function(event) {
+      this.currentSpecificTechnicalOptionIndex = event.target.selectedIndex;
+      this.categories.pop();
+      this.categories.push(this.specificTechnicalOptions[this.currentSpecificTechnicalOptionIndex]);
+      // var index = this.specificTechnicalOptions.indexOf(option);
+      // console.log(option);
     }
+  },
+  created() {
+    this.categories.push(this.specificTechnicalOptions[this.currentSpecificTechnicalOptionIndex]);
   }
 });
 
