@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro to Interface Builder</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* theme cloned from Xcode's "Dusk" theme */
+      .remark-slide-content {
+          background-color: #1E2028;
+          color: #FFFFFF;
+      }
+
+      .remark-slide-content.imgresize img {
+        max-width: 70%;
+        max-height: 40vh;
+      }
+
+      .remark-inline-code {
+          color: #41B645;
+      }
+
+      .remark-container {
+          background: #1E2028;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #4155D1;
+      }
+
+      h1 {
+          color: #DB2C38;
+      }
+
+      h2 {
+          color: #786DC4;
+      }
+
+      h3 {
+          color: #C67C48;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      table {
+        font-size: 0.7em;
+      }
+
+      th {
+        color: black;
+        font-weight: bold;
+        background-color: #DB2C38;
+      }
+
+      td:nth-child(1) {
+        color: black;
+        font-weight: bold;
+        background-color: #DB2C38;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, imgresize, imgresize
+
+# Intro to Interface Builder
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# Xcode
+
+* Apple is a trillion-dollar company known for their attention to detail
+* Clearly, this means that Xcode is nigh flawless
+* Any issues installing Xcode or adding app icons?
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-1.png)
+
+# Interface builder
+
+Introduced as part of OpenStep in 1997
+
+A lot of macOS/iOS development is based on NeXTStep
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-2.png)
+
+# Main.storyboard
+
+Associated with ViewController.swift
+
+Allows you to organize views and set constraints
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-3.png)
+
+# View hierarchy
+
+Each storyboard can contain multiple scenes
+
+Scenes contain one or more view controller
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-4.png)
+
+# Safe area
+
+Most of your views will live in here
+
+This will keep views away from whatever weird notches Apple makes
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-5.png)
+
+# Adding objects
+
+Click on the "Library" button
+
+Drag a Label into the view
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-6.gif)
+
+# Drag-and-drop label
+
+You can also search the library for other views
+
+The library hides when not in use
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-7.png)
+
+# Label added to view
+
+Let's add constraints
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-8.png)
+
+# Adding constraints
+
+The tiny "Add new constraints" tie fighter
+
+Pre-filled values are just where it is now
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-9.png)
+
+# Set constraints to zero
+
+"Constrain to margins" doesn't matter here
+
+The safe area doesn't have margins
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-10.png)
+
+# Click "Add 4 Constraints"
+
+Make sure the little lines are red
+
+If they're dashes, the constraint won't be added
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-11.png)
+
+# Constraints in the hierarchy
+
+Constraints are kind of grouped up
+
+They will kind of show up next to their associated view
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-12.png)
+
+# Attributes inspector
+
+Click the stake (?) on the top of the right pane
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-13.png)
+
+# Label attributes
+
+Text, color, font, alignment, lines
+
+If lines is set to one, long text will be truncated... (zero prevents this)
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-14.png)
+
+# More attributes
+
+I very rarely change any of these tbh
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-15.png)
+
+# Yes, more attributes
+
+Alpha (opacity), background and tint color
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-16.png)
+
+# Size inspector
+
+Ruler icon in the right pane
+
+Positioning and size information including constraints
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-17.png)
+
+# Constraint editor
+
+Another way to edit constraints
+
+You can also pick them in the hierarchy and change them
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-18.png)
+
+# Hugging priority
+
+Determines how likely views are to squish
+
+If Xcode tells you to change one, just do it
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-19.gif)
+
+# Add a Stack View
+
+Like a LinearLayout on Android
+
+Drag from library, put label into stack, and add constraints
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-20.gif)
+
+# Add button to stack
+
+Drag and drop to reorder
+
+Can use stack view attributes to change alignment and distribution
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-21.png)
+
+# Custom label text
+
+Enter just about whatever here
+
+Default fonts like "Large Title" are available
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-22.png)
+
+# Custom button text
+
+Guess what? It's basically the same as the label
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-23.gif)
+
+# Creating an outlet
+
+This is kind of like findViewById in Android
+
+Gives you a code reference to a layout item
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-24.gif)
+
+# Adding a new scene
+
+Drag and drop a view controller
+
+Once it's placed, you can line it up with another scene
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-25.gif)
+
+# Create a segue
+
+Segues navigate between views
+
+Buttons can trigger a segue action to the new scene
+
+---
+
+class: center, middle, imgresize
+
+![](../images/ib-26.gif)
+
+# Run your app
+
+You can now segue from one view to another
+
+Note that we can't get back; we'll fix this later
+
+---
+
+# Assignment
+
+* Put some stuff into your scenes
+* Two or more scenes would be good
+* Use image views as placeholders
+  * We'll add image resources later
+* Set colors and text to get close to your design
+* This can be incredibly rough, just get something in there
+
+---
+
+class: center, middle, imgresize
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
