@@ -15,7 +15,7 @@ var app = new Vue({
             label: "D1",
             question: "Does the finished project match the intended design as shown by the student at the beginning of the semester?",
             options: [
-              "Original design is actively mocked by the poor quality of the finished product.",
+              "Original design is not at all represented by the finished product.",
               "Design has some significant shortcomings but is generally acceptable.",
               "Design is mostly matched with some exceptions that are not a detriment to the design.",
               "Design is represented well and has some minor improvements.",
@@ -279,9 +279,9 @@ var app = new Vue({
             question: "Are all layouts properly constructed, with no errors in the design view?",
             options: [
               "Layouts have numerous warnings and do not properly render",
-              "",
+              "Layouts may have some warnings, or may have runtime rendering issues",
               "Layouts may have some warnings that do not detract from runtime behavior",
-              "",
+              "Layouts are mostly formatted correctly with few warnings",
               "Layouts are properly formatted with no errors or warnings"
             ],
             picked: 2
@@ -291,10 +291,10 @@ var app = new Vue({
             question: "Is all Kotlin well-written, and does it properly leverage Android APIs?",
             options: [
               "Kotlin fails to compile or does not function as intended",
-              "",
-              "Kotlin compilation may produce minor warnings, but does function properly",
-              "",
-              "Kotlin compiles without errors and is well formatted"
+              "Kotlin compiles with numerous warnings which should have been resolved",
+              "Kotlin compilation may produce some minor warnings, but does function properly",
+              "Kotlin compiles with very few issues",
+              "Kotlin compiles without errors or warnings and is well formatted"
             ],
             picked: 2
           },
@@ -302,10 +302,10 @@ var app = new Vue({
             label: "ST3A",
             question: "Are styles and colors applied to all views properly using themes and color resources?",
             options: [
-              "Resources are properly referenced, causing the code to fail to compile",
-              "",
+              "Resources are improperly referenced, causing the code to fail to compile",
+              "Some resources may be referenced wrong, causing runtime errors",
               "Resources are present and properly used, but some strings or colors are not resources",
-              "",
+              "Nearly all resources and colors are applied from layouts",
               "All resources and colors are properly applied to layouts"
             ],
             picked: 2
@@ -315,9 +315,9 @@ var app = new Vue({
             question: "Does the application produce warnings or errors when running in the simulator?",
             options: [
               "The application crashes when running in the simulator",
-              "",
+              "A few errors appear while the app is running, but the app does not crash",
               "Some warnings appear while the app is running, but they do not substantially impact the app",
-              "",
+              "Very few warnings are produced by the application when running",
               "The application runs with no significant warnings or errors"
             ],
             picked: 2
@@ -327,9 +327,9 @@ var app = new Vue({
             question: "Does the application's build process produce warnings or errors?",
             options: [
               "The application completely fails to build",
-              "",
-              "The application builds with some warnings that do not prevent the build from completing",
-              "",
+              "The application builds with many warnings, with several severe warnings",
+              "The application builds with some warnings, some of which may be severe",
+              "The application builds with few warnings that do not prevent the build from completing",
               "The application builds with no warnings or errors"
             ],
             picked: 2
