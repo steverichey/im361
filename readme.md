@@ -38,7 +38,7 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 
 * [C1. Intro to Xcode](https://steverichey.github.io/im361/lessons/C1-intro-to-xcode.html)
 * [C2. Intro to Interface Builder](https://steverichey.github.io/im361/lessons/C2-intro-to-interface-builder.html)
-* C3. Intro to Swift
+* [C3. Intro to Swift](https://steverichey.github.io/im361/lessons/C3-basics-of-swift.html)
 * C4. Working with Tables
 * C5. Application Resources and Localization
 * C6. Automated UI Testing

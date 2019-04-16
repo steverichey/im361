@@ -22,23 +22,37 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3M-mW-EOW">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="272.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="163.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="HvE-aC-DDf" kind="showDetail" id="XAf-go-ehf"/>
+                                            <segue destination="HvE-aC-DDf" kind="showDetail" identifier="greenView" id="XAf-go-ehf"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, world! You can click on the button below." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXf-Cn-BXU">
-                                        <rect key="frame" x="0.0" y="272.5" width="414" height="273"/>
+                                        <rect key="frame" x="0.0" y="163.5" width="414" height="163.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4k9-Im-Aq4">
+                                        <rect key="frame" x="0.0" y="327" width="416" height="164"/>
+                                        <connections>
+                                            <action selector="didPressSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="nNG-om-J21"/>
+                                        </connections>
+                                    </switch>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fz-1T-hCw">
-                                        <rect key="frame" x="0.0" y="545.5" width="414" height="272.5"/>
+                                        <rect key="frame" x="0.0" y="491" width="414" height="163.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Click here"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41n-ux-pg9">
+                                        <rect key="frame" x="0.0" y="654.5" width="414" height="163.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Click to show alert"/>
+                                        <connections>
+                                            <action selector="didPressShowAlert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0RU-n0-N62"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -58,15 +72,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="194" y="128"/>
         </scene>
-        <!--View Controller-->
+        <!--Green View Controller-->
         <scene sceneID="hEI-4a-lf0">
             <objects>
-                <viewController id="HvE-aC-DDf" sceneMemberID="viewController">
+                <viewController id="HvE-aC-DDf" customClass="GreenViewController" customModule="InterplanetaryCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CDE-3c-G3W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sbQ-l6-yCd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="26r-bn-1iv">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xci-yH-MPl">
+                                        <rect key="frame" x="0.0" y="409" width="414" height="409"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <state key="normal" title="Go Back"/>
+                                        <connections>
+                                            <action selector="didPressGoBack:" destination="HvE-aC-DDf" eventType="touchUpInside" id="vw0-AF-nNj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.1312497275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="sbQ-l6-yCd" firstAttribute="leading" secondItem="f70-3u-Nej" secondAttribute="leading" id="9WB-rz-5DO"/>
+                            <constraint firstItem="f70-3u-Nej" firstAttribute="bottom" secondItem="sbQ-l6-yCd" secondAttribute="bottom" id="ZZT-9m-xEx"/>
+                            <constraint firstItem="f70-3u-Nej" firstAttribute="trailing" secondItem="sbQ-l6-yCd" secondAttribute="trailing" id="e3x-IZ-tTL"/>
+                            <constraint firstItem="sbQ-l6-yCd" firstAttribute="top" secondItem="f70-3u-Nej" secondAttribute="top" id="rbY-ZT-ThH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="f70-3u-Nej"/>
                     </view>
                 </viewController>
@@ -75,4 +114,7 @@
             <point key="canvasLocation" x="1074" y="128"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="GreenImage" width="887" height="1330.5"/>
+    </resources>
 </document>

@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basics of Swift</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* theme cloned from Xcode's "Dusk" theme */
+      .remark-slide-content {
+          background-color: #1E2028;
+          color: #FFFFFF;
+      }
+
+      .remark-slide-content.imgresize img {
+        max-width: 70%;
+        max-height: 40vh;
+      }
+
+      .remark-inline-code {
+          color: #41B645;
+      }
+
+      .remark-container {
+          background: #1E2028;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #4155D1;
+      }
+
+      h1 {
+          color: #DB2C38;
+      }
+
+      h2 {
+          color: #786DC4;
+      }
+
+      h3 {
+          color: #C67C48;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      table {
+        font-size: 0.7em;
+      }
+
+      th {
+        color: black;
+        font-weight: bold;
+        background-color: #DB2C38;
+      }
+
+      td:nth-child(1) {
+        color: black;
+        font-weight: bold;
+        background-color: #DB2C38;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, imgresize, imgresize
+
+# Basics of Swift
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# View controller
+
+```swift
+class ViewController: UIViewController {
+    @IBOutlet weak var button: UIButton!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+}
+```
+
+---
+
+# Adding a function
+
+* Add the following:
+
+```swift
+override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+}
+```
+
+* Add below the viewDidLoad closing brace
+* You should get autocomplete
+* This will get called by iOS before a segue
+* You have to return true (should perform) or false (should not perform)
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-1.png)
+
+# Swift switch statements
+
+Kind of like a lot if if-then statements
+
+If you don't provide cases, you'll get this error
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-2.png)
+
+# Switch cases
+
+Since `identifier` is a string, cases must be strings
+
+Every case must have a statement
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-3.png)
+
+# Exhaustive switches
+
+Swift switches have to handle all possibilities
+
+You can use a default case for this
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-4.png)
+
+# Default case
+
+We only have one segue, and we can give it this ID
+
+So while we know that default is unnecessary, Swift doesn't
+
+This also helps if you add identifiers later
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-5.png)
+
+# Returning values
+
+We've done this before
+
+If you see an arrow at the end, you need to return
+
+"Should perform" indicates what to return
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-6.png)
+
+# Unresolved identifiers
+
+We want to allow "greenView" segue in only some cases
+
+We haven't added that yet, or we misspelled it
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-7.png)
+
+# Swift compiler errors
+
+Also available in the left pane, in the issue navigator
+
+Warnings also show up here
+
+---
+
+# Updated view controller
+
+```swift
+class ViewController: UIViewController {
+    @IBOutlet weak var button: UIButton!
+    var isSegueAllowed = false
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch identifier {
+        case "greenView":
+            print("going to the green view")
+
+            if isSegueAllowed {
+                return true
+            } else {
+                return false
+            }
+        default:
+            print("going to some other view?")
+            return true
+        }
+    }
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-8.png)
+
+# Switch component
+
+Can trigger a function when toggled
+
+Good for changing a boolean value
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-8b.gif)
+
+# Adding a switch
+
+Drag from "value changed" to your class
+
+Give your method a name e.g. `didPressSwitch`
+
+---
+
+# Implementing the switch
+
+```swift
+class ViewController: UIViewController {
+    @IBOutlet weak var button: UIButton!
+    var isSegueAllowed = false
+
+    // ...
+
+    @IBAction func didPressSwitch(_ sender: Any) {
+        isSegueAllowed = !isSegueAllowed
+    }
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-9.png)
+
+# Naming our segue
+
+Useful when one view controller has many segues
+
+Click on the segue itself
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-10.png)
+
+# Debugging your app
+
+Bottom pane shows `print` statements
+
+This shouldn't be called? What gives
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-11.png)
+
+# Fixing the typo
+
+The compiler doesn't check our storyboards
+
+It's up to you to make sure things are right
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-12.png)
+
+# Dismissing the view
+
+We still get stuck on the second view
+
+Let's add a button to return to the previous view
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-13.png)
+
+# Adding a second view controller
+
+We need code to dismiss the view
+
+Right-click the folder containing code and add a file
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-14.png)
+
+# Add a new Swift file
+
+Ensure iOS tab is selected
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-15.png)
+
+# Name your file
+
+SomethingViewController.swift
+
+Should be in the same folder as the other view controller
+
+---
+
+# A new view controller
+
+* Add this code:
+
+```swift
+import UIKit
+
+class GreenViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+```
+
+* UIKit is needed for a view controller
+* viewDidLoad is a good place to set up your view
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-16.png)
+
+# Linking the class
+
+Select the view controller in question
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-17.png)
+
+# Custom class
+
+Enter your class name in this field
+
+Xcode should offer autofill
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-18.png)
+
+# Custom class added
+
+Should show this module
+
+Name of the scene changes too
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-19.png)
+
+# Creating an IBOutlet
+
+Sometimes Xcode gets stuck like this...
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-20.png)
+
+# Automatic assistant
+
+Automatic will usually pick the right thing
+
+If not, you can pick from "manual"
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-21.png)
+
+# Insert button action
+
+"Touch up inside" is standard for buttons
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-22.png)
+
+# Creating the action
+
+Give it a name
+
+For iOS, this is usually `didPressSomething`
+
+---
+
+# Dismissing the view
+
+* Change this:
+
+```swift
+@IBAction func didPressGoBack(_ sender: Any) {
+}
+```
+
+* To this:
+
+```swift
+@IBAction func didPressGoBack(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
+}
+```
+
+* Swift function parameters have names
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-23.png)
+
+# Displaying an alert
+
+Add a new button
+
+Connect a "Touch up inside" action to a view controller
+
+---
+
+# Implementing an alert
+
+```swift
+@IBAction func didPressShowAlert(_ sender: Any) {
+    // create the alert controller
+    let alert = UIAlertController(title: "Hello world!", message: "This is an alert", preferredStyle: .alert)
+
+    // create a default action
+    let action1 = UIAlertAction(title: "Hello", style: .default) { _ in
+        // this code will be run when the user picks "Hello"
+        print("Hello was clicked")
+    }
+
+    // create a cancel action
+    let action2 = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+        // this code will be run when the user picks "Cancel"
+        print("action was cancelled")
+    }
+
+    // create a destructive action
+    let action3 = UIAlertAction(title: "DELETE", style: .destructive) { _ in
+        // this code will be run when the user picks "DELETE"
+        print("DELETE WAS CLICKED")
+    }
+
+    // add all actions to the alert
+    alert.addAction(action1)
+    alert.addAction(action2)
+    alert.addAction(action3)
+
+    // show the alert to the user
+    present(alert, animated: true) {
+        // this code will run after the alert is shown
+        print("alert was shown")
+    }
+}
+```
+
+---
+
+# Implementing an alert
+
+```swift
+// create the alert controller
+let alert = UIAlertController(title: "Hello world!",
+                              message: "This is an alert",
+                              preferredStyle: .alert)
+```
+
+---
+
+# Implementing an alert
+
+```swift
+// create a default action
+let action1 = UIAlertAction(title: "Hello",
+                            style: .default) { _ in
+    // this code will be run when the user picks "Hello"
+    print("Hello was clicked")
+}
+```
+
+---
+
+# Implementing an alert
+
+```swift
+// create a cancel action
+let action2 = UIAlertAction(title: "Cancel",
+                            style: .cancel) { _ in
+    // this code will be run when the user picks "Cancel"
+    print("action was cancelled")
+}
+```
+
+---
+
+# Implementing an alert
+
+```swift
+// create a destructive action
+let action3 = UIAlertAction(title: "DELETE",
+                            style: .destructive) { _ in
+    // this code will be run when the user picks "DELETE"
+    print("DELETE WAS CLICKED")
+}
+```
+
+---
+
+# Implementing an alert
+
+```swift
+// add all actions to the alert
+alert.addAction(action1)
+alert.addAction(action2)
+alert.addAction(action3)
+```
+
+---
+
+# Implementing an alert
+
+```swift
+// show the alert to the user
+present(alert,
+        animated: true) {
+    // this code will run after the alert is shown
+    print("alert was shown")
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-32.png)
+
+# Example alert
+
+Preferred style is alert
+
+Normal, destructive, and cancel action styles
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-33.png)
+
+# Example action sheet
+
+A bit more particular on iPad
+
+If tapped away, "cancel" is assumed
+
+You can't tap away from an alert
+
+---
+
+# Swift arrays
+
+```swift
+let array1 = [
+    1,
+    2,
+    3,
+    4,
+    5
+]
+
+let array2 = [
+    "first",
+    "second",
+    "third",
+    "fourth",
+    "fifth"
+]
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-24.png)
+
+# Heterogeneous collections
+
+Everything in a Swift array has to be the same type
+
+You'll get this kind of warning if it gets confused
+
+---
+
+# Swift structs
+
+```swift
+struct Planet {
+    let name: String
+    let position: Int
+    let distanceFromSun: Float
+    let diameter: Float
+    let orbitalVelocity: Float
+    let rotationalVelocity: Float
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-30a.png)
+
+# Image views
+
+Drag an image view from the library into a view
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-30b.png)
+
+# Default appearance
+
+No image yet
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-30c.png)
+
+# Select your assets
+
+Currently, only an app icon
+
+This is where your image resources go
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-30d.png)
+
+# Click the plus button
+
+Select "New Image Set"
+
+Rename the default image
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-30e.png)
+
+# Adding resources
+
+Typically, three images with @1x, @2x, and @3x suffixes
+
+Use highest resolution for 3x, then 66% and 33%
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-30f.png)
+
+# Selecting our image
+
+Enter the exact resource name in the Attributes Inspector
+
+---
+
+class: center, middle, imgresize
+
+![](../images/swift-30g.png)
+
+# Image added
+
+Try "Content Mode" to set fill
+
+Otherwise, use constraints to set size
+
+---
+
+# Assignment
+
+* Add view controllers for all your scenes
+* Make sure the view controller is properly connected
+* Ensure your code compiles and your app runs without crashing
+* Use at least one of any other thing we covered
+  * Switch statement
+  * Struct
+  * Image view
+  * Alert
+  * Conditional segues
+  * Array
+  * Dismissing a view
+
+---
+
+class: center, middle, imgresize
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
