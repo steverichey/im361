@@ -9,37 +9,20 @@
 import Foundation
 import UIKit
 
-struct Planet {
-    let name: String
-    let position: Int
-    let distanceFromSun: Float
-    let diameter: Float
-    let orbitalVelocity: Float
-    let rotationalVelocity: Float
-}
+class GreenViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var myTextField: UITextField!
 
-class GreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let array1 = [
-            1,
-            2,
-            3,
-            4,
-            5
-        ]
-
-        let array2 = [
-            "first",
-            "second",
-            "third",
-            "fourth",
-            5
-        ]
+        myTextField.delegate = self
     }
 
-    @IBAction func didPressGoBack(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let userText = textField.text!
+        print(userText)
+
+        textField.resignFirstResponder()
+        return true
     }
 }

@@ -16,20 +16,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        title = "This view is pink"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         switch identifier {
         case "greenView":
-            print("going to the green view")
-
             if isSegueAllowed {
                 return true
             } else {
                 return false
             }
         default:
-            print("going to some other view?")
             return true
         }
     }

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Managing Table Views</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* theme cloned from Xcode's "Dusk" theme */
+      .remark-slide-content {
+          background-color: #1E2028;
+          color: #FFFFFF;
+      }
+
+      .remark-slide-content.imgresize img {
+        max-width: 70%;
+        max-height: 40vh;
+      }
+
+      .remark-inline-code {
+          color: #41B645;
+      }
+
+      .remark-container {
+          background: #1E2028;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #4155D1;
+      }
+
+      h1 {
+          color: #DB2C38;
+      }
+
+      h2 {
+          color: #786DC4;
+      }
+
+      h3 {
+          color: #C67C48;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      table {
+        font-size: 0.7em;
+      }
+
+      th {
+        color: black;
+        font-weight: bold;
+        background-color: #DB2C38;
+      }
+
+      td:nth-child(1) {
+        color: black;
+        font-weight: bold;
+        background-color: #DB2C38;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, imgresize, imgresize
+
+# Managing Table Views
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2019
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-1.png)
+
+# Current example app
+
+Two view controllers
+
+One segue
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-2.gif)
+
+# UITextField
+
+Allows text input
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-3.png)
+
+# Text field settings
+
+In the Attributes inspector
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-4.png)
+
+# Enabling the software keyboard
+
+The simulator acts as if you have a hardware keyboard
+
+However, you can change this
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-5.png)
+
+# Text field appearance
+
+However, we'll need some code to get the text
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-6.gif)
+
+# Connecting to the text field
+
+Just like connecting to a button
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-7.png)
+
+# This view controller is not a delegate
+
+Easily fixed
+
+---
+
+# Put a delegate on it
+
+* Delegates perform an action in response to... something
+* In iOS like 90% of things are delegates
+* Make your code like this:
+
+```swift
+class GreenViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var myTextField: UITextField!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        myTextField.delegate = self
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+```
+
+* This will make the keyboard go away when you press enter
+
+---
+
+# Getting textfield text
+
+* Inside that function, you can also grab the text
+* Like this:
+
+```swift
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    let userText = textField.text!
+    print(userText)
+
+    textField.resignFirstResponder()
+    return true
+}
+```
+
+* Since `.text` is optional (it might be null) we need to use an exclamation point
+
+---
+
+# Focusing a text field
+
+* If you want to manually set focus on a text field, you can use:
+
+```swift
+textField.becomeFirstResponder()
+```
+
+* This is handy if you have a series of text fields, and the user needs to fill them all out
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-8.gif)
+
+# Adding a navigation controller
+
+Search for "navigation" in the object library and drag into storyboard
+
+Make this navigation controller the initial view controller
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-9.gif)
+
+# Moving our views into navigation
+
+Delete the default root view controller, add a new segue
+
+Ensure subsequent segues are "Show (e.g. Push)"
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-10.gif)
+
+# How navigation works
+
+Now we get a navigation bar and a back button
+
+Sadly, this breaks our `dismiss` call
+
+---
+
+# Popping the stack
+
+* With a navigation controller in control, you get a "stack" of views that you can "push" or "pop" new view controllers on to and off of
+* Change this:
+
+```swift
+@IBAction func didPressGoBack(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
+}
+```
+
+* To this:
+
+```swift
+@IBAction func didPressGoBack(_ sender: Any) {
+    navigationController?.popViewController(animated: true)
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-11.gif)
+
+# Titles in view controllers
+
+This works fine...
+
+... mostly ...
+
+---
+
+# iOS bug alert
+
+* If you add a title to the root view controller, it no worky
+* If you set the root view controller title to the same thing as in the storyboard, it no worky
+* Luckily, you can do this:
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    // Do any additional setup after loading the view.
+    title = "This view is pink"
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-12.gif)
+
+# Titles update
+
+Neat, but what if you want BIG TITLES
+
+---
+
+# Prefers large titles
+
+* Support for large titles added in iOS 11
+* You might want this
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    // Do any additional setup after loading the view.
+    title = "This view is pink"
+    navigationController?.navigationBar.prefersLargeTitles = true
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-13.gif)
+
+# Large titles
+
+Here's what they look like
+
+---
+
+# Adding a table view
+
+* Table views are highly common in iOS
+* You define one view that gets recycled
+* You need some kind of data to go in the table
+* With a couple of methods, you can have a working table
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-14.gif)
+
+# Table view controller
+
+Search and drag from the object library
+
+Provide some way to get there, set a title if needed
+
+---
+
+# Controller class
+
+* Add a new file
+* Implement the class as follows:
+
+```swift
+import UIKit
+
+class PlanetTableViewController: UITableViewController {
+    override func tableView(_ tableView: UITableView,
+                            numberOfRowsInSection section: Int) -> Int {
+        return 9
+    }
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-15.png)
+
+# Set a custom class
+
+If you don't do this, it won't work
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-16.png)
+
+# Datasource problems
+
+A table view needs a source for cells
+
+Lets set up a cell
+
+---
+
+# Tableview datasource
+
+* Using a UITableViewController handles a lot of things for us
+* Really all we need is to provide a number of rows, and cells
+* Add this:
+
+```swift
+class PlanetTableViewController: UITableViewController {
+    ...
+
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(frame: .zero)
+        cell.backgroundColor = .purple
+        return cell
+    }
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-17.png)
+
+# Nine purple cells
+
+Why do we still have lines below?
+
+We need to add a footer to stop this
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-18.gif)
+
+# Adding a table footer
+
+Just drag-and-drop a plain view to the table
+
+Make sure it is under the "Table View Cell"
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-19.png)
+
+# No extra lines
+
+How about adding content to the views?
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-20.gif)
+
+# Adding views to the cell
+
+The "Table View Cell" here is a prototype
+
+Set it up to look like the cell that will repeat
+
+---
+
+# Coding our table view cell
+
+* We need a class so we can connect our cell to our data
+* As the table recycles views, the cell will get reused
+* Mostly, this will just hold a few IBOutlet properties
+* In a new file, add this:
+
+```swift
+import UIKit
+
+class PlanetViewCell: UITableViewCell {
+
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-21.gif)
+
+# Set a cell custom class
+
+Very similar to setting a class on a view controller
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-22.gif)
+
+# Connecting our cells
+
+Use the Connections inspector to link labels
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-23.png)
+
+# Very important: reuse IDs
+
+In order to reuse table cells, we need an identifier
+
+This can be anything; I usually make it the name of the class
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-24.png)
+
+# Your cell should look like this
+
+Approximately
+
+At least some kind of outlet connections
+
+---
+
+# Updating a cell
+
+* We don't have data just yet, but let's set some placeholder text on our cells
+* Update the `cellForRowAt` method to the following:
+
+```swift
+override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlanetViewCell") as? PlanetViewCell else {
+        fatalError("No cell available")
+    }
+
+    cell.firstLabel.text = "henlo"
+    cell.secondLabel.text = "stinky"
+    cell.thirdLabel.text = "linzard"
+
+    return cell
+}
+```
+
+* The guard statement is a bit dense...
+
+---
+
+# Cell updates
+
+```swift
+guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlanetViewCell") as? PlanetViewCell else {
+    fatalError("No cell available")
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-25.png)
+
+# Nine cells with placeholder data
+
+Let's create some data
+
+---
+
+# Creating data
+
+* First, create a struct to hold data:
+
+```swift
+struct Planet {
+    let name: String
+    let position: Int
+    let distanceFromSun: Float
+}
+```
+
+* Then, create an array in the table view controller:
+
+```swift
+class PlanetTableViewController: UITableViewController {
+    let data = [
+        Planet(name: "Mercury", position: 1, distanceFromSun: 0.47),
+        Planet(name: "Venus", position: 2, distanceFromSun: 0.72),
+        Planet(name: "Earth", position: 3, distanceFromSun:  0.983),
+        Planet(name: "Mars", position: 4, distanceFromSun: 1.542),
+        Planet(name: "Jupiter", position: 5, distanceFromSun: 5.2),
+        Planet(name: "Saturn", position: 6, distanceFromSun: 10.07),
+        Planet(name: "Uranus", position: 8, distanceFromSun: 18.4),
+        Planet(name: "Neptune", position: 7, distanceFromSun: 29.8),
+        Planet(name: "Pluto", position: 9, distanceFromSun: 29.7)
+    ]
+```
+
+---
+
+# How many rows?
+
+* Now, we want our table to have the same number of rows as we have data
+
+```swift
+override func tableView(_ tableView: UITableView,
+                        numberOfRowsInSection section: Int) -> Int {
+    return data.count
+}
+```
+
+---
+
+# Using numbers as text
+
+* In Swift, we can use string concatenation to put a property into a string
+* It looks like this:
+
+```swift
+cell.secondLabel.text = "Position: \(planet.position)"
+```
+
+* Use double quotes like normal
+* Put a `\(` in front of the code
+* Put a `)` after the code
+* Stuff inside the parentheses is evaluated
+
+---
+
+# Getting data in our cells
+
+* We can use the `indexPath.row` to index the array
+* This will let us get one piece of data (in my case, a planet) and use it to set text to labels
+
+```swift
+override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = ... else {
+        ...
+    }
+
+    let planet = data[indexPath.row]
+
+    cell.firstLabel.text = planet.name
+    cell.secondLabel.text = "Position: \(planet.position)"
+    cell.thirdLabel.text = "\(planet.distanceFromSun) AU"
+
+    return cell
+}
+```
+
+---
+
+class: center, middle, imgresize
+
+![](../images/table-views-26.png)
+
+# We did it
+
+Cells are updated with data from our array
+
+This would work pretty well for 9 or 900 rows
+
+---
+
+# Assignment
+
+* Add one of the following to your project:
+  * UITextField
+  * UINavigationController
+  * UITableViewController
+* If you haven't looked yet, Apple's developer documentation is pretty good
+
+---
+
+class: center, middle, imgresize
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
