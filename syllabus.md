@@ -61,13 +61,13 @@ Lessons are available [here](https://github.com/steverichey/im361#lessons).
 | Monday, April 1        | B7. Using Device Sensors                        | Beta Android App           | Apr 3  | 5     |
 | Wednesday, April 3     | B8. QA and Code Review                          | Final Android App          | Apr 8  | 100   |
 | Monday, April 8        | C1. Intro to Xcode                              | Initial App Repo           | Apr 10 | 5     |
-| Wednesday, April 10    | C2. Intro to Objective-C & Swift                | Basic App                  | Apr 15 | 5     |
-| Monday, April 15       | C3. Interface Builder                           | App with Custom UI         | Apr 17 | 5     |
-| Wednesday, April 17    | C4. Tables and lists                            | App with UITableView       | Apr 22 | 5     |
-| Monday, April 22       | C5. Application resources and localization      | App with Resources         | Apr 24 | 5     |
-| Wednesday, April 24    | C6. UI Testing                                  | App with UI Tests          | Apr 29 | 5     |
-| Monday, April 29       | C7. Intro to Machine Learning                   | Image Classifier           | May 1  | 5     |
-| Wednesday, May 1       | C8. App Store & TestFlight; QA and Code Review  | Beta iOS App               | May 6  | 5     |
+| Wednesday, April 10    | C2. Intro to Interface Builder                  | Basic App                  | Apr 15 | 5     |
+| Monday, April 15       | C3. Intro to Swift                              | App with Custom UI         | Apr 17 | 5     |
+| Wednesday, April 17    | C4. Working with Table                          | App with UITableView       | Apr 22 | 5     |
+| Monday, April 22       | C5. App Design Review                           | Updated App                | Apr 24 | 5     |
+| Wednesday, April 24    | C6. UI and Unit Testing                         | UI/Unit Tests (in class)   | Apr 29 | 5     |
+| Monday, April 29       | C7. CreateML                                    | Image Classifier (in class)| May 1  | 5     |
+| Wednesday, May 1       | C8. QA and Code Review                          | Beta iOS App               | May 6  | 5     |
 | Monday, May 6          | Final Review                                    | Final iOS App              | May 15 | 100   |
 
 Total available course points: 420.

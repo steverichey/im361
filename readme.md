@@ -40,7 +40,7 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [C2. Intro to Interface Builder](https://steverichey.github.io/im361/lessons/C2-intro-to-interface-builder.html)
 * [C3. Intro to Swift](https://steverichey.github.io/im361/lessons/C3-basics-of-swift.html)
 * [C4. Working with Tables](https://steverichey.github.io/im361/lessons/C4-managing-table-views.html)
-* C5. Application Resources and Localization
+* C5. App Design Review
 * C6. Automated UI Testing
 * C7. CreateML and Machine Learning
 
