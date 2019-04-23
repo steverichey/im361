@@ -10,31 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
-    var isSegueAllowed = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "This view is pink"
+        title = "InterPlan"
         navigationController?.navigationBar.prefersLargeTitles = true
-    }
-
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        switch identifier {
-        case "greenView":
-            if isSegueAllowed {
-                return true
-            } else {
-                return false
-            }
-        default:
-            return true
-        }
-    }
-
-    @IBAction func didPressSwitch(_ sender: Any) {
-        isSegueAllowed = !isSegueAllowed
     }
 
     @IBAction func didPressShowAlert(_ sender: Any) {
