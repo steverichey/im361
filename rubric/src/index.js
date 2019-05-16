@@ -312,9 +312,9 @@ var app = new Vue({
           },
           {
             label: "ST4A",
-            question: "Does the application produce warnings or errors when running in the simulator?",
+            question: "Does the application produce warnings or errors when running in the emulator?",
             options: [
-              "The application crashes when running in the simulator",
+              "The application crashes when running in the emulator",
               "A few errors appear while the app is running, but the app does not crash",
               "Some warnings appear while the app is running, but they do not substantially impact the app",
               "Very few warnings are produced by the application when running",
