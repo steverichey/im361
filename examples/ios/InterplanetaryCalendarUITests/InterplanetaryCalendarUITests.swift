@@ -29,6 +29,15 @@ class InterplanetaryCalendarUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+        let app = XCUIApplication()
+        app.buttons["View Planets"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Mars"]/*[[".cells.staticTexts[\"Mars\"]",".staticTexts[\"Mars\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
+        app.navigationBars["A list of planets"].buttons["InterPlan"].tap()
+        app.buttons["View Credits"].tap()
+        app.statusBars.otherElements["6:05 PM"]/*@START_MENU_TOKEN@*/.swipeLeft()/*[[".swipeDown()",".swipeLeft()"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        app.navigationBars["Credits"].buttons["InterPlan"].tap()
+
     }
 
 }

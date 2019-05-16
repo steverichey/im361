@@ -45,6 +45,16 @@ class PlanetTableViewController: UITableViewController {
         cell.secondLabel.text = "Position: \(planet.position)"
         cell.thirdLabel.text = "\(planet.distanceFromSun) AU"
 
+        if planet.name == "Mars" {
+            cell.bgImageView.image = #imageLiteral(resourceName: "Mars")
+        } else if planet.name == "Earth" {
+            cell.bgImageView.image = #imageLiteral(resourceName: "Earth")
+        } else if planet.name == "Venus" {
+            cell.bgImageView.image = #imageLiteral(resourceName: "Venus")
+        } else {
+            cell.bgImageView.image = nil
+        }
+
         return cell
     }
 }

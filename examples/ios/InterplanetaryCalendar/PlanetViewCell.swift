@@ -13,4 +13,5 @@ class PlanetViewCell: UITableViewCell {
     @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var secondLabel: UILabel!
     @IBOutlet weak var thirdLabel: UILabel!
+    @IBOutlet weak var bgImageView: UIImageView!
 }

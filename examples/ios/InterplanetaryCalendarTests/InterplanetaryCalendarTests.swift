@@ -22,6 +22,8 @@ class InterplanetaryCalendarTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let planet = Planet(name: "Mario Planet", position: 64, distanceFromSun: 3.14)
+        XCTAssertEqual("Mario Planet", planet.name)
     }
 
     func testPerformanceExample() {

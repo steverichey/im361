@@ -8,15 +8,26 @@
 
 import UIKit
 
+// venus: https://unsplash.com/photos/1w_Vy0HpxzU
+// earth: https://unsplash.com/photos/yZygONrUBe8
+// mars: https://unsplash.com/photos/pZ-XFIrJMtE
+
 class ViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
 
-        // Do any additional setup after loading the view.
-        title = "InterPlan"
-        navigationController?.navigationBar.prefersLargeTitles = true
+
+    @IBAction func didPressButton(_ sender: Any) {
+        let url = URL(string: "com.mirareality.origami://")!
+
+        print("can open? \(UIApplication.shared.canOpenURL(url))")
+
+        UIApplication.shared.open(url, options: [:]) { success in
+            print("success? \(success)")
+        }
     }
 
     @IBAction func didPressShowAlert(_ sender: Any) {
