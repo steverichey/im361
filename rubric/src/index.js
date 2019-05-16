@@ -324,7 +324,7 @@ var app = new Vue({
           },
           {
             label: "ST5A",
-            question: "Does the application's build process produce warnings or errors?",
+            question: "Does the Gradle build process produce warnings or errors?",
             options: [
               "The application completely fails to build",
               "The application builds with many warnings, with several severe warnings",
