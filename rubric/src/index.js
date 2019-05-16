@@ -214,9 +214,9 @@ var app = new Vue({
             question: "Does the HTML for the application leverage semantic markup with proper attributes?",
             options: [
               "HTML validation absolutely fails, leading to rendering errors in the browser",
-              "",
+              "HTML validation has a small number of significant issues, but no rendering errors",
               "HTML validation may have some minor issues, but semantic tags are mostly correct",
-              "",
+              "HTML is almost entirely correct, with one or two incorrect tags",
               "HTML is valid, well-formed, and easily readable with appropriate use of semantic tags"
             ],
             picked: 2
@@ -226,9 +226,9 @@ var app = new Vue({
             question: "Is the JavaScript clear to the reader while leveraging features available in Vue?",
             options: [
               "JavaScript is not valid, semantically unclear, and the syntax is incorrect",
-              "",
+              "JavaScript has incorrect formatting in many places, but is syntactically correct",
               "JavaScript may have incorrect formatting or function in some places, but is mostly correct",
-              "",
+              "JavaScript format is nearly all correct with very few exceptions",
               "JavaScript format aids comprehension in significant ways"
             ],
             picked: 2
@@ -238,9 +238,9 @@ var app = new Vue({
             question: "Does the CSS properly style the content, with clear style rules, that apply evenly throughout the content?",
             options: [
               "CSS rules are extremely narrow, use overrides, or use incorrect syntax",
-              "",
+              "Most CSS is correctly written, but in many cases uses incorrect syntax",
               "CSS rules are logical and the proper syntax is used throughout with few exceptions",
-              "",
+              "Most CSS is written well, but may be confusing in some places",
               "All CSS is well-written, well-formatted, and easy to understand"
             ],
             picked: 2
@@ -250,21 +250,21 @@ var app = new Vue({
             question: "Does the application produce errors or warnings when running in the browser?",
             options: [
               "Numerous errors and warnings are produced at runtime, at all levels of the application",
-              "",
-              "No errors are produced in the browser console, but some warnings may appear",
-              "",
+              "Some errors are produced in the browser console",
+              "No errors are produced in the browser console, but several warnings may appear",
+              "A few warnings may appear while the application is running",
               "When the application is running, no errors or warnings are displayed in the console"
             ],
             picked: 2
           },
           {
             label: "ST5W",
-            question: "Does the application's build process produce errors or warnings?",
+            question: "Does the Webpack build process produce errors or warnings?",
             options: [
               "Numerous errors and warnings are produced at buildtime when using the standard build process",
-              "",
+              "A few errors are produced by the build process",
               "No errors are produced at build time, but some warnings may appear",
-              "",
+              "Few warnings are produced by the web application build process",
               "When the application is built, no errors or warnings are produced by the build tools"
             ],
             picked: 2
