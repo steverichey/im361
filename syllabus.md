@@ -2,18 +2,18 @@
 
 Advanced User Experience
 
-| Info       | Detail                            |
-| ---------- | --------------------------------- |
-| Instructor | Steve Richey                      |
-| Class time | Monday/Wednesday at 5:30PM-6:45PM |
-| Location   | Duryea Parking Deck               |
-| Email      | srichey@fsmail.bradley.edu        |
+| Info       | Detail                              |
+| ---------- | ----------------------------------- |
+| Instructor | Steve Richey                        |
+| Class time | Monday & Wednesday at 5:30PM-6:45PM |
+| Location   | GCC 205                             |
+| Email      | srichey [at] fsmail.bradley.edu     |
 
 This syllabus, and related information about the course, is available [here](https://github.com/steverichey/im361).
 
 ## Overview
 
-Development techniques and practices for websites and mobile application user interfaces and experiences. The course will be taught through lectures, demonstrations, and exercises using applications and scripting languages. Hands-on work will be required during class as well as considerable out of class production time.
+Development techniques and practices for web and mobile application user interfaces and experiences. The course will be taught through lectures, demonstrations, and exercises using applications and scripting languages. Hands-on work will be required during class as well as out of class development time.
 
 ## Resources
 
@@ -21,7 +21,7 @@ Please note that all required software will be discussed in class, including the
 
 * Personal computer, per the Interactive Media department's [laptop requirement](https://www.bradley.edu/academic/departments/interactive/laptop/)
 * Terminal program
-* Text editor: BBEdit/TextWrangler, [Notepad++](https://notepad-plus-plus.org/), [Atom](https://atom.io/), Emacs, [Sublime Text](https://www.sublimetext.com/), [Brackets](http://brackets.io/)
+* Text editor: [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [Brackets](http://brackets.io/), [Notepad++](https://notepad-plus-plus.org/)
 * [Git](https://git-scm.com)
 * [NodeJS](https://nodejs.org/en)
 * [Android Studio](https://developer.android.com/studio)
@@ -35,46 +35,68 @@ Students will learn the basis of following introductory UXD developmental practi
 
 ## Schedule
 
-Lessons are available [here](https://github.com/steverichey/im361#lessons).
+Lessons are available [here](https://github.com/steverichey/im361#lessons). Aside from in-class exercises, assignments are due at noon on the day of the next class.
 
 | Dates                  | Class                                           | Assignments                | Due    | Value |
 | ---------------------- | ----------------------------------------------- | -------------------------- | ------ | ----- |
-| Wednesday, January 23  | 00. Class Overview; What Is Computation?        | Designs                    | Jan 28 | 5     |
-| Monday, January 28     | 01. Git and Github                              | Your First Repo            | Jan 30 | 5     |
-| Wednesday, January 30  | No class due to weather                         |                            | Feb 4  |       |
-| Monday, February 4     | A1. Intro to JavaScript & NodeJS                | Interesting JavaScript     | Feb 6  | 5     |
-| Wednesday, February 6  | A2. Intro to Web Frameworks                     | Website: Origins           | Feb 11 | 5     |
-| Monday, February 11    | A3. HTML, Semantic Markup, and GitHub Pages     | Semantic markup of design  | Feb 13 | 5     |
-| Wednesday, February 13 | A4. Intro to CSS and Style                      | Styled design              | Feb 18 | 5     |
-| Monday, February 18    | A5. Advanced HTML and Vue                       | Full site markup           | Feb 20 | 5     |
-| Wednesday, February 20 | A6. Advanced CSS and Vue                        | Animated site              | Feb 25 | 5     |
-| Monday, February 25    | A7. Advanced JS and Vue                         | Beta Site                  | Feb 27 | 5     |
-| Wednesday, February 27 | A8. QA and Code Review                          | Final Site                 | Mar 4  | 100   |
-| Monday, March 4        | B1. Intro to Android Studio                     | Initial App Repo           | Mar 6  | 5     |
-| Wednesday, March 6     | B2. Android Layouts and Interaction             | Button and Layout Binding  | Mar 11 | 5     |
-| Monday, March 11       | B3. Android Emulators and Resources             | Color and String Resources | Mar 13 | 5     |
-| Wednesday, March 13    | B4. Intro to Android Layouts                    | First View Layout          | Mar 18 | 5     |
-| Monday, March 18       | Spring break                                    |                            |        |       |
-| Wednesday, March 20    | Spring break                                    |                            |        |       |
-| Monday, March 25       | B5. Using APIs in Android Applications          | In-class API code          | Mar 27 | 5     |
-| Wednesday, March 27    | B6. APIs, Animations, and Multiple Activities   | App with animation         | Apr 1  | 5     |
-| Monday, April 1        | B7. Using Device Sensors                        | Beta Android App           | Apr 3  | 5     |
-| Wednesday, April 3     | B8. QA and Code Review                          | Final Android App          | Apr 8  | 100   |
-| Monday, April 8        | C1. Intro to Xcode                              | Initial App Repo           | Apr 10 | 5     |
-| Wednesday, April 10    | C2. Intro to Interface Builder                  | Basic App                  | Apr 15 | 5     |
-| Monday, April 15       | C3. Intro to Swift                              | App with Custom UI         | Apr 17 | 5     |
-| Wednesday, April 17    | C4. Working with Table                          | App with UITableView       | Apr 22 | 5     |
-| Monday, April 22       | C5. App Design Review                           | Updated App                | Apr 24 | 5     |
-| Wednesday, April 24    | C6. UI and Unit Testing                         | UI/Unit Tests (in class)   | Apr 29 | 5     |
-| Monday, April 29       | C7. CreateML                                    | Image Classifier (in class)| May 1  | 5     |
-| Wednesday, May 1       | C8. QA and Code Review                          | Beta iOS App               | May 6  | 5     |
-| Monday, May 6          | Final Review                                    | Final iOS App              | May 15 | 100   |
+| Wednesday, January 22  | 001. Class Overview; What Is Computation?       | Designs                    | Jan 27 | 5     |
+| Monday, January 27     | 002. Computer Science for Beginners             | Quiz                       | Class  | 5     |
+| Wednesday, January 29  | 003. Git and Github                             | Web app repo               | Feb 3  | 5     |
+| Monday, February 3     | A01. Intro to JavaScript & NodeJS               | Web app state object       | Feb 5  | 5     |
+| Wednesday, February 5  | A02. Intro to Web Frameworks                    | Viewable web app           | Feb 10 | 5     |
+| Monday, February 10    | A03. HTML, Semantic Markup, and GitHub Pages    | Semantic markup            | Feb 12 | 5     |
+| Wednesday, February 12 | A04. Intro to CSS and Style                     | Styled design              | Feb 17 | 5     |
+| Monday, February 17    | A05. Advanced HTML and Vue                      | Full site markup           | Feb 19 | 5     |
+| Wednesday, February 19 | A06. Advanced CSS and Vue                       | Animated site              | Feb 24 | 5     |
+| Monday, February 24    | A07. Advanced JS and Vue                        | Beta web app               | Feb 26 | 5     |
+| Wednesday, February 26 | QA and Code Review                              | Final web app              | Mar 2  | 100   |
+| Monday, March 2        | B01. Intro to Android Studio                    | Android app repo           | Mar 4  | 5     |
+| Wednesday, March 4     | B02. Intro to Kotlin and Resources              | Color and string resources | Mar 9  | 5     |
+| Monday, March 9        | B03. Android Layouts and Interaction            | Beta Android app           | Mar 11 | 5     |
+| Wednesday, March 11    | QA and Code Review                              | Final Android app          | Mar 23 | 50    |
+| Monday, March 16       | Spring break                                    |                            |        |       |
+| Wednesday, March 18    | Spring break                                    |                            |        |       |
+| Monday, March 23       | C01. Intro to Xcode                             | iOS App Repo               | Mar 25 | 5     |
+| Wednesday, March 25    | C02. Intro to Swift                             | Quiz                       | Mar 30 | 5     |
+| Monday, March 30       | C03. Intro to SwiftUI                           | Beta Android App           | Apr 1  | 5     |
+| Wednesday, April 1     | C04. Asset Catalogs                             | Final Android App          | Apr 6  | 5     |
+| Monday, April 6        | C05. Working with Multiple Views                | Initial App Repo           | Apr 8  | 5     |
+| Wednesday, April 8     | 004. Easy Neural Networks with CreateML         | Image Classifier           | Class  | 5     |
+| Monday, April 13       | C06. UI and Unit Testing in Xcode               | UI and unit tests          | Class  | 5     |
+| Wednesday, April 15    | C07. Managing State                             | Mutable app state data     | Apr 15 | 5     |
+| Monday, April 20       | C08. Working with Data Sources                  | Data sources               | Apr 20 | 5     |
+| Wednesday, April 22    | C09. Saving Data and User Preferences           | User settings              | Apr 22 | 5     |
+| Monday, April 27       | C10. Advanced iOS Development                   | Beta iOS App               | Apr 29 | 5     |
+| Wednesday, April 29    | QA and Code Review                              | Final iOS App              | May 6  | 100   |
+| Monday, May 6          | Final Review                                    |                            |        |       |
 
-Total available course points: 420.
+Total available course points: 375.
+
+## Course Assessment
+
+Projects will be graded based on their adherence to specific criteria as well as their effectiveness. Sakai will be used for grades in accordance with University policy. Most coursework will be handled via GitHub; some coursework may be submitted via Sakai.
+
+| Letter | Meaning   | Percent     | Info                                                                 |
+| ------ | --------- | ----------- | -------------------------------------------------------------------- |
+| A      | Excellent | ≥ 90%       | Superior competence and performance far beyond minimum requirements. |
+| B      | Good      | <90%, ≥ 80% | Above average competence and fulfills beyond minimum.                |
+| C      | Average   | <80%, ≥ 70% | Average competence and meets minimum requirements.                   |
+| D      | Deficient | <70%, ≥ 60% | Deficient competence and partially fulfills minimum requirements.    |
+| F      | Failing   | <60%        | Minimal competence with material and minimum requirements not met.   |
+
+Large projects (the web, Android, and iOS apps) will be evaluated using [this rubric](https://steverichey.github.io/im361/rubric/). Smaller assignments are evaluated on the following five point scale.
+
+| Points | Meaning                                             |
+| ------ | --------------------------------------------------- |
+| 5      | Submission greatly exceeds standards.               |
+| 4      | Submission exceeds standards in some aspects.       |
+| 3      | Submission meets standards.                         |
+| 2      | Submission fails to meet standards in some aspects. |
+| 1      | Submission completely fails to meet standards.      |
 
 ## Accommodation
 
-In accordance with University procedures, any student who feels they may need an accommodation based on the impact of a disability should contact me privately to discuss your specific needs. Students requesting accommodations must register with [Student Access Services](https://www.bradley.edu/offices/student/sas/) located at 100 Heitz Hall and provide appropriate documentation to verify eligibility. You can reach the SAS at (309) 677-3654 or find more information at the Student Access Services website.
+In accordance with University procedures, any student who feels they may need an accommodation based on the impact of a disability should contact me privately to discuss your specific needs. Students requesting accommodations must register with [Student Access Services](https://www.bradley.edu/offices/student/sas/) located at 100 Heitz Hall and provide appropriate documentation to verify eligibility. You can reach the SAS at [(309) 677-3654](tel:+13096773654) or find more information at the Student Access Services website.
 
 ## Academic Honesty
 
@@ -93,10 +115,8 @@ This course is designed to present some of the basic skills necessary to develop
 * Develop mobile-first websites using HTML5, CSS, and JavaScript
 * Leverage modern site development technologies like Webpack and Vue
 * Leverage open source solutions using package management tools
-* Develop mobile applications for Android writing Kotlin and Java in Android Studio
-* Leverage web APIs for mobile applications
-* Leverage device sensors to enhance mobile applications
-* Develop mobile applications for iOS writing Swift and Objective-C in Xcode
+* Develop mobile applications for Android writing Kotlin in Android Studio
+* Develop mobile applications for iOS writing Swift in Xcode
 * Leverage UI tools to create resolution-independent interfaces
 * Leverage testing frameworks to ensure code runs as expected
 
@@ -107,18 +127,6 @@ You can only be successful in this class if you participate and engage in the ma
 ## Social Media and Classroom Distractions
 
 It is considered professional etiquette when in a meeting to turn off your phone and give full attention to the subject being discussed. Students in this course are expected to do the same. If you text, use Facebook, email, etc., the instructor reserves the right to ask students engaged in this type of behavior to leave the class. It is then the student’s responsibility to make up any lost or missing work from the class dismissal. Lack of professionalism by engagement in social media during class will reduce your grade.
-
-## Course Assessment
-
-Projects will be graded based on their adherence to specific criteria as well as their effectiveness. Sakai will be used for grades in accordance with University policy. Most coursework will be handled via GitHub; some coursework may be submitted via Sakai.
-
-| Letter | Meaning   | Percent     | Info                                                                 |
-| ------ | --------- | ----------- | -------------------------------------------------------------------- |
-| A      | Excellent | ≥ 90%       | Superior competence and performance far beyond minimum requirements. |
-| B      | Good      | <90%, ≥ 80% | Above average competence and fulfills beyond minimum.                |
-| C      | Average   | <80%, ≥ 70% | Average competence and meets minimum requirements.                   |
-| D      | Deficient | <70%, ≥ 60% | Deficient competence and partially fulfills minimum requirements.    |
-| F      | Failing   | <60%        | Minimal competence with material and minimum requirements not met.   |
 
 ## Student Privacy
 

@@ -11,38 +11,39 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 
 ## Lessons
 
-* [00. What Is Computation?](https://steverichey.github.io/im361/lessons/00-what-is-computation.html)
-* [01. An Introduction to Git and Github](https://steverichey.github.io/im361/lessons/01-intro-to-git.html)
+* [001. What Is Computation?](https://steverichey.github.io/im361/lessons/00-what-is-computation.html)
+* [002. Computer Science for Beginners](#)
+* [003. An Introduction to Git and Github](https://steverichey.github.io/im361/lessons/01-intro-to-git.html)
+* [004. Easy Neural Networks with CreateML](#)
 
 ### Web Development Project
 
-* [A1. Intro to JavaScript & NodeJS](https://steverichey.github.io/im361/lessons/A1-node-js.html)
-* [A2. Intro to Web Frameworks](https://steverichey.github.io/im361/lessons/A2-web-frameworks.html)
-* [A3. HTML, Semantic Markup, and GitHub Pages](https://steverichey.github.io/im361/lessons/A3-html.html)
-* [A4. Intro to CSS and Style](https://steverichey.github.io/im361/lessons/A4-css.html)
-* [A5. Advanced HTML and Vue](https://steverichey.github.io/im361/lessons/A5-vue-and-html.html)
-* [A6. Advanced CSS and Vue](https://steverichey.github.io/im361/lessons/A6-css-vue.html)
-* [A7. Advanced JS and Vue](https://steverichey.github.io/im361/lessons/A7-js-and-vue.html)
+* [A01. Intro to JavaScript & NodeJS](#)
+* [A02. Intro to Web Frameworks](#)
+* [A03. HTML, Semantic Markup, and GitHub Pages](#)
+* [A04. Intro to CSS and Style](#)
+* [A05. Advanced HTML and Vue](#)
+* [A06. Advanced CSS and Vue](#)
+* [A07. Advanced JS and Vue](#)
 
 ### Android Development Project
 
-* [B1. Intro to Android Studio](https://steverichey.github.io/im361/lessons/B1-intro-to-android-studio.html)
-* [B2. Android Layouts and Interaction](https://steverichey.github.io/im361/lessons/B2-android-layouts-and-interaction.html)
-* [B3. Android Emulators and Resources](https://steverichey.github.io/im361/lessons/B3-android-emulators-and-resources.html)
-* [B4. Intro to Android Layouts](https://steverichey.github.io/im361/lessons/B4-android-layouts.html)
-* [B5. Using APIs in Android Applications](https://steverichey.github.io/im361/lessons/B5-android-apis.html)
-* [B6. APIs, Animations, and Multiple Activities](https://steverichey.github.io/im361/lessons/B6-android-anims-activities.html)
-* [B7. Using Android Device Sensors](https://steverichey.github.io/im361/lessons/B7-android-sensors.html)
+* [B01. Intro to Android Studio](#)
+* [B02. Intro to Kotlin and Resources](#)
+* [B03. Android Layouts and Interaction](#)
 
 ### iOS Development Project
 
-* [C1. Intro to Xcode](https://steverichey.github.io/im361/lessons/C1-intro-to-xcode.html)
-* [C2. Intro to Interface Builder](https://steverichey.github.io/im361/lessons/C2-intro-to-interface-builder.html)
-* [C3. Intro to Swift](https://steverichey.github.io/im361/lessons/C3-basics-of-swift.html)
-* [C4. Working with Tables](https://steverichey.github.io/im361/lessons/C4-managing-table-views.html)
-* C5. App Design Review
-* C6. Automated UI Testing
-* C7. CreateML and Machine Learning
+* [C01. Intro to Xcode](#)
+* [C02. Intro to Swift](#)
+* [C03. Intro to SwiftUI](#)
+* [C04. Asset Catalogs](#)
+* [C05. Working with Multiple Views](#)
+* [C06. UI and Unit Testing in Xcode](#)
+* [C07. Managing State](#)
+* [C08. Working with Data Sources](#)
+* [C09. Saving Data and User Preferences](#)
+* [C10. Advanced iOS Development](#)
 
 ## Web Development Project Resources
 
