@@ -577,8 +577,6 @@ var app = new Vue({
       this.currentSpecificTechnicalOptionIndex = event.target.selectedIndex;
       this.categories.pop();
       this.categories.push(this.specificTechnicalOptions[this.currentSpecificTechnicalOptionIndex]);
-      // var index = this.specificTechnicalOptions.indexOf(option);
-      // console.log(option);
     }
   },
   created() {
