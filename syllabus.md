@@ -84,7 +84,7 @@ Projects will be graded based on their adherence to specific criteria as well as
 | D      | Deficient | <70%, ≥ 60% | Deficient competence and partially fulfills minimum requirements.    |
 | F      | Failing   | <60%        | Minimal competence with material and minimum requirements not met.   |
 
-Large projects (the web, Android, and iOS apps) will be evaluated using [this rubric](https://steverichey.github.io/im361/rubric/). Smaller assignments are evaluated on the following five point scale.
+Large projects (the web, Android, and iOS apps) will be evaluated using [this rubric](https://steverichey.github.io/im361/rubric/dist). Smaller assignments are evaluated on the following five point scale.
 
 | Points | Meaning                                             |
 | ------ | --------------------------------------------------- |

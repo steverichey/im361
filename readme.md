@@ -7,7 +7,7 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [Syllabus](./syllabus.md)
 * [Web project setup](./web-setup.md)
 * [Example web project](./examples/web)
-* [Grading rubric](https://steverichey.github.io/im361/rubric/)
+* [Grading rubric](https://steverichey.github.io/im361/rubric/dist)
 
 ## Lessons
 
