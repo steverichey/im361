@@ -1,0 +1,38 @@
+<ul>
+  <li v-for="(category, categoryIndex) in categories">
+    <h2>{{ category.name }}</h2>
+    <ul v-if="category.elements">
+      <li v-for="(element, elementIndex) in category.elements">
+        <h3 v-if="element.question"><span class="elementLabel">{{ element.label }}</span> {{ element.question }}</h3>
+        <h3 v-else>Missing question</h3>
+        <ul v-if="canShowOptions(element)">
+          <li v-for="(option, optionIndex) in element.options">
+            <p v-if="canShowSelected(element)">
+              <input type="radio" v-bind:id="'option' + categoryIndex + elementIndex + optionIndex" v-bind:value="optionIndex" v-model="element.picked">
+              <label class="selectableOption" v-bind:class="{ selectedOption: optionIndex == element.picked }" v-bind:for="'option' + categoryIndex + elementIndex + optionIndex">{{ option }}</label>
+            </p>
+            <p v-else>{{ option }}</p>
+          </li>
+        </ul>
+        <p v-else>No options</p>
+        <p v-if="canShowSelected(element)">
+          Selected: {{ element.picked + 1 }} / {{ element.options.length }}
+        </p>
+      </li>
+    </ul>
+    <p v-else>No elements</p>
+    <p>{{ category.name }} total: {{ categoryTotal(category) }} / {{ categoryMax(category) }}</p>
+    <p>{{ category.name }} score: {{ categoryScore(category) }}%</p>
+  </li>
+</ul>
+<h2>Comments</h2>
+<div v-if="isInvalidComments" class="error">Warning: comment includes colon, which will lead to parsing errors.</div>
+<textarea v-model="comments" cols="60" rows="10"></textarea>
+<h2>Total</h2>
+<p>Total: {{ overallTotal }} / {{ overallMax }}</p>
+<p>Raw score: {{ overallScore }}%</p>
+<p>Weight formula: {{ overallScore }} * {{ weightMultiplier }} + {{ weightAdd }}</p>
+<p>Weighted score: {{ weightedScore }}%</p>
+<p class="grades" v-bind:class="'grade' + weightedGrade">Grade: {{ weightedGrade }}</p>
+<a v-if="studentName" v-bind:href="downloadLink" v-bind:download="downloadFilename">Download grade summary</a>
+<div v-else>Cannot download: no student name</div>

@@ -1,0 +1,10 @@
+<h1>IM 361 Rubric</h1>
+<p>A rubric for <a href="https://github.com/steverichey/im361">IM361</a>.</p>
+<p>Load file: <input type="file" id="file" ref="file" accept="text/plain" v-on:change="uploadFile()"/></p>
+<p v-if="uploadedFile">Loaded "{{ uploadedFile.name }}" with {{ uploadedFile.size }} bytes</p>
+<p>Enter student name: <input v-model="studentName"></p>
+<select v-on:change="onSpecificTechnicalChange">
+  <option v-for="option in specificTechnicalOptions" v-bind:value="option">
+    {{ option.name }}
+  </option>
+</select>
