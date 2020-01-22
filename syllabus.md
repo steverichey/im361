@@ -96,13 +96,27 @@ Large projects (the web, Android, and iOS apps) will be evaluated using [this ru
 
 ## Accommodation
 
-In accordance with University procedures, any student who feels they may need an accommodation based on the impact of a disability should contact me privately to discuss your specific needs. Students requesting accommodations must register with [Student Access Services](https://www.bradley.edu/offices/student/sas/) located at 100 Heitz Hall and provide appropriate documentation to verify eligibility. You can reach the SAS at [(309) 677-3654](tel:+13096773654) or find more information at the Student Access Services website.
+The [Office of Student Access Services (SAS)](https://www.bradley.edu/offices/student/sas/) helps students with documented disabilities by facilitating accommodations that remove barrier to academic success. Students seeking such accommodations must register with SAS, which is located in 100 Heitz Hall. The phone number is (309) 677-3654. For additional related resources, go [here](https:// www.bradley.edu/offices/student/sas/studentresources/).
+
+In accordance with University procedures, if you have a documented disability and require accommodations to obtain equal access in this course, please contact me privately to discuss your specific needs. You must be registered with Student Access Services located at 100 Heitz Hall. You can reach the SAS at [(309) 677-3654](tel:+13096773654) or find more information at the Student Access Services website.
 
 ## Academic Honesty
 
-Academic dishonesty is a serious offense and will not be tolerated within this class and within the Department of Interactive Media. Any student found plagiarizing will receive a grade of “0” for the assignment and will be subject to disciplinary action under Bradley regulations. Plagiarizing on the final exam/project will render you an F for the course.
+### Academic Integrity
 
-Please note it is your responsibility as a student to understand what collaboration is, what the limits are, and to contact me if you are ever in doubt. Independent work is critical to the learning process. Please review your Student Handbook for more information.
+Plagiarism is a serious offense and all instances of it will be dealt with according to Bradley University’s policies and procedures. Students who submit plagiarized work, in whole or part, will receive a failing grade for that assignment and students who plagiarize also risk failing the course. Plagiarism is generally defined as using the ideas of another as your own. Plagiarism is not avoided by simply changing a few words or by paraphrasing the work of others. Click [here](http://www.lib.usm.edu/legacy/ plag/paraphrasing.php) to learn about the differences between paraphrasing and summarizing. All borrowed material -— not just quotes -— must be attributed through proper and clear citation of sources, (i.e., in Footnotes or Endnotes). When in doubt, reference it and ask your instructor! Click [here]( https://www.bradley.edu/campuslife/studenthandbook/policies/policies/cheating/) for an overview of Bradley University’s academic misconduct policies related to “Cheating and Plagiarism”.
+
+### Important Information
+
+Click [here](https://www.bradley.edu/campuslife/studenthandbook/) for the Student Handbook, which provides information on the Academic Calendar, Conduct and University Policies, Services for Students, and University Observed Holidays.
+
+### Standards of Conduct
+
+Bradley University is dedicated to a safe, supportive and non-discriminatory learning environment. It is the responsibility of all students to familiarize themselves with Bradley University policies regarding [Standards of Conduct](https://bradley.edu/campuslife/studenthandbook/policies/conduct/) and other University Policies. Click [here](https://www.bradley.edu/campuslife/studenthandbook/policies/) for direct access to Bradley University’s Standards of Conduct & University’s Policies (in the Student Handbook).
+
+### In-Class Discussion Guidelines
+
+We will have many discussions in this class. It is imperative that everyone be actively engaged in making our discussion space a safe one where all students feel comfortable sharing their thoughts. One of the best ways to do this is to remember that this is a scholarly discussion. All of our comments should be focused on the issues we are studying in class and we should rely on evidence from our course materials to support our arguments. All of us bring different backgrounds and experiences to the discussion. When we are exposed to a new perspective or idea, it enriches our learning. We will be respectful of others and strive to make our discussions inclusive of all voices.
 
 ## Late Work
 
@@ -143,6 +157,28 @@ Note that communicating about problems directly with us enables your growth and 
 ## Attendance
 
 Class attendance, learning, and letter grades are positively correlated. Unexcused absences may result in a zero for the week's work. Repeated unexcused absences may result in letter grade reductions for the project or entire course.
+
+## Services
+
+### Student Counseling Services
+
+The [Counseling Center](https://www.bradley.edu/campuslife/healthservices/counseling/) provides short term mental health counseling and related services to help students identify barriers, improve coping, and achieve personal and academic goals. It is located in the Markin Center, Room 52. The phone number is (309) 677-2700. The “after hours” phone number is (309) 677-3200. The email address is bradleyhealthservices [at] bradley.edu.
+
+### Health Services
+
+The [Health Services Office](https://www.bradley.edu/campuslife/healthservices/) provides care of general physical health and illness problems, as well as minor injuries, allergy issues, and medication management. It is located in the Markin Center, Room 101. The phone number is (309) 677-2700. The email address is bradleyhealthservices [at] bradley.edu.
+
+### Student Support Services
+
+[Student Support Services](https://www.bradley.edu/offices/student/support/) is designed to offer guidance to students in times of need. Its mission is to provide personal attention and resources to students as they work to achieve their academic and personal goals. Student Support Services serves as a major link between Academic Affairs and Student Affairs striving to improve student retention through positive communication and relationships with students, faculty, staff and families. It is located in Sisson Hall, Room 101 and 103. The phone number is (309) 677-3910.
+
+### Title IX
+
+Bradley University seeks to provide an environment that is free of bias, discrimination and harassment. Under Title IX, discrimination based on sex or gender is prohibited. If you have been impacted by sex discrimination including sexual assault, sexual harassment, dating violence, domestic violence or stalking, we encourage you to report it to the Executive Director of Student Support Services. While you may talk to a faculty member, faculty are required to share such reports with the University’s Title IX Coordinator or Executive Director of Student Support Services. Please refer to the [Bradley University Statement on Sexual Harassment and Sexual Misconduct Policy and Procedures](http://www.bradley.edu/campuslife/studenthandbook/policies/misconduct/index.dot).
+
+### Office of Diversity and Inclusion
+
+The [Office of Diversity and Inclusion (ODI)](https://www.bradley.edu/campuslife/odi) supports historically underrepresented communities – Asian, African American, Hispanic/Latinx, Multiracial, or students who are first in their families to attend college – as they transition to Bradley. The office also handles incidents of bias or discrimination based on race or ethnicity. The office offers services for lesbian, bisexual, transgender or questioning students. The office is located in the Garrett Center. The phone number is (309) 677-2646. The email address is diversity [at] bradley.edu.
 
 ## Excused Absence
 
