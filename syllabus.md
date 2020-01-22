@@ -96,7 +96,7 @@ Large projects (the web, Android, and iOS apps) will be evaluated using [this ru
 
 ## Accommodation
 
-The [Office of Student Access Services (SAS)](https://www.bradley.edu/offices/student/sas/) helps students with documented disabilities by facilitating accommodations that remove barrier to academic success. Students seeking such accommodations must register with SAS, which is located in 100 Heitz Hall. The phone number is (309) 677-3654. For additional related resources, go [here](https:// www.bradley.edu/offices/student/sas/studentresources/).
+The [Office of Student Access Services (SAS)](https://www.bradley.edu/offices/student/sas/) helps students with documented disabilities by facilitating accommodations that remove barrier to academic success. Students seeking such accommodations must register with SAS, which is located in 100 Heitz Hall. The phone number is (309) 677-3654. For additional related resources, go [here](https://www.bradley.edu/offices/student/sas/studentresources/).
 
 In accordance with University procedures, if you have a documented disability and require accommodations to obtain equal access in this course, please contact me privately to discuss your specific needs. You must be registered with Student Access Services located at 100 Heitz Hall. You can reach the SAS at [(309) 677-3654](tel:+13096773654) or find more information at the Student Access Services website.
 
@@ -104,7 +104,7 @@ In accordance with University procedures, if you have a documented disability an
 
 ### Academic Integrity
 
-Plagiarism is a serious offense and all instances of it will be dealt with according to Bradley University’s policies and procedures. Students who submit plagiarized work, in whole or part, will receive a failing grade for that assignment and students who plagiarize also risk failing the course. Plagiarism is generally defined as using the ideas of another as your own. Plagiarism is not avoided by simply changing a few words or by paraphrasing the work of others. Click [here](http://www.lib.usm.edu/legacy/ plag/paraphrasing.php) to learn about the differences between paraphrasing and summarizing. All borrowed material -— not just quotes -— must be attributed through proper and clear citation of sources, (i.e., in Footnotes or Endnotes). When in doubt, reference it and ask your instructor! Click [here]( https://www.bradley.edu/campuslife/studenthandbook/policies/policies/cheating/) for an overview of Bradley University’s academic misconduct policies related to “Cheating and Plagiarism”.
+Plagiarism is a serious offense and all instances of it will be dealt with according to Bradley University’s policies and procedures. Students who submit plagiarized work, in whole or part, will receive a failing grade for that assignment and students who plagiarize also risk failing the course. Plagiarism is generally defined as using the ideas of another as your own. Plagiarism is not avoided by simply changing a few words or by paraphrasing the work of others. Click [here](http://www.lib.usm.edu/legacy/plag/paraphrasing.php) to learn about the differences between paraphrasing and summarizing. All borrowed material -— not just quotes -— must be attributed through proper and clear citation of sources, (i.e., in Footnotes or Endnotes). When in doubt, reference it and ask your instructor! Click [here]( https://www.bradley.edu/campuslife/studenthandbook/policies/policies/cheating/) for an overview of Bradley University’s academic misconduct policies related to “Cheating and Plagiarism”.
 
 ### Important Information
 
