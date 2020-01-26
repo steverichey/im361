@@ -40,8 +40,8 @@ Lessons are available [here](https://github.com/steverichey/im361#lessons). Asid
 | Dates       | Class                                           | Assignments                | Due    | Value |
 | ----------- | ----------------------------------------------- | -------------------------- | ------ | ----- |
 | Wed, Jan 22 | 001. Class Overview; What Is Computation?       | Designs                    | Jan 27 | 5     |
-| Mon, Jan 27 | 002. Computer Science for Beginners             | Quiz                       | Class  | 5     |
-| Wed, Jan 29 | 003. Git and Github                             | Web app repo               | Feb 3  | 5     |
+| Mon, Jan 27 | 002. Git and Github                             | Repo                       | Jan 29 | 5     |
+| Wed, Jan 29 | 003. Computer Science for Beginners             | Quiz                       | Feb 3  | 5     |
 | Mon, Feb 3  | A01. Intro to JavaScript & NodeJS               | Web app state object       | Feb 5  | 5     |
 | Wed, Feb 5  | A02. Intro to Web Frameworks                    | Viewable web app           | Feb 10 | 5     |
 | Mon, Feb 10 | A03. HTML, Semantic Markup, and GitHub Pages    | Semantic markup            | Feb 12 | 5     |
