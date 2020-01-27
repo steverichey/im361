@@ -13,6 +13,11 @@
           color: #f8f8f2;
       }
 
+      .remark-slide-content.imgresize img {
+        max-width: 70%;
+        max-height: 40vh;
+      }
+
       .remark-container {
           background: #282828;
       }
@@ -74,6 +79,7 @@ Spring 2020
 
 * Pet allergies
 * imbradley [.] slack [.] com
+* macOS versions
 
 ---
 
@@ -107,6 +113,7 @@ class: center, middle
 * Multiple people can work on features simultaneously
   * At the end, work has to be "merged" back together
 * Make changes locally, test them, and then "commit" to these changes
+  * Every commit has a unique number, called a "hash"
 * "Push" your changes from your computer up to the cloud
 * Other developers can "pull" these changes
 
@@ -176,19 +183,33 @@ class: center, middle
 
 ---
 
-# GitHub 101
+class: center, middle, imgresize
 
-* Stores your code and allows collaboration
-* Git needs permission to upload
+# Creating a GitHub account
 
-```
-ssh-keygen -t rsa -b 4096 -C "myname@example.com"
-```
+.center[![GitHub: first page](../images/github-01.png)]
 
-* Note the location!!
-* Windows: use Git Bash
-* https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
-* https://help.github.com/categories/authenticating-to-github/
+Visit [github.com](https://www.github.com)
+
+---
+
+class: center, middle, imgresize
+
+# Creating a new repository
+
+.center[![GitHub: first page](../images/github-02.png)]
+
+A repository is just a bucket of code
+
+---
+
+class: center, middle, imgresize
+
+# Repository settings
+
+.center[![GitHub: first page](../images/github-03.png)]
+
+Mostly the default is fine, _myfirstrepo_ for the name
 
 ---
 
@@ -218,7 +239,24 @@ class: center, middle
 
 .center[![GitHub: select New SSH Key](../images/github-ssh.png)]
 
-Almost done, I swear
+Now, back to the terminal
+
+---
+
+# Pushing to GitHub 101
+
+* GitHub needs to know who you are
+* We can generate a public/private key pair and upload the public key
+* This is how GitHub will recognize you
+
+```
+ssh-keygen -t rsa -b 4096 -C "myname@example.com"
+```
+
+* Note the location!!
+* Windows: use Git Bash
+* https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+* https://help.github.com/categories/authenticating-to-github/
 
 ---
 
