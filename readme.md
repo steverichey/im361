@@ -11,9 +11,9 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 
 ## Lessons
 
-* [001. What Is Computation?](https://steverichey.github.io/im361/lessons/00-what-is-computation.html)
-* [002. An Introduction to Git and Github](https://steverichey.github.io/im361/lessons/01-intro-to-git.html)
-* [003. Computer Science for Beginners](#)
+* [001. What Is Computation?](https://steverichey.github.io/im361/lessons/001.html)
+* [002. An Introduction to Git and Github](https://steverichey.github.io/im361/lessons/002.html)
+* [003. Computer Science for Beginners](https://steverichey.github.io/im361/lessons/003.html)
 * [004. Easy Neural Networks with CreateML](#)
 
 ### Web Development Project

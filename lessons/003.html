@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>An Introduction to Git and Github</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      /* monokai theme from https://github.com/juanpabloaj/platon/blob/master/public/style.css */
+      .remark-slide-content {
+          background-color: #282828;
+          color: #f8f8f2;
+      }
+
+      .remark-slide-content.imgresize img {
+        max-width: 70%;
+        max-height: 40vh;
+      }
+
+      .remark-container {
+          background: #282828;
+      }
+
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #111;
+      }
+
+      a {
+          color: #AE81FF;
+      }
+
+      h1 {
+          color: #F92672;
+      }
+
+      h2 {
+          color: #A6E22E;
+      }
+
+      h3 {
+          color: #66D9EF;
+      }
+
+      body {
+        font-family: 'Open Sans';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+
+      .remark-code, .remark-inline-code {
+        color: #A6E22E;
+        font-family: 'Ubuntu Mono';
+      }
+
+      .remark-code-line {
+        background: #000;
+        padding-left: 1em;
+      }
+
+      .remark-code {
+        margin: 1em;
+        padding: 1em;
+      }
+
+      pre {
+        background: black;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Computer Science for Beginners
+
+Steve Richey
+
+srichey [at] fsmail.bradley.net
+
+Bradley University
+
+Spring 2020
+
+[github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# Bookkeeping
+
+* Questions about git?
+
+---
+
+# What is computer science?
+
+* Computer science exists independently of computers
+* Anything can be a computer
+* The first computers were people
+* Charles Babbage basically created computers because he kept finding errors in _The Nautical Almanac_
+* A computer just follows directions very, very well
+* In a world where computers exist, this gives rise to a bunch of other stuff (information theory, cryptography, Minecraft, etc)
+
+---
+
+# Is this class computer science?
+
+* Well yes, but actually no
+* We will cover practical applications of computer science at an **extremely high level** only
+* We will _not_ learn:
+  * How to sort a linked list
+  * What polymorphism is
+  * The difference between covariance and contravariance
+
+---
+
+# How does code work?
+
+* Computers are very dumb
+* Traditionally, a processor only knows a few _instructions_, which are just things you can tell the CPU to do
+  * For example: add, clear, compare, decrement, increment, jump, load, store, transfer
+  * Modern processors have a wild number of instructions, like special instructions just for decoding video fast
+* Humans are bad at writing machine instructions (aka assembly)
+* Humans are worse at _reading_ machine instructions
+* Humans are okay at writing _high-level_ code
+* A _compiler_ is a special computer program that turns code into instructions
+
+---
+
+# Compilation example
+
+* [Compiler Explorer](https://godbolt.org)
+* A simple C program:
+
+```
+int square(int num) {
+    return num * num;
+}
+```
+
+* Becomes this:
+
+```
+push    rbp
+  mov     rbp, rsp
+  mov     DWORD PTR [rbp-4], edi
+  mov     eax, DWORD PTR [rbp-4]
+  imul    eax, eax
+  pop     rbp
+  ret
+```
+
+---
+
+# Some things are kind of wild
+
+* Running compiled code is risky if you don't know what will do
+* It's pretty hard to know what code will do before you run it (see the Halting Problem)
+* At the same time, every processor has a slightly different instruction set
+  * Mobile phones made this more of a challenge
+  * Phones use special processors designed to use less energy (ARM)
+* So, instead of running machine code, you might download the code, and your computer compiles it while you use the program
+  * This is called just-in-time compilation
+  * Android apps do this kind of sometimes maybe
+  * iOS apps do not do this, usually
+
+---
+
+# Anyway, here's type theory
+
+* When you write code, you deal with a lot of _types_
+* A _type_ is just a classification of the way values are stored
+* Some common types:
+  * Boolean (true or false)
+  * Integer (whole numbers)
+  * Float (floating point numbers or fractions)
+  * String (just text)
+* Sometimes, you will need to make your own type
+* Some languages will let you mix up types, like JavaScript
+* Some languages will not even let you run the program if your types are messed up
+
+---
+
+# Assigning values
+
+* It is very common to use a _variable_ to hold on to some data
+* In order to put the data in a variable, we _assign_ it
+
+```
+var x = 1;
+```
+
+* In this JavaScript example, we use `var` to say we're creating a new variable
+* Then we provide a name for the variable, in this case just `x`
+  * `x` is actually a terrible variable name
+  * Clear variable names make your code easier to read!
+* Finally we define the data to go into this variable, the number `1`
+* Later on, we don't need to use `var` because the variable is already created
+
+```
+x = 2;
+```
+
+* Now, `x` is storing the number `2`
+
+---
+
+# Functions
+
+* It's helpful to put a bunch of code together into a `function`
+* We saw an example of this earlier, here it is in JavaScript
+
+```
+function square(num) {
+    return num * num;
+}
+```
+
+* The word `function` is how you start a new function
+* You _usually_ have to give your function a name (in this case, `square`)
+* Inside parentheses, you put the inputs (parameters) for your function
+  * In this function, it takes one value, called `num`
+  * In JavaScript, you don't have to say what kind of type you expect
+  * Pro: this makes it quicker to write code
+  * Con: this makes it hard to understand what type this function _should_ take
+* Then we use brackets to define where the function starts and ends
+* For the sake of argument, functions only return one value
+
+---
+
+# More about functions
+
+```
+function square(num) {
+    return num * num;
+}
+```
+
+* Inside of brackets is the _body_ of the function
+* This is where the function does stuff
+* When the function is done, we can use `return` to spit a value back out of it
+* This function will take one input number, multiply that number by itself, and return the result
+* You can then _call_ this function elsewhere in the code and `assign` the _returned_ value to a variable
+
+```
+var x = 2;
+var y = square(x);
+```
+
+* What number is stored in `y`?
+
+---
+
+# Modifying values
+
+* Once you've assigned a value to the variable, you can read or modify that value
+* Continuing the previous example:
+
+```
+console.log(y);
+```
+
+* `console.log` is a built-in _function_ that comes with JavaScript (basically)
+* It just prints something to a place where you can see it
+* We _pass_ `y` as a _parameter_ to this function, and the function will _read_ that value
+* We can also modify the value in `y`:
+
+```
+y = y + 3;
+```
+
+* What is the value in `y` now?
+
+---
+
+# Branching logic
+
+* The most common way to control the flow of your app is with `if` statements
+* In the following example, notice that we enclose strings in double quotes
+
+```
+if (true) {
+  console.log("it is true");
+} else {
+  console.log("it is false");
+}
+```
+
+* What will this print?
+* This is in JavaScript, notice that boolean values are written as either `true` or `false`
+
+---
+
+# Comparison
+
+* Since `true` is always `true`, the previous example always does the same thing
+* Let's do someting more complicated
+
+```
+var x = 5;
+var y = 10;
+
+if (y > x) {
+  console.log("yeah that makes sense");
+} else if (y < -1) {
+  console.log("not sure how this happened");
+} else if (x == y) {
+  console.log("this seems impossible");
+}
+```
+
+* You can compare numbers with `<`, `>`, or `==`
+* Very important: assignment is `=` but comparison is `==`
+
+---
+
+# Examples of types
+
+* These are all in JavaScript
+* Anything after `//` will be ignored; we use these to write comments
+
+```
+var integer = 37;                // creates an integer
+var someFloat = 3.1415926535;    // creates a floating-point number
+var text = "my name is the dog"; // creates a string
+var yes = true;                  // creates a boolean
+```
+
+* Sometimes we want to have a bunch of data in a list
+* Most languages call this an _array_
+* In JavaScript, you use square brackets to start and end an array
+
+```
+var myArray = [1, 2, 3, 4, 5, 6]; // creates an array of integers
+myArray.append(7);                // add a new number to the end of the array
+var thirdNumber = myArray[2];     // read the 3rd number in the array
+```
+
+* Don't worry about memorizing these, they're just examples and we'll go into much more detail with all of these later
+
+---
+
+# Review and summary
+
+* Computers are very dumb
+* They can only do a few things but they will do those things perfectly and very fast and forever
+* In order to write code that is easier to understand we build on layers of abstraction and use a compiler to turn that code into machine instructions
+* High-level code is mainly comprised of variables, assignment, modification, functions, and control flow
+* All of the programming languages we will use in this class are fairly similar
+* What we discussed today will largely hold true for the entire semester
+
+---
+
+# Assignment
+
+* Quiz
+
+---
+
+class: center, middle
+
+# Discussion
+
+What questions do you have?
+
+    </textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
