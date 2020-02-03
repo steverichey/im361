@@ -13,6 +13,11 @@
           color: #f8f8f2;
       }
 
+      .remark-slide-content.imgresize img {
+        max-width: 70%;
+        max-height: 40vh;
+      }
+
       .remark-container {
           background: #282828;
       }
@@ -72,9 +77,9 @@ Spring 2020
 
 # Git review
 
-* Some people like git
-* Others do not
-* Millenials respond
+* Git is a system for tracking changes to code over time
+* Git is extremely useful but the command line interface is obtuse
+* If only there were some kind of graphical user interface
 
 ---
 
@@ -115,6 +120,18 @@ class: center, bottom
 # You just push a button
 
 Easier than `git push origin master`
+
+---
+
+class: center, bottom, imgresize
+
+![GitHub desktop: clone](../images/atom.png)
+
+# Atom
+
+* You may want to install Atom from [atom.io](https://www.atom.io)
+* Atom is an extensible text editor made by GitHub
+* If you would rather use Sublime Text or VS Code, that's fine too
 
 ---
 
@@ -173,7 +190,7 @@ class: center, bottom
 
 ---
 
-class: center, bottom
+class: center, bottom, imgresize
 
 ![Node version](../images/node-version.png)
 
@@ -182,54 +199,6 @@ class: center, bottom
 ```
 node --version
 npm --version
-```
-
----
-
-# Enough JS to be dangerous
-
-```JavaScript
-// assign a variable
-var x = 10;
-// print something
-console.log("x is " + x);
-// modify a variable
-x += 10;
-// create a function
-function sum(a, b) {
-  return a + b;
-}
-// use a function
-var y = sum(10, 20);
-// create an object
-var z = {
-  one: 1,
-  two: 2
-};
-// use an object
-z.one;
-```
-
----
-
-# More than enough JS to be dangerous
-
-```JavaScript
-// other kinds of variables
-var pi = 3.14159;
-var message = "hello";
-// checking equality
-if (message === "hello") {
-  console.log("message is hello");
-} else {
-  console.log("message is not hello");
-}
-// comparing numbers
-if (2 < 5) {
-  console.log("yes, two is less than five");
-} else {
-  console.log("something has gone horribly wrong");
-}
 ```
 
 ---
