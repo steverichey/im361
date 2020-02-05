@@ -17,6 +17,11 @@
           background: #282828;
       }
 
+      .remark-slide-content.imgresize img {
+        max-width: 70%;
+        max-height: 40vh;
+      }
+
       .remark-slide-scaler {
         -webkit-box-shadow: 0 0 30px #111;
       }
@@ -70,40 +75,13 @@ Spring 2020
 
 ---
 
-# JavaScript
+# Bookkeeping
 
-* Some people like ~git~ JavaScript
-* Others do not
-* Millenials respond
+* Schedule change March 11
+* Do not forget to commit and push your changes
+* Things are due at noon
+* Late assignments are not accepted
 * What interesting things did we do?
-
-* Schedule change March 6
-* How to rename a repo
-* Node vs. browser...
-
----
-
-# Node vs Browser
-
-* Browser
-
-```js
-var amount = prompt("Enter amount of bill");
-// do stuff with "amount"
-```
-
-* Node
-
-```js
-var readline = require('readline').createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-readline.question('Enter amount of bill', (amount) => {
-  // do stuff with "amount"
-})
-```
 
 ---
 
@@ -115,15 +93,19 @@ totes easy
 
 ---
 
-# Modern web development
+class: center, middle, imgresize
 
 ![A lot of frameworks](../images/web-frameworks.png)
 
----
-
 # Modern web development
 
+---
+
+class: center, middle, imgresize
+
 ![All hail chaos](../images/all-hail-chaos.png)
+
+# Modern web development
 
 ---
 
@@ -191,7 +173,7 @@ I just stole this tbh
 
 ---
 
-class: center, middle
+class: center, middle, imgresize
 
 ![Vue in practice](../images/vue-in-practice-1.png)
 
@@ -201,7 +183,7 @@ You're gonna do this
 
 ---
 
-class: center, middle
+class: center, middle, imgresize
 
 ![Vue in practice](../images/vue-in-practice-2.png)
 
@@ -241,8 +223,8 @@ Normally, this is extremely not fun to do
 * Inside our JS file:
 ```js
 data: {
-  message: 'Hello Vue!',
-  counter: 0
+    message: 'Hello Vue!',
+    counter: 0
 }
 ```
 * In the terminal:
