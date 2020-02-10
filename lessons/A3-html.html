@@ -47,6 +47,7 @@
       }
 
       .remark-code, .remark-inline-code {
+        color: #A6E22E;
         font-family: 'Ubuntu Mono';
       }
     </style>
@@ -56,7 +57,7 @@
 
 class: center, middle
 
-# HTML, Semantic Markup, and GitHub Pages
+# HTML and Semantic Markup
 
 Steve Richey
 
@@ -67,6 +68,15 @@ Bradley University
 Spring 2020
 
 [github.com/steverichey/im361](https://github.com/steverichey/im361)
+
+---
+
+# Errata
+
+* Assignments must be committed and pushed up **before noon** on the day they are due
+* If you commit or push after noon, those changes will not be counted
+* Please ensure your code does not produce any errors when built with `npx webpack`
+* Please ensure your code does not print any errors to the JavaScript console
 
 ---
 
@@ -98,6 +108,21 @@ class: center, middle
   * Servers just kind of send text and hope for the best
   * That's how Marc Andreessen added the <img> tag to Mosaic
 * HTML5 from 2008 - 2014
+
+---
+
+# What is the semantic web?
+
+* Web pages should have _semantics_, which is to say they are meaningful to computers
+* Computers can then parse and display this information in a number of ways
+  * Automated assistants
+  * Web crawlers and search engines
+  * Accessibility tools
+* HTML enables semantics through tags that allow us to annotate text
+* If properly used, these tags can make the meaning and data in a web page much clearer
+* Initially, this would include markup for data that describes facts that can be composed
+* In practice, only a small subset of these semantics are in common use
+* See [Whatever Happened to the Semantic Web?](https://twobithistory.org/2018/05/27/semantic-web.html)
 
 ---
 
@@ -190,184 +215,26 @@ class: center, middle
 
 class: center, middle
 
-# GitHub Pages
+# HTML Markup Examples
 
 ---
 
 class: center, middle
 
-![](../images/ghp01.png)
-
-# GitHub
-
-Open settings
-
----
-
-class: center, middle
-
-![](../images/ghp02.png)
-
-# Settings
-
-Scroll down
-
----
-
-class: center, middle
-
-![](../images/ghp03.png)
-
-# GitHub Pages
-
-Stop on this section
-
----
-
-class: center, middle
-
-![](../images/ghp04.png)
-
-# Select master as source
-
-Ignore theme for now
-
----
-
-class: center, middle
-
-![](../images/ghp05.png)
-
-# Don't forget to save!
-
----
-
-class: center, middle
-
-![](../images/ghp06.png)
-
-# You should see this
-
-Otherwise... bad
-
----
-
-class: center, middle
-
-![](../images/ghp07.png)
-
-# Go back to Pages settings
-
-You now have a link to your page
-
----
-
-class: center, middle
-
-![](../images/ghp08.png)
-
-# Copy page link
-
----
-
-class: center, middle
-
-![](../images/ghp09.png)
-
-# Go back to repo
-
-Easiest way is to probably click this
-
----
-
-class: center, middle
-
-![](../images/ghp10.png)
-
-# Click the "edit" button
-
----
-
-class: center, middle
-
-![](../images/ghp11.png)
-
-# Should look like this
-
----
-
-class: center, middle
-
-![](../images/ghp12.png)
-
-# Paste in link to GitHub Pages
-
-Might want to add a description
-And save... don't forget to save!
-
----
-
-class: center, middle
-
-![](../images/ghp13.png)
-
-# Now header has a link
-
-EZ
-
----
-
-class: center, middle
-
-![](../images/ghp14.png)
-
-# One tiny change to our HTML
-
-Save this change
-
----
-
-class: center, middle
-
-![](../images/ghp15.png)
-
-# One tiny change to our gitignore
-
-Save, commit, and push
-Your `dist` directory should now be tracked :\
-
----
-
-class: center, middle
-
-![](../images/ghp16.png)
-
-# Now visit your GitHub Page
-
-Just follow the link
-
----
-
-class: center, middle
-
-![](../images/ghp17.png)
-
-# Not working?
-
-Clear cache and hard reload
-Chrome: Cmd+Refresh, Firefox: Shift+Refresh
+# HTML Markup Demo
 
 ---
 
 # Assignment
 
-* Semantically mark up one page from your design
-* Probably the "main" page
-* Text only for now: don't worry about images
+* Semantically mark up the first page from your design
+  * This should be the home, default, or initial page users see
+* Text only for now
+  * Don't worry about images
+  * Do not style your HTML (we'll do that next time)
 * A user should know how to use your site from this markup alone... mostly
 * What is style, or merely presentation information?
-* Put this outside of your Vue div (with id="app") for now
-  * Or, just remove the Vue div; note that Vue might complain in the JavaScript console, though
+* Put this inside of the Vue div (`<div id="app">`)
 * [https://htmlhint.io/](https://htmlhint.io/)
 
 ---

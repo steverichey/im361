@@ -44,7 +44,7 @@ Lessons are available [here](https://github.com/steverichey/im361#lessons). Asid
 | Wed, Jan 29 | 003. Computer Science for Beginners             | Quiz                       | Feb 3  | 5     |
 | Mon, Feb 3  | A01. Intro to JavaScript & NodeJS               | Web app state object       | Feb 5  | 5     |
 | Wed, Feb 5  | A02. Intro to Web Frameworks                    | Viewable web app           | Feb 10 | 5     |
-| Mon, Feb 10 | A03. HTML, Semantic Markup, and GitHub Pages    | Semantic markup            | Feb 12 | 5     |
+| Mon, Feb 10 | A03. HTML and Semantic Markup                   | Semantic markup            | Feb 12 | 5     |
 | Wed, Feb 12 | A04. Intro to CSS and Style                     | Styled design              | Feb 17 | 5     |
 | Mon, Feb 17 | A05. Advanced HTML and Vue                      | Full site markup           | Feb 19 | 5     |
 | Wed, Feb 19 | A06. Advanced CSS and Vue                       | Animated site              | Feb 24 | 5     |
