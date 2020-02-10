@@ -4,3 +4,6 @@ list.html
 *.zip
 scripts/list.txt
 scripts/projects
+scripts/web
+scripts/android
+scripts/ios
