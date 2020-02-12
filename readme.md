@@ -22,7 +22,7 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [A01. Intro to JavaScript & NodeJS](https://steverichey.github.io/im361/lessons/A1-node-js.html)
 * [A02. Intro to Web Frameworks](https://steverichey.github.io/im361/lessons/A2-web-frameworks.html)
 * [A03. HTML and Semantic Markup](https://steverichey.github.io/im361/lessons/A3-html.html)
-* [A04. Intro to CSS and Style](#)
+* [A04. Intro to CSS and Style](https://steverichey.github.io/im361/lessons/A4-css.html)
 * [A05. Advanced HTML and Vue](#)
 * [A06. Advanced CSS and Vue](#)
 * [A07. Advanced JS and Vue](#)
