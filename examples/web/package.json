@@ -1,31 +1,18 @@
 {
-  "name": "im361web",
+  "name": "web",
   "version": "1.0.0",
-  "description": "aaaaa",
+  "description": "",
   "main": "index.js",
-  "dependencies": {
-    "webpack-cli": "^3.2.3",
-    "vue": "^2.6.1",
-    "webpack": "^4.29.1"
-  },
-  "devDependencies": {
-    "css-loader": "^2.1.0",
-    "file-loader": "^3.0.1",
-    "style-loader": "^0.23.1",
-    "url-loader": "^1.1.2"
-  },
   "scripts": {
-    "dev": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/steverichey/im361web.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/steverichey/im361web/issues"
+  "dependencies": {
+    "vue": "^2.6.11"
   },
-  "homepage": "https://github.com/steverichey/im361web#readme"
+  "devDependencies": {
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
 }

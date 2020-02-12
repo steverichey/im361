@@ -3,156 +3,32 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Bapplebees</title>
+    <title>My Vue Project</title>
   </head>
   <body>
-    <div id="app" class="appdiv">
+    <div id="app">
       <header>
-        <button v-on:click="isButtonDisabled = false">Click to enable</button>
-        <button
-          v-on:click="isError = !isError"
-          v-bind:disabled="isButtonDisabled">
-          ERROR is {{ isError ? "ON" : "OFF" }}
-        </button>
+        <h1>Welcome to the <span>Pizza Zone</span><h1>
         <nav>
           <ul>
-            <li><a href="#home" v-on:click="pageName = 'home'">Home</a></li>
-            <li><a href="#about" v-on:click="pageName = 'about'">About</a></li>
-            <li><a href="#resources" v-on:click="pageName = 'resources'">Resources</a></li>
-            <li><a href="#help" v-on:click="pageName = 'help'">Help</a></li>
-            <li><a href="#cart" v-on:click="pageName = 'cart'">Cart</a></li>
+            <li><a href="#">Pizza</a></li>
+            <li><a href="#">Calzones</a></li>
+            <li><a href="#">Ravioli</a></li>
           </ul>
         </nav>
       </header>
-      <!-- First page -->
-      <main v-bind:hidden="pageName != 'home'" class="animated">
-        <h1 class="cool">HOME, welcome {{ fullName }}</h1>
-        <p class="fancy">This is the home page.</p>
-        <h4>The minion section</h4>
-        <p>Minions ipsum tatata bala tu hahaha pepete tulaliloo poopayee. <span class="applebees cool">Bappleees</span> bananaaaa po kass butt chasy pepete ti aamoo! Belloo! gelatooo tank yuuu! Poopayee <span class="applebees fancy">bappleees</span> tulaliloo wiiiii. Butt poopayee la bodaaa bappleees la bodaaa potatoooo butt potatoooo tatata bala tu pepete. Para tú aaaaaah hahaha wiiiii ti aamoo! Tulaliloo tank yuuu! Jiji bananaaaa underweaaar. La bodaaa bananaaaa underweaaar la bodaaa underweaaar baboiii tank yuuu! Po kass pepete. Jeje baboiii pepete bee do bee do bee do jiji me want bananaaa! Potatoooo bappleees ti aamoo! Me want bananaaa!</p>
-        <p><span class="applebees fancy">Bappleees</span> poulet tikka masala baboiii jiji. La bodaaa poopayee bananaaaa jeje chasy potatoooo tank yuuu! Hahaha daa daa uuuhhh. Tulaliloo jeje jeje hahaha pepete bappleees me want bananaaa! Chasy jiji potatoooo bananaaaa poopayee hahaha butt bee do bee do bee do ti aamoo! Tatata bala tu. La bodaaa para tú jeje daa ti aamoo! Po kass poopayee uuuhhh po kass daa bee do bee do bee do. Belloo! tulaliloo bee do bee do bee do bee do bee do bee do aaaaaah baboiii baboiii.</p>
-        <select v-model="currentColor">
-          <option v-for="color in colorList" v-bind:value="color">
-            {{ color }}
-          </option>
-        </select>
-        <p>Selected: {{ currentColor }}</p>
-        <select v-model="currentEmoji">
-          <option v-for="emoji in emojiList" v-bind:value="emoji">
-            {{ emoji }}
-          </option>
-        </select>
-        <p>Selected: {{ currentEmoji }}</p>
-        <h5 class="cool">Options: {{ optionCount }}</h5>
-        <ul>
-          <li v-for="option in options" v-bind:class="option.type">
-            This {{ option.name }} is very {{ option.type }}.
-          </li>
-        </ul>
-        <button v-on:click="removeOption">Remove Option</button>
-        <button v-on:click="addOption({ name: 'Woof', type: 'medium'})">Add Woofer</button>
-        <button v-on:click="addOption({ name: 'Dog', type: 'normal' })">Add Doggo</button>
-        <button v-on:click="addOption({ name: 'Arf', type: 'furry' })">Add Pup</button>
-        <button v-on:click="reverseOptions">Reverse list</button>
+      <main>
+        <article>
+          <h2>What Makes Pizza SO GOOD</h2>
+          <p>Pizza is just bread and cheese.</p>
+          <p>Bread is good.</p>
+          <p>Cheese is good.</p>
+        </article>
       </main>
-      <!-- Second page -->
-      <main v-bind:hidden="pageName != 'about'">
-        <h1>Image Example</h1>
-        <div class="imagecontainer">
-          <img v-bind:src="fileName" v-bind:title="randomlyGeneratedTitle" v-on:mouseover="makeNewTitle()">
-        </div>
-        <h1>About Us</h1>
-        <p class="canShowError" v-bind:class="{ hasError: isError }">Here is a bunch of text. This text is <em>important</em>, but is it more important <strong>than this</strong>?</p>
-        <p>This is a whole different paragraph.</p>
-        <h2>An Ordered List</h2>
-        <p>Best dogs</p>
-        <ol>
-          <li>Bisley</li>
-          <li class="canShowError" v-bind:class="{ hasError: isError }">Bisley, again</li>
-          <li>Still Bisley</li>
-          <li>Guess what: Bisley</li>
-        </ol>
-        <h3>Some buttons</h3>
-        <p>
-          <button v-on:click="pageNumber = 2">This button is neat</button>
-        </p>
-        <p>
-          <button>This button is bad, actually</button>
-        </p>
-        <p>
-          <button>The worst button</button>
-        </p>
-      </main>
-      <!-- Third page -->
-      <main v-bind:hidden="pageName != 'resources'">
-        <h1>Resources</h1>
-        <h2>Schedules</h2>
-        <input v-model="currentName">
-        <button v-on:click="createSchedule('starby', currentName)">Submit</button>
-        <div class="allschedules" v-if="hasSchedules">
-          <h3>Current Schedules: {{ numberOfSchedules }}</h3>
-          <select v-model="selectedSchedule">
-            <option v-for="schedule in schedules" v-bind:value="schedule">
-              {{ schedule.name }}
-            </option>
-          </select>
-          <ul>
-            <li v-for="schedule in schedules" v-bind:hidden="selectedSchedule != schedule">
-              <p>Reminj: {{ schedule.reminji }}</p>
-              <P>Name: {{ schedule.name }}</p>
-              <p><input v-model="currentTodo"></p>
-              <p><button v-on:click="addTodo(schedule, currentTodo)">Add</button></p>
-              <ul>
-                <li v-for="todo in schedule.todos">
-                  <p>{{ todo }}</p>
-                  <p><button v-on:click="removeTodo(schedule, todo)">Remove</button</p>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div v-else>No schedules</div>
-        <p>On this page, you can find resources.</p>
-        <h2>Nietzsche Says</h2>
-        <p class="inverted">Morality marvelous virtues horror salvation ocean. Gains merciful disgust abstract law marvelous enlightenment faithful disgust burying passion abstract right against. Ascetic convictions convictions burying pious decieve. Play christianity christian insofar ultimate. Holiest passion suicide philosophy noble strong good noble burying spirit free.</p>
-        <p class="canShowError" v-bind:class="{ hasError: isError }">Selfish spirit christianity overcome madness overcome zarathustra dead. Value right christian marvelous faith war christianity war. Overcome philosophy free horror inexpedient convictions. Of zarathustra truth right madness god philosophy spirit spirit. Battle merciful ideal contradict enlightenment. Holiest inexpedient aversion revaluation gains ubermensch.</p>
-        <p class="blurry">Oneself of pinnacle decieve christian truth insofar virtues against selfish. Good passion noble salvation right convictions faith ascetic eternal-return transvaluation sea christian decieve. Pinnacle ultimate sexuality of sexuality derive hope disgust self play. Ascetic pinnacle zarathustra hatred joy moral self love joy transvaluation insofar. Dead fearful ascetic faithful deceptions fearful good. Convictions endless evil holiest morality. Depths good merciful passion victorious convictions oneself war.</p>
-        <p>War madness.</p>
-      </main>
-      <!-- Fourth page -->
-      <main v-bind:hidden="pageName != 'help'">
-        <h1>Quiz</h1>
-        <p>You have answered {{ quizScore }} out of {{ numberOfQuizQuestions }} questions correctly.</p>
-        <p>Your score is {{ quizPercent }}%</p>
-        <ol>
-          <li v-for="question in quizQuestions">
-            <h2>{{ question.question }}</h2>
-            <ul>
-              <li v-for="answer in question.answers">
-                <button v-bind:disabled="answeredQuestions.includes(question.number)" v-on:click="submitAnswer(question, answer)">{{ answer }}</button>
-              </li>
-            </ul>
-          </li>
-        </ol>
-      </main>
-      <!-- Fifth page -->
-      <main v-bind:hidden="pageName != 'cart'">
-        <h2>Buy</h2>
-        <button v-on:click="addToCart('Coffee', 2)">Coffee $2</button>
-        <button v-on:click="addToCart('Latte', 5)">Latte $5</button>
-        <button v-on:click="addToCart('Cappucino', 4)">Cap $4</button>
-        <h3>Items in cart</h3>
-        <ul>
-          <li v-for="item in cart">
-            {{ item.name }} ${{ item.cost}}
-          </li>
-        </ul>
-        <h3>Total: ${{ cartTotal }}.00</h3>
-      </main>
-      <footer class="rainbow" v-bind:style="{ backgroundImage: 'url(' + fileName + ')' }">
-        You can blame this site on me, Steve.
+      <footer>
+        &copy; 2020 Pizza Zone, a division of Monsanto
       </footer>
     </div>
-    <script src="./dist/main.js" type="text/javascript"></script>
+    <script src="dist/main.js" type="text/javascript"></script>
   </body>
 </html>
