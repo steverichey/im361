@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+html {
+  background-color: blue;
+  font-size: 24px;
+}
+
+body {
+  color: yellow;
+  font-family: fantasy;
+}
+
+header {
+  border: solid 4px cyan;
+}
+
+a {
+  font-family: cursive;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: #dd0011;
+  color: #11dd01;
+}
+
+a:visited {
+  color: #00aa00;
+}
+
+a:hover {
+  color: black;
+  font-weight: lighter;
+  background: grey;
+}
+
+.pizzazone {
+  color: pink;
+  font-size: 32px;
+  font-family: 'Open Sans';
+  font-weight: 800;
+}
+
+h2 {
+  width: 50%;
+  background: purple;
+  color: white;
+}
+
+h3 {
+  width: 400px;
+  background: purple;
+}
+
+p {
+  background: red;
+  margin: 1em;
+  padding: 0.5em;
+  color: rgba(32, 64, 128, 0.5);
+}
+
+li.calzone {
+  font-family: "Ubuntu Mono";
+  font-size: 4em;
+  background-image: url("https://placekitten.com/200/300");
+}
+
+li a {
+  background: none;
+  font-family: inherit;
+}
+
+/* this is a comment */
+
+footer {
+  margin: 1em;
+  border: solid 4px cyan;
+  padding: 0.25em;
+}
