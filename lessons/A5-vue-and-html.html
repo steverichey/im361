@@ -47,6 +47,7 @@
       }
 
       .remark-code, .remark-inline-code {
+        color: #A6E22E;
         font-family: 'Ubuntu Mono';
       }
     </style>
@@ -70,15 +71,30 @@ Spring 2020
 
 ---
 
-# CSS
+# Errata
 
-* Nested rules: no bueno
-  * There are ways around this
-    * `a > b`
-    * `a.b`
-* Keep it simple
-* We'll be able to turn classes on and off later
-  * This will be important
+* Job fair Thursday
+* Inline vs. block tags
+* Project title in HTML
+* Nested rules in CSS
+
+Don't do this:
+
+```
+h1 {
+  a {
+    color: red; /* no!! */
+  }
+}
+```
+
+Do this instead:
+
+```
+h1 > a {
+  color: red; /* yes! */
+}
+```
 
 ---
 
@@ -90,7 +106,7 @@ class: center, middle
 
 # Making everything Vue
 
-* Put everything inside of a <div id="app">
+* Put everything inside of a `<div id="app">`
 * Basically, everything inside the body tag
 * Now Vue can control stuff
 

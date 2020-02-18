@@ -47,20 +47,17 @@ h2 {
 
 h3 {
   width: 400px;
-  background: purple;
 }
 
 p {
-  background: red;
   margin: 1em;
   padding: 0.5em;
-  color: rgba(32, 64, 128, 0.5);
+  color: white;
 }
 
 li.calzone {
   font-family: "Ubuntu Mono";
-  font-size: 4em;
-  background-image: url("https://placekitten.com/200/300");
+  font-size: 1.1em;
 }
 
 li a {
@@ -74,4 +71,10 @@ footer {
   margin: 1em;
   border: solid 4px cyan;
   padding: 0.25em;
+}
+
+.dangerOrder {
+  border: solid 2px red;
+  background: red;
+  font-size: 2em;
 }
