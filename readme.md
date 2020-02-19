@@ -23,8 +23,8 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [A02. Intro to Web Frameworks](https://steverichey.github.io/im361/lessons/A2-web-frameworks.html)
 * [A03. HTML and Semantic Markup](https://steverichey.github.io/im361/lessons/A3-html.html)
 * [A04. Intro to CSS and Style](https://steverichey.github.io/im361/lessons/A4-css.html)
-* [A05. Advanced HTML and Vue](#)
-* [A06. Advanced CSS and Vue](#)
+* [A05. Advanced HTML and Vue](https://steverichey.github.io/im361/lessons/A5-vue-and-html.html)
+* [A06. Advanced CSS and Vue](https://steverichey.github.io/im361/lessons/A6-css-vue.html)
 * [A07. Advanced JS and Vue](#)
 
 ### Android Development Project
