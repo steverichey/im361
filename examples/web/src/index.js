@@ -1,12 +1,14 @@
 import Vue from 'vue/dist/vue.js'
 import "./style.css";
+import html from './index.html';
+// import kitten from "./kitten.jpg";
 
 var app = new Vue({
   el: '#app',
   data: {
     message: 'Hello Vue!',
     userName: "Steve",
-    sandwichName: "Hot dog",
+    sandwichName: null,
     sandwichOrder: [],
     sandwichTypes: [
       "Pizza",
@@ -39,3 +41,15 @@ var app = new Vue({
 });
 
 window.app = app;
+// const element = document.createElement('div');
+//
+//     // Lodash, now imported by this script
+// element.innerHTML = "henlo";
+// element.classList.add('hello');
+//
+// // Add the image to our existing div.
+// const myIcon = new Image();
+// myIcon.src = kitten;
+// element.appendChild(myIcon);
+//
+// document.body.appendChild(element);

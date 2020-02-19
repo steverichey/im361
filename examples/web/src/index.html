@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Pizza Zone</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Welcome to the <span class="pizzazone">Pizza Zone</span>, {{ userName }}!</h1>
+        <p v-if="sandwichName">Your favorite sandwich is {{ sandwichName }}.</p>
+        <p v-else>Pick your favorite sandwich below!</p>
+        <nav>
+          <h2>What is your favorite sandwich?</h2>
+          <ul>
+            <li v-for="sandwich in sandwichTypes">
+              <a v-on:click="sandwichName = sandwich">{{ sandwich }}</a>
+            </li>
+          </ul>
+        </nav>
+        <button v-bind:disabled="!sandwichName" class="orderbutton" v-on:click="sandwichOrder.push(sandwichName)">Order this sandwich</button>
+        <p><a href="#calzone-facts">Get straight to the Calzones</a></p>
+      </header>
+      <main>
+        <p>Would you like to place an order for the following:</p>
+        <ul>
+          <li v-for="sandwich in sandwichOrder">
+            {{ sandwich }}
+          </li>
+        </ul>
+        <button v-bind:disabled="cannotPlaceOrder" v-on:click="sandwichOrder = []">
+          Place Order Now!
+        </button>
+        <p v-bind:class="{ dangerOrder: isDangerous }" v-if="sandwichName">
+          You have ordered {{ isDangerous ? "an UNSAFE" : "a safe" }} number of {{ pluralSandwich }}.
+        </p>
+        <p v-else>
+          You have not ordered anything.
+        </p>
+        <article v-if="sandwichName == 'Pizza'">
+          <h2>What Makes Pizza SO GOOD</h2>
+          <p>Pizza is just bread and cheese.</p>
+          <p>Bread is good.</p>
+          <p>Cheese is good.</p>
+          <h3>Reasons To Like Pizza</h3>
+          <p>You don't need one</p>
+          <p>You should like it anyway</p>
+        </article>
+        <article v-if="sandwichName == 'Calzone'">
+          <h3 id="calzone-facts">This is some interesting facts about calzones</h3>
+          <li>
+            <ul>Calzone fact #1: Calzone is just taco pizza.</ul>
+            <ul>Calzone fact #2: Ham calzones are <a href="https://www.youtube.com/watch?v=Ujw6B7JUnIA">illegal</a>.</ul>
+          </li>
+        </article>
+        <article v-if="sandwichName == 'Ravioli'">
+          <h3 id="ravioli-facts">This is some interesting facts about pillow pata</h3>
+          <li>
+            <ul>Ravioli fact #1: Ravioli is just noodle sandwich.</ul>
+            <ul>Ravioli fact #2: If you can make ravioli on your own, you are techincally a warlock.</ul>
+          </li>
+        </article>
+        <article v-if="sandwichName == 'Ice Cream'">
+          <p>Ice cream isn't a sandwich</p>
+        </article>
+        <article v-if="sandwichName == 'Hot Pocket'">
+          <p>I was into hot pockets before they were cool. I burned myself</p>
+        </article>
+      </main>
+      <footer>
+        &copy; 2020 <span class="pizzazone">Pizza Zone</span>, a division of Monsanto
+      </footer>
+    </div>
+    <script src="bundle.js" type="text/javascript"></script>
+  </body>
+</html>

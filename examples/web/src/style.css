@@ -1,13 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
 html {
-  background-color: blue;
-  font-size: 24px;
+  background-color: #222;
+  font-size: 1em;
+  color: white;
 }
 
 body {
-  color: yellow;
-  font-family: fantasy;
+  font-family: monospace;
 }
 
 header {
@@ -15,48 +15,40 @@ header {
 }
 
 a {
-  font-family: cursive;
-  font-size: 2em;
-  font-weight: bold;
-  background-color: #dd0011;
-  color: #11dd01;
+  font-weight: 600;
+  color: #f00;
 }
 
 a:visited {
-  color: #00aa00;
+  color: #d00;
 }
 
 a:hover {
-  color: black;
-  font-weight: lighter;
-  background: grey;
+  color: #e00;
+  font-weight: 800;
+  cursor: pointer;
+  background: white;
 }
 
 .pizzazone {
   color: pink;
-  font-size: 32px;
-  font-family: 'Open Sans';
-  font-weight: 800;
+  font-size: 1.5em;
+  font-family: fantasy;
 }
 
 h2 {
-  width: 50%;
-  background: purple;
-  color: white;
-}
-
-h3 {
-  width: 400px;
+  background: #505;
+  color: #88f;
 }
 
 p {
-  margin: 1em;
+  margin: 0.5em;
   padding: 0.5em;
   color: white;
 }
 
 li.calzone {
-  font-family: "Ubuntu Mono";
+  font-family: cursive;
   font-size: 1.1em;
 }
 
@@ -68,13 +60,13 @@ li a {
 /* this is a comment */
 
 footer {
-  margin: 1em;
-  border: solid 4px cyan;
+  margin: 0.75em;
+  border: solid 4px purple;
   padding: 0.25em;
 }
 
 .dangerOrder {
   border: solid 2px red;
   background: red;
-  font-size: 2em;
+  font-size: 1.1em;
 }
