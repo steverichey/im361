@@ -9,20 +9,34 @@
     <div id="app">
       <header>
         <h1>Welcome to the <span class="pizzazone">Pizza Zone</span>, {{ userName }}!</h1>
-        <p v-if="sandwichName">Your favorite sandwich is {{ sandwichName }}.</p>
-        <p v-else>Pick your favorite sandwich below!</p>
         <nav>
-          <h2>What is your favorite sandwich?</h2>
-          <ul>
-            <li v-for="sandwich in sandwichTypes">
-              <a v-on:click="sandwichName = sandwich">{{ sandwich }}</a>
-            </li>
+          <ul class="navBar">
+            <li><a v-on:click="currentPage = 'home'">Home</a></li>
+            <li><a v-on:click="currentPage = 'order'">Order</a></li>
+            <li><a v-on:click="currentPage = 'contact'">Contact</a></li>
           </ul>
         </nav>
+      </header>
+      <!-- home page -->
+      <main v-bind:hidden="currentPage != 'home'">
+        <h2>Minions ipsum baboiii me want bananaaa!</h2>
+        <p>Para tú me want bananaaa! Daa uuuhhh bee do bee do bee do potatoooo. Gelatooo potatoooo uuuhhh po kass tank yuuu! Bee do bee do bee do gelatooo jeje po kass pepete poopayee. Aaaaaah gelatooo gelatooo bappleees. Jeje ti aamoo! Jiji potatoooo po kass uuuhhh. Butt hana dul sae poulet tikka masala jiji hahaha bee do bee do bee do pepete uuuhhh bananaaaa me want bananaaa! Hahaha. Potatoooo daa bee do bee do bee do bappleees belloo! Poopayee ti aamoo! Para tú po kass. Bananaaaa para tú jiji bee do bee do bee do baboiii para tú po kass.</p>
+        <h3>Gelatooo tank yuuu!</h3>
+        <p>Poulet tikka masala la bodaaa. Potatoooo tulaliloo tank yuuu! Para tú para tú para tú bananaaaa. Belloo! underweaaar bee do bee do bee do tank yuuu! Chasy belloo! Jiji tatata bala tu. Butt hana dul sae underweaaar poopayee poopayee uuuhhh aaaaaah tatata bala tu bappleees jeje jiji. Aaaaaah underweaaar jiji uuuhhh chasy jiji baboiii baboiii bee do bee do bee do. Hahaha para tú hahaha poulet tikka masala la bodaaa uuuhhh bananaaaa bappleees bee do bee do bee do la bodaaa. Chasy bananaaaa butt daa hana dul sae jiji belloo! Me want bananaaa! Butt bananaaaa.</p>
+        <h3>I don't like this very much</h3>
+        <p><a v-on:click="currentPage = 'contact'">Contact us</a></p>
+      </main>
+      <!-- order page -->
+      <main v-bind:hidden="currentPage != 'order'">
+        <p v-if="sandwichName">Your favorite sandwich is {{ sandwichName }}.</p>
+        <p v-else>Pick your favorite sandwich below!</p>
+        <ul>
+          <li v-for="sandwich in sandwichTypes">
+            <a v-on:click="sandwichName = sandwich">{{ sandwich }}</a>
+          </li>
+        </ul>
         <button v-bind:disabled="!sandwichName" class="orderbutton" v-on:click="sandwichOrder.push(sandwichName)">Order this sandwich</button>
         <p><a href="#calzone-facts">Get straight to the Calzones</a></p>
-      </header>
-      <main>
         <p>Would you like to place an order for the following:</p>
         <ul>
           <li v-for="sandwich in sandwichOrder">
@@ -32,7 +46,7 @@
         <button v-bind:disabled="cannotPlaceOrder" v-on:click="sandwichOrder = []">
           Place Order Now!
         </button>
-        <p v-bind:class="{ dangerOrder: isDangerous }" v-if="sandwichName">
+        <p class="couldBeDangerous" v-bind:class="{ dangerOrder: isDangerous }" v-if="sandwichName">
           You have ordered {{ isDangerous ? "an UNSAFE" : "a safe" }} number of {{ pluralSandwich }}.
         </p>
         <p v-else>
@@ -68,10 +82,16 @@
           <p>I was into hot pockets before they were cool. I burned myself</p>
         </article>
       </main>
+      <!-- contact page -->
+      <main v-bind:hidden="currentPage != 'contact'">
+        <p>Please feel free to <a href="http://monsanto.com">contact us</a>.</p>
+      </main>
+      <!-- <h4>THIS CAT IS NOT A TOPPING</h4>
+      <img src="./images/kitten.jpg"> -->
       <footer>
         &copy; 2020 <span class="pizzazone">Pizza Zone</span>, a division of Monsanto
       </footer>
     </div>
-    <script src="bundle.js" type="text/javascript"></script>
+    <script src="./dist/bundle.js" type="text/javascript"></script>
   </body>
 </html>

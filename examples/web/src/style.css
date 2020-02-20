@@ -57,6 +57,13 @@ li a {
   font-family: inherit;
 }
 
+h4 {
+  color: yellow;
+  background-color: blue;
+  text-align: center;
+  font-size: 1.5em;
+}
+
 /* this is a comment */
 
 footer {
@@ -65,8 +72,28 @@ footer {
   padding: 0.25em;
 }
 
-.dangerOrder {
+nav {
+  font-size: 2em;
+}
+
+ul.navBar {
+  display: inline-flex;
+}
+
+nav ul.navBar li {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5em;
+  padding: 1em;
+}
+
+.couldBeDangerous {
+  transition: background-color 2s;
+}
+
+.couldBeDangerous.dangerOrder {
   border: solid 2px red;
-  background: red;
-  font-size: 1.1em;
+  background-color: red;
+  font-size: 2em;
 }
