@@ -53,7 +53,7 @@ Lessons are available [here](https://github.com/steverichey/im361#lessons). Asid
 | Mon, Mar 2  | B01. Intro to Android Studio                    | Android app repo           | Mar 4  | 5     |
 | Wed, Mar 4  | B02. Intro to Kotlin and Resources              | Color and string resources | Mar 9  | 5     |
 | Mon, Mar 9  | B03. Android Layouts and Interaction            | Beta Android app           | Mar 11 | 5     |
-| Wed, Mar 11 | QA and Code Review                              | Final Android app          | Mar 23 | 50    |
+| Wed, Mar 11 | B04. Android Tips and Tricks (online)           | Final Android app          | Mar 23 | 50    |
 | Mon, Mar 16 | Spring break                                    |                            |        |       |
 | Wed, Mar 18 | Spring break                                    |                            |        |       |
 | Mon, Mar 23 | C01. Intro to Xcode                             | iOS App Repo               | Mar 25 | 5     |
