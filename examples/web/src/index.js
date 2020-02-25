@@ -15,7 +15,9 @@ var app = new Vue({
       "Ravioli",
       "Ice Cream",
       "Hot Pocket"
-    ]
+    ],
+    complaints: [],
+    complaintCounter: 0
   },
   computed: {
     pluralSandwich: function() {
@@ -35,6 +37,20 @@ var app = new Vue({
     },
     sandwichCount: function() {
       return this.sandwichOrder.length;
+    }
+  },
+  methods: {
+    addComplaint: function(obj) {
+      this.complaints.push({ message: obj.message, id: this.complaintCounter });
+      this.complaintCounter += 1;
+    },
+    removeComplaint: function(id) {
+      for (var i = 0; i < this.complaints.length; i++) {
+        if (this.complaints[i].id == id) {
+          this.complaints.splice(i, 1);
+          return;
+        }
+      }
     }
   }
 });

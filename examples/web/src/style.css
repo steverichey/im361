@@ -80,6 +80,12 @@ ul.navBar {
   display: inline-flex;
 }
 
+#app {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 nav ul.navBar li {
   list-style: none;
   display: flex;

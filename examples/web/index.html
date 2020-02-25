@@ -84,7 +84,17 @@
       </main>
       <!-- contact page -->
       <main v-bind:hidden="currentPage != 'contact'">
-        <p>Please feel free to <a href="http://monsanto.com">contact us</a>.</p>
+        <h3>Use this automated complaint form</h3>
+        <ul>
+          <li v-for="complaint in complaints">
+            {{ complaint.message }}
+            <button v-on:click="removeComplaint(complaint.id)">Remove</button>
+          </li>
+        </ul>
+        <button v-on:click="addComplaint({ message: 'This site REALLY stinks', id: 0 })">This site REALLY stinks</button>
+        <button v-on:click="addComplaint({ message: 'I ordered a pizza, it did not show up', id: 1 })">I ordered a pizza, it did not show up</button>
+        <button v-on:click="addComplaint({ message:'I don\'t like calzones', id: 2 })">I don't like calzones</button>
+        <p>Or, please feel free to <a href="http://monsanto.com">contact us</a>.</p>
       </main>
       <!-- <h4>THIS CAT IS NOT A TOPPING</h4>
       <img src="./images/kitten.jpg"> -->
