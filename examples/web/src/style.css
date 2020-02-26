@@ -12,6 +12,7 @@ body {
 
 header {
   border: solid 4px cyan;
+  background: url("images/kitten.jpg");
 }
 
 a {
