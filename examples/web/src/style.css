@@ -13,6 +13,7 @@ body {
 header {
   border: solid 4px cyan;
   background: url("images/kitten.jpg");
+  text-align: center;
 }
 
 a {
@@ -35,6 +36,14 @@ a:hover {
   color: pink;
   font-size: 1.5em;
   font-family: fantasy;
+}
+
+h1 {
+  text-shadow: 2px 2px black;
+}
+
+header li {
+  text-shadow: 2px 2px black;
 }
 
 h2 {
