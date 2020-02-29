@@ -8,7 +8,7 @@
   <body>
     <div id="app">
       <header>
-        <h1>Welcome to the <span class="pizzazone">Pizza Zone</span>, {{ userName }}!</h1>
+        <h1>Welcome to the <span class="pizzazone">Pizza Zone</span><span v-if="userName">, {{ userName }}</span>!</h1>
         <nav>
           <ul class="navBar">
             <li><a v-on:click="currentPage = 'home'">Home</a></li>
@@ -16,6 +16,7 @@
             <li><a v-on:click="currentPage = 'contact'">Contact</a></li>
           </ul>
         </nav>
+        <button v-on:click="logOut">Log out</button>
       </header>
       <!-- home page -->
       <main v-bind:hidden="currentPage != 'home'">
@@ -95,6 +96,12 @@
         <button v-on:click="addComplaint({ message: 'I ordered a pizza, it did not show up', id: 1 })">I ordered a pizza, it did not show up</button>
         <button v-on:click="addComplaint({ message:'I don\'t like calzones', id: 2 })">I don't like calzones</button>
         <p>Or, please feel free to <a href="http://monsanto.com">contact us</a>.</p>
+      </main>
+      <!-- login page -->
+      <main v-bind:hidden="currentPage != 'login'">
+        <h3>Please log in</h3>
+        <input v-model="userName" placeholder="username">
+        <button v-on:click="logIn" v-bind:disabled="!userName">Log in</button>
       </main>
       <h4>THIS CAT IS NOT A TOPPING</h4>
       <img src="images/kitten.jpg">

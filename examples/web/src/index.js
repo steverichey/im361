@@ -51,6 +51,13 @@ var app = new Vue({
           return;
         }
       }
+    },
+    logOut: function() {
+      this.userName = null;
+      this.currentPage = "login";
+    },
+    logIn: function() {
+      this.currentPage = "home";
     }
   }
 });
