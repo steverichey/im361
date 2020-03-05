@@ -17,7 +17,14 @@ var app = new Vue({
       "Hot Pocket"
     ],
     complaints: [],
-    complaintCounter: 0
+    complaintCounter: 0,
+    pizzaImages: [
+      "images/pizza1.png",
+      "images/pizza2.png",
+      "images/pizza3.png"
+    ],
+    modalImage: null,
+    isModalShown: false
   },
   computed: {
     pluralSandwich: function() {
@@ -58,6 +65,14 @@ var app = new Vue({
     },
     logIn: function() {
       this.currentPage = "home";
+    },
+    showModal: function(image) {
+      this.modalImage = image;
+      this.isModalShown = true;
+    },
+    hideModal: function() {
+      this.modalImage = null;
+      this.isModalShown = false;
     }
   }
 });

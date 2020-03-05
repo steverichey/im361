@@ -61,6 +61,12 @@
           <h3>Reasons To Like Pizza</h3>
           <p>You don't need one</p>
           <p>You should like it anyway</p>
+          <h3>Examples of Good Pizza</h3>
+          <ul>
+            <li v-for="pizzaImage in pizzaImages">
+              <a href="#" v-on:click="showModal(pizzaImage)"><img v-bind:src="pizzaImage"></a>
+            </li>
+          </ul>
         </article>
         <article v-if="sandwichName == 'Calzone'">
           <h3 id="calzone-facts">This is some interesting facts about calzones</h3>
@@ -102,9 +108,17 @@
         <h3>Please log in</h3>
         <input v-model="userName" placeholder="username">
         <button v-on:click="logIn" v-bind:disabled="!userName">Log in</button>
+        <h4>THIS CAT IS NOT A TOPPING</h4>
+        <img src="images/kitten.jpg">
       </main>
-      <h4>THIS CAT IS NOT A TOPPING</h4>
-      <img src="images/kitten.jpg">
+      <!-- modal -->
+      <div class="modalContainer" v-bind:hidden="!isModalShown">
+        <div class="modalActual">
+          <span class="helper"></span>
+          <img class="modalImage" v-bind:src="modalImage">
+          <a class="modalClose" v-on:click="hideModal">Close</a>
+        </div>
+      </div>
       <footer>
         &copy; 2020 <span class="pizzazone">Pizza Zone</span>, a division of Monsanto
       </footer>

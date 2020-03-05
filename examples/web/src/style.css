@@ -113,3 +113,50 @@ nav ul.navBar li {
   background-color: red;
   font-size: 2em;
 }
+
+.modalContainer {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modalActual {
+  width: 40vw;
+  height: 40vw;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* https://stackoverflow.com/a/7310398/1944212 */
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.modalImage {
+  vertical-align: middle;
+  width: 100%;
+}
+
+.modalClose {
+  display: block;
+  clear: both;
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+a.modalClose {
+  background: inherit;
+}
+
+a.modalClose:hover {
+  color: blue;
+}
