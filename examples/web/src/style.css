@@ -146,6 +146,10 @@ nav ul.navBar li {
   width: 100%;
 }
 
+.imageBg {
+  font-size: 3em;
+}
+
 .modalClose {
   display: block;
   clear: both;

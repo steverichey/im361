@@ -10,11 +10,17 @@ var app = new Vue({
     sandwichName: null,
     sandwichOrder: [],
     sandwichTypes: [
-      "Pizza",
-      "Calzone",
-      "Ravioli",
-      "Ice Cream",
-      "Hot Pocket"
+      {
+        name: "Pizza",
+        image: "images/pizza1.png"
+      },
+      {
+        name: "Calzone",
+        image: "images/calzone.png"
+      }
+      // "Ravioli",
+      // "Ice Cream",
+      // "Hot Pocket"
     ],
     complaints: [],
     complaintCounter: 0,

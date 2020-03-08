@@ -32,8 +32,8 @@
         <p v-if="sandwichName">Your favorite sandwich is {{ sandwichName }}.</p>
         <p v-else>Pick your favorite sandwich below!</p>
         <ul>
-          <li v-for="sandwich in sandwichTypes">
-            <a v-on:click="sandwichName = sandwich">{{ sandwich }}</a>
+          <li class="imageBg" v-for="sandwich in sandwichTypes" v-bind:style="{ backgroundImage: 'url('+sandwich.image+')' }">
+            <a v-on:click="sandwichName = sandwich.name">{{ sandwich.name }}</a>
           </li>
         </ul>
         <button v-bind:disabled="!sandwichName" class="orderbutton" v-on:click="sandwichOrder.push(sandwichName)">Order this sandwich</button>
