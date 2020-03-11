@@ -40,7 +40,7 @@ Lessons are available [here](https://github.com/steverichey/im361#lessons). Asid
 | Dates       | Class                                           | Assignments                | Due    | Value |
 | ----------- | ----------------------------------------------- | -------------------------- | ------ | ----- |
 | Wed, Jan 22 | 001. Class Overview; What Is Computation?       | Designs                    | Jan 27 | 5     |
-| Mon, Jan 27 | 002. Git and Github                             | Repo                       | Jan 29 | 5     |
+| Mon, Jan 27 | 002. Git and Github                             | Web app repo               | Jan 29 | 5     |
 | Wed, Jan 29 | 003. Computer Science for Beginners             | Quiz                       | Feb 3  | 5     |
 | Mon, Feb 3  | A01. Intro to JavaScript & NodeJS               | Web app state object       | Feb 5  | 5     |
 | Wed, Feb 5  | A02. Intro to Web Frameworks                    | Viewable web app           | Feb 10 | 5     |
@@ -49,26 +49,26 @@ Lessons are available [here](https://github.com/steverichey/im361#lessons). Asid
 | Mon, Feb 17 | A05. Advanced HTML and Vue                      | Full site markup           | Feb 19 | 5     |
 | Wed, Feb 19 | A06. Advanced CSS and Vue                       | Animated site              | Feb 24 | 5     |
 | Mon, Feb 24 | A07. Advanced JS and Vue                        | Beta web app               | Feb 26 | 5     |
-| Wed, Feb 26 | QA and Code Review                              | Final web app              | Mar 2  | 100   |
-| Mon, Mar 2  | B01. Intro to Android Studio                    | Android app repo           | Mar 4  | 5     |
-| Wed, Mar 4  | B02. Intro to Kotlin and Resources              | Color and string resources | Mar 9  | 5     |
-| Mon, Mar 9  | B03. Android Layouts and Interaction            | Beta Android app           | Mar 11 | 5     |
-| Wed, Mar 11 | B04. Android Tips and Tricks (online)           | Final Android app          | Mar 23 | 50    |
+| Wed, Feb 26 | Practicum                                       | Participation              | Class  | 5     |
+| Mon, Mar 2  | Practicum                                       | Participation              | Class  | 5     |
+| Wed, Mar 4  | Practicum                                       | Participation              | Class  | 5     |
+| Mon, Mar 9  | Practicum                                       | Participation              | Class  | 5     |
+| Wed, Mar 11 | Practicum                                       | Final web app              | Mar 23 | 100   |
 | Mon, Mar 16 | Spring break                                    |                            |        |       |
 | Wed, Mar 18 | Spring break                                    |                            |        |       |
-| Mon, Mar 23 | C01. Intro to Xcode                             | iOS App Repo               | Mar 25 | 5     |
-| Wed, Mar 25 | C02. Intro to Swift                             | Quiz                       | Mar 30 | 5     |
-| Mon, Mar 30 | C03. Intro to SwiftUI                           | Beta Android App           | Apr 1  | 5     |
-| Wed, Apr 1  | C04. Asset Catalogs                             | Final Android App          | Apr 6  | 5     |
-| Mon, Apr 6  | C05. Working with Multiple Views                | Initial App Repo           | Apr 8  | 5     |
-| Wed, Apr 8  | 004. Easy Neural Networks with CreateML         | Image Classifier           | Class  | 5     |
-| Mon, Apr 13 | C06. UI and Unit Testing in Xcode               | UI and unit tests          | Class  | 5     |
-| Wed, Apr 15 | C07. Managing State                             | Mutable app state data     | Apr 15 | 5     |
+| Mon, Mar 23 | C01. Intro to Swift                             | Quiz                       | Mar 25 | 5     |
+| Wed, Mar 25 | C02. Intro to Xcode                             | iOS app repo               | Mar 30 | 5     |
+| Mon, Mar 30 | C03. Intro to SwiftUI                           | Initial app view           | Apr 1  | 5     |
+| Wed, Apr 1  | C04. Managing state                             | Mutable app state data     | Apr 6  | 5     |
+| Mon, Apr 6  | C05. Asset Catalogs                             | App assets                 | Apr 8  | 5     |
+| Wed, Apr 8  | 004. Working with Multiple Views                | Multiple views             | Apr 13 | 5     |
+| Mon, Apr 13 | C06. Easy Neural Networks with CreateML         | Image classifier           | Class  | 5     |
+| Wed, Apr 15 | C07. UI and Unit Testing in Xcode               | UI and unit tests          | Class  | 5     |
 | Mon, Apr 20 | C08. Working with Data Sources                  | Data sources               | Apr 20 | 5     |
 | Wed, Apr 22 | C09. Saving Data and User Preferences           | User settings              | Apr 22 | 5     |
-| Mon, Apr 27 | C10. Advanced iOS Development                   | Beta iOS App               | Apr 29 | 5     |
-| Wed, Apr 29 | QA and Code Review                              | Final iOS App              | May 6  | 100   |
-| Mon, May 6  | Final Review                                    |                            |        |       |
+| Mon, Apr 27 | Practicum                                       | Participation              | Class  | 5     |
+| Wed, Apr 29 | Practicum                                       | Participation              | Class  | 5     |
+| Mon, May 6  | Practicum                                       | Final iOS App              | May 8  | 100   |
 
 Total available course points: 375.
 

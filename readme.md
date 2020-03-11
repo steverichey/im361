@@ -27,29 +27,22 @@ This repository stores relevant information for the IM 361 course at [Bradley Un
 * [A06. Advanced CSS and Vue](https://steverichey.github.io/im361/lessons/A6-css-vue.html)
 * [A07. Advanced JS and Vue](https://steverichey.github.io/im361/lessons/A7-js-and-vue.html)
 
-### Android Development Project
-
-* [B01. Intro to Android Studio](#)
-* [B02. Intro to Kotlin and Resources](#)
-* [B03. Android Layouts and Interaction](#)
-
 ### iOS Development Project
 
-* [C01. Intro to Xcode](#)
-* [C02. Intro to Swift](#)
+* [C01. Intro to Swift](#)
+* [C02. Intro to Xcode](#)
 * [C03. Intro to SwiftUI](#)
-* [C04. Asset Catalogs](#)
-* [C05. Working with Multiple Views](#)
-* [C06. UI and Unit Testing in Xcode](#)
-* [C07. Managing State](#)
+* [C04. Managing State](#)
+* [C05. Asset Catalogs](#)
+* [C06. Working with Multiple Views](#)
+* [C07. UI and Unit Testing in Xcode](#)
 * [C08. Working with Data Sources](#)
 * [C09. Saving Data and User Preferences](#)
-* [C10. Advanced iOS Development](#)
 
 ## Web Development Project Resources
 
 * [Guide to Vue.js](https://vuejs.org/v2/guide/)
-* [HTMLHint](https://htmlhint.io/)
+* [HTMLHint](https://htmlhint.com/)
 * [HTML Validator](https://validator.w3.org/#validate_by_input)
 * [MDN web docs](https://developer.mozilla.org)
 * [w3schools](https://www.w3schools.com/)
