@@ -1,4 +1,4 @@
-package com.steverichey.pokemonbuilder
+package com.steverichey.interplanetarycalendar
 
 import org.junit.Test
 
