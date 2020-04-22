@@ -1,10 +1,14 @@
 package com.steverichey.interplanetarycalendar
 
+import android.graphics.PorterDuff
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : FragmentActivity() {
     lateinit var viewPager: ViewPager2
@@ -17,6 +21,36 @@ class MainActivity : FragmentActivity() {
 
         val adapter = MainActivityPagerAdapter(this)
         viewPager.adapter = adapter
+
+        val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
+        val primaryColor = ContextCompat.getColor(this, R.color.colorPrimary)
+
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            if (position == 0) {
+                tab.text = "Planets"
+                tab.setIcon(R.drawable.ic_list_black_24dp)
+            }
+
+            if (position == 1) {
+                tab.text = "Current"
+                tab.setIcon(R.drawable.ic_my_location_black_24dp)
+            }
+
+            if (position == 2) {
+                tab.text = "Settings"
+                tab.setIcon(R.drawable.ic_settings_black_24dp)
+            }
+
+            tab.icon?.setColorFilter(primaryColor, PorterDuff.Mode.SRC_ATOP)
+        }.attach()
+    }
+
+    override fun onBackPressed() {
+        if (viewPager.currentItem > 0) {
+            viewPager.currentItem -= 1
+        } else {
+            super.onBackPressed()
+        }
     }
 
     private inner class MainActivityPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
@@ -25,7 +59,15 @@ class MainActivity : FragmentActivity() {
         }
 
         override fun createFragment(position: Int): Fragment {
-            return PlanetListFragment()
+            if (position == 0) {
+                return PlanetListFragment()
+            }
+
+            if (position == 1) {
+                return CurrentPlanetFragment()
+            }
+
+            return SettingsFragment()
         }
     }
 }
