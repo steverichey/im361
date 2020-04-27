@@ -28,7 +28,7 @@
         android:allowUndo="false"
         android:text="@string/it_doesn_t_look_like_you_ve_added_any_planets_press_the_button_to_add_one"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
