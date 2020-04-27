@@ -47,6 +47,9 @@ class PlanetListFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recycler_view)
         viewManager = LinearLayoutManager(context)
         viewAdapter = PlanetListAdapter(planets)
+
+        recyclerView.layoutManager = viewManager
+        recyclerView.adapter = viewAdapter
     }
 
     data class Planet(val name: String)
