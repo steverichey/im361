@@ -23,7 +23,13 @@ class PlanetListFragment : Fragment() {
         val floatingActionButton = view.findViewById<FloatingActionButton>(R.id.floating_action_button)
 
         floatingActionButton.setOnClickListener {
-            Toast.makeText(context, "You pressed the button!", Toast.LENGTH_SHORT).show()
+            val dialog = PlanetEntryDialogFragment()
+
+            dialog.positiveCallback = { text ->
+                Toast.makeText(context, "You entered $text!", Toast.LENGTH_SHORT).show()
+            }
+
+            dialog.show(fragmentManager!!, "add_planet")
         }
     }
 }
