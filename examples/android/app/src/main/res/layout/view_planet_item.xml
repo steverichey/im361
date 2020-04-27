@@ -26,9 +26,9 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Unknown Planet"
+        android:text="Default Text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/planet_image_view"
         app:layout_constraintTop_toTopOf="parent" />
 </com.steverichey.interplanetarycalendar.PlanetItemView>
