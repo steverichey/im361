@@ -39,9 +39,9 @@ class PlanetListFragment : Fragment() {
         }
 
         val planets = mutableListOf(
-            Planet("Mercury"),
-            Planet("Venus"),
-            Planet("Earth")
+            Planet("Mercury", R.drawable.ic_noun_mercury_287717),
+            Planet("Venus", R.drawable.ic_noun_venus_287715),
+            Planet("Earth", R.drawable.ic_noun_earth_287725)
         )
 
         recyclerView = view.findViewById(R.id.recycler_view)
@@ -52,7 +52,7 @@ class PlanetListFragment : Fragment() {
         recyclerView.adapter = viewAdapter
     }
 
-    data class Planet(val name: String)
+    data class Planet(val name: String, val res: Int)
 
     inner class PlanetListViewHolder(val view: PlanetItemView) : RecyclerView.ViewHolder(view)
 
@@ -69,7 +69,7 @@ class PlanetListFragment : Fragment() {
 
         override fun onBindViewHolder(holder: PlanetListViewHolder, position: Int) {
             holder.view.textView.text = data[position].name
-            holder.view.imageView.setImageResource(R.drawable.ic_my_location_black_24dp)
+            holder.view.imageView.setImageResource(data[position].res)
         }
     }
 }
