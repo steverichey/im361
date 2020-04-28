@@ -31,9 +31,9 @@ class PlanetListFragment : Fragment() {
 
         // this is the list of data to show in the recycler at app launch
         val planets = mutableListOf(
-            Planet("Mercury", R.drawable.ic_noun_mercury_287717),
-            Planet("Venus", R.drawable.ic_noun_venus_287715),
-            Planet("Earth", R.drawable.ic_noun_earth_287725)
+            Planet("Mercury", R.drawable.ic_noun_mercury_287717, R.drawable.mercury_bg),
+            Planet("Venus", R.drawable.ic_noun_venus_287715, R.drawable.venus_bg),
+            Planet("Earth", R.drawable.ic_noun_earth_287725, R.drawable.earth_bg)
         )
 
         // set an action to occur when the user taps on the floating action button
@@ -43,11 +43,17 @@ class PlanetListFragment : Fragment() {
 
             // when the user taps OK...
             dialog.positiveCallback = { text ->
-                // create a short toast
-                Toast.makeText(context, "Added new planet $text", Toast.LENGTH_SHORT).show()
+                if (text.isNotEmpty()) {
+                    // create a short toast
+                    Toast.makeText(context, "Added new planet $text", Toast.LENGTH_SHORT).show()
 
-                // add the new planet to our list of planets; this will update the recycler view
-                planets.add(Planet(text, R.drawable.ic_error_outline_black_24dp))
+                    // add the new planet to our list of planets; this will update the recycler view
+                    if (text == "Mars") {
+                        planets.add(Planet(text, R.drawable.ic_noun_mars_287716, R.drawable.mars_bg))
+                    } else {
+                        planets.add(Planet(text, R.drawable.ic_error_outline_black_24dp, R.drawable.other_bg))
+                    }
+                }
             }
 
             // actually show the dialog to the user
@@ -67,10 +73,11 @@ class PlanetListFragment : Fragment() {
             context!!, recyclerView, R.layout.view_planet_item, planets) { itemView, item ->
             // 5. replace these two lines below to set up your view
             itemView.textView.text = item.name
-            itemView.imageView.setImageResource(item.res)
+            itemView.imageView.setImageResource(item.iconResource)
+            itemView.backgroundImageView.setImageResource(item.backgroundResource)
         }
     }
 
     // if you use the general recycler, you will need to create your own data class to show in the recycler
-    data class Planet(val name: String, val res: Int)
+    data class Planet(val name: String, val iconResource: Int, val backgroundResource: Int)
 }

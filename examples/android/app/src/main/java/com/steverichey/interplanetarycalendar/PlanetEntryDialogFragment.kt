@@ -12,7 +12,7 @@ class PlanetEntryDialogFragment : DialogFragment() {
     var positiveCallback: ((String) -> Unit)? = null
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val builder = AlertDialog.Builder(context!!)
+        val builder = AlertDialog.Builder(context!!, R.style.DialogFragmentTheme)
         builder.setMessage("Add a new planet?")
 
         val dialogView = LayoutInflater

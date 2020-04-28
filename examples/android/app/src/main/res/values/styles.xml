@@ -8,4 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="DialogFragmentTheme" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonBarNegativeButtonStyle">@style/DialogFragmentButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/DialogFragmentButtonStyle</item>
+    </style>
+
+    <style name="DialogFragmentButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
 </resources>
