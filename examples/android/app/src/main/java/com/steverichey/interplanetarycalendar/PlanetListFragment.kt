@@ -9,11 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.fragment_current_planet.view.*
 
 class PlanetListFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
-    lateinit var viewAdapter: RecyclerView.Adapter<*>
-    lateinit var viewManager: RecyclerView.LayoutManager
+    lateinit var recycler: GeneralRecycler<*, *>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,50 +26,51 @@ class PlanetListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // connect to our floating action button
         val floatingActionButton = view.findViewById<FloatingActionButton>(R.id.floating_action_button)
 
-        floatingActionButton.setOnClickListener {
-            val dialog = PlanetEntryDialogFragment()
-
-            dialog.positiveCallback = { text ->
-                Toast.makeText(context, "You entered $text!", Toast.LENGTH_SHORT).show()
-            }
-
-            dialog.show(fragmentManager!!, "add_planet")
-        }
-
+        // this is the list of data to show in the recycler at app launch
         val planets = mutableListOf(
             Planet("Mercury", R.drawable.ic_noun_mercury_287717),
             Planet("Venus", R.drawable.ic_noun_venus_287715),
             Planet("Earth", R.drawable.ic_noun_earth_287725)
         )
 
+        // set an action to occur when the user taps on the floating action button
+        floatingActionButton.setOnClickListener {
+            // create a new dialog/popup/alert
+            val dialog = PlanetEntryDialogFragment()
+
+            // when the user taps OK...
+            dialog.positiveCallback = { text ->
+                // create a short toast
+                Toast.makeText(context, "Added new planet $text", Toast.LENGTH_SHORT).show()
+
+                // add the new planet to our list of planets; this will update the recycler view
+                planets.add(Planet(text, R.drawable.ic_error_outline_black_24dp))
+            }
+
+            // actually show the dialog to the user
+            dialog.show(fragmentManager!!, "add_planet")
+        }
+
+        // connect to our recycler view
         recyclerView = view.findViewById(R.id.recycler_view)
-        viewManager = LinearLayoutManager(context)
-        viewAdapter = PlanetListAdapter(planets)
 
-        recyclerView.layoutManager = viewManager
-        recyclerView.adapter = viewAdapter
+        // create a new object to manage the recycler view
+        // if you use this in your code:
+        // 1. replace `PlanetItemView` with the name of your view for each item in the recycler
+        // 2. replace `Planet` with the name of your data class for each item
+        // 3. replace `R.layout.view_planet_item` with the resource ID of your layout for each item
+        // 4. replace `planets` with the name of your mutable list of data
+        recycler = GeneralRecycler<PlanetItemView, Planet>(
+            context!!, recyclerView, R.layout.view_planet_item, planets) { itemView, item ->
+            // 5. replace these two lines below to set up your view
+            itemView.textView.text = item.name
+            itemView.imageView.setImageResource(item.res)
+        }
     }
 
+    // if you use the general recycler, you will need to create your own data class to show in the recycler
     data class Planet(val name: String, val res: Int)
-
-    inner class PlanetListViewHolder(val view: PlanetItemView) : RecyclerView.ViewHolder(view)
-
-    inner class PlanetListAdapter(val data: List<Planet>) : RecyclerView.Adapter<PlanetListViewHolder>() {
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlanetListViewHolder {
-            val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.view_planet_item, parent, false) as PlanetItemView
-            return PlanetListViewHolder(view)
-        }
-
-        override fun getItemCount(): Int {
-            return data.size
-        }
-
-        override fun onBindViewHolder(holder: PlanetListViewHolder, position: Int) {
-            holder.view.textView.text = data[position].name
-            holder.view.imageView.setImageResource(data[position].res)
-        }
-    }
 }
