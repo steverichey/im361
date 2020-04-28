@@ -7,12 +7,12 @@
       android:translateY="625.7778">
     <path
         android:pathData="M742.1,197.1C677.6,149.9 598,122 512,122c-215.4,0 -390,174.6 -390,390c0,86 27.9,165.6 75.1,230.1L742.1,197.1z"
-        android:fillColor="#F60069"/>
+        android:fillColor="@color/colorPrimary"/>
     <path
         android:pathData="M281.9,826.9C346.4,874.1 426,902 512,902c215.4,0 390,-174.6 390,-390c0,-86 -27.9,-165.6 -75.1,-230.1L281.9,826.9z"
-        android:fillColor="#F60069"/>
+        android:fillColor="@color/colorPrimaryDark"/>
     <path
         android:pathData="M91.3,962.8c-7.7,0 -15.4,-2.9 -21.2,-8.8c-11.7,-11.7 -11.7,-30.7 0,-42.4L911.5,70c11.7,-11.7 30.7,-11.7 42.4,0c11.7,11.7 11.7,30.7 0,42.4L112.5,954C106.6,959.8 98.9,962.8 91.3,962.8z"
-        android:fillColor="#ED1C24"/>
+        android:fillColor="@color/colorAccent"/>
   </group>
 </vector>
