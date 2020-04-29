@@ -25,7 +25,7 @@ class GeneralRecycler<TView: View, TItem>(
     data: List<TItem>,
     private val onViewBind: (view: TView, item: TItem) -> Unit
 ) {
-    var dataHash = data.hashCode()
+    private var dataHash = data.hashCode()
 
     init {
         // this sets up the connection between the recycler view, an adapter, and a layout manager

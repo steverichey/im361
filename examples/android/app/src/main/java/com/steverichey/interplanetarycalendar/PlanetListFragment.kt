@@ -6,10 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.android.synthetic.main.fragment_current_planet.view.*
+
+// this is the list of data to show in the recycler at app launch
+val planets = mutableListOf(
+    PlanetListFragment.Planet("Mercury", R.drawable.ic_noun_mercury_287717, R.drawable.mercury_bg),
+    PlanetListFragment.Planet("Venus", R.drawable.ic_noun_venus_287715, R.drawable.venus_bg),
+    PlanetListFragment.Planet("Earth", R.drawable.ic_noun_earth_287725, R.drawable.earth_bg)
+)
 
 class PlanetListFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
@@ -29,13 +34,6 @@ class PlanetListFragment : Fragment() {
         // connect to our floating action button
         val floatingActionButton = view.findViewById<FloatingActionButton>(R.id.floating_action_button)
 
-        // this is the list of data to show in the recycler at app launch
-        val planets = mutableListOf(
-            Planet("Mercury", R.drawable.ic_noun_mercury_287717, R.drawable.mercury_bg),
-            Planet("Venus", R.drawable.ic_noun_venus_287715, R.drawable.venus_bg),
-            Planet("Earth", R.drawable.ic_noun_earth_287725, R.drawable.earth_bg)
-        )
-
         // set an action to occur when the user taps on the floating action button
         floatingActionButton.setOnClickListener {
             // create a new dialog/popup/alert
@@ -49,7 +47,13 @@ class PlanetListFragment : Fragment() {
 
                     // add the new planet to our list of planets; this will update the recycler view
                     if (text == "Mars") {
-                        planets.add(Planet(text, R.drawable.ic_noun_mars_287716, R.drawable.mars_bg))
+                        planets.add(Planet(text, R.drawable.ic_noun_mars_287716, R.drawable.other_bg))
+                    } else if (text == "Jupiter") {
+                        planets.add(Planet(text, R.drawable.ic_noun_jupiter_287711, R.drawable.other_bg))
+                    } else if (text == "Saturn") {
+                        planets.add(Planet(text, R.drawable.ic_noun_saturn_376497, R.drawable.other_bg))
+                    } else if (text == "Uranus") {
+                        planets.add(Planet(text, R.drawable.ic_noun_uranus_287709, R.drawable.other_bg))
                     } else {
                         planets.add(Planet(text, R.drawable.ic_error_outline_black_24dp, R.drawable.other_bg))
                     }

@@ -10,63 +10,66 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Assume user is on earth"
+        android:text="@string/assume_user_is_on_earth"
         android:thumbTint="@color/colorPrimary"
         android:trackTint="@color/colorPrimaryDark" />
 
     <Switch
-        android:id="@+id/switch2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Account for leap second smearing"
+        android:text="@string/account_for_leap_second_smearing"
         android:thumbTint="@color/colorPrimary"
         android:trackTint="@color/colorPrimaryDark" />
 
     <Switch
-        android:id="@+id/switch3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Enable multiple epochs"
+        android:text="@string/enable_multiple_epochs"
         android:thumbTint="@color/colorPrimary"
         android:trackTint="@color/colorPrimaryDark" />
 
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Icons by Ben Davis at the Noun Project: https://thenounproject.com/smashicons/" />
+        android:text="@string/icons_by_ben_davis_at_the_noun_project_https_thenounproject_com_smashicons" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Mars Photo by Nicolas Lobos on Unsplash" />
+        android:text="@string/icons_by_chameleon_design" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Earth Photo by NASA on Unsplash" />
+        android:text="@string/mars_photo_by_nicolas_lobos_on_unsplash" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Venus Photo by Daria Sheveleva on Unsplash" />
+        android:text="@string/earth_photo_by_nasa_on_unsplash" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Mercury Photo by Jon Butterworth on Unsplash" />
+        android:text="@string/venus_photo_by_daria_sheveleva_on_unsplash" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Other Photo by roman manukyan on Unsplash" />
+        android:text="@string/mercury_photo_by_jon_butterworth_on_unsplash" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/other_photo_by_roman_manukyan_on_unsplash" />
 
 </LinearLayout>

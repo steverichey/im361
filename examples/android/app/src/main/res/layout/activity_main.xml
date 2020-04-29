@@ -20,20 +20,20 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/ic_memory_black_24dp"
-            android:text="First" />
+            android:icon="@drawable/ic_list_black_24dp"
+            android:text="@string/tab_planets" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/ic_memory_black_24dp"
-            android:text="Second" />
+            android:icon="@drawable/ic_my_location_black_24dp"
+            android:text="@string/tab_current" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/ic_memory_black_24dp"
-            android:text="Third" />
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:text="@string/tab_settings" />
 
     </com.google.android.material.tabs.TabLayout>
 

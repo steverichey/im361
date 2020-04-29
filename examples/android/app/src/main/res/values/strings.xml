@@ -1,4 +1,23 @@
 <resources>
     <string name="app_name">Interplanetary Calendar</string>
     <string name="it_doesn_t_look_like_you_ve_added_any_planets_press_the_button_to_add_one">It doesn\'t look like you\'ve added any planets, press the button to add one.</string>
+    <string name="tab_planets">Planets</string>
+    <string name="tab_current">Current</string>
+    <string name="tab_settings">Settings</string>
+    <string name="enter_planet_name_here">Enter planet name here</string>
+    <string name="your_current_planet_is">Your current planet is:</string>
+    <string name="earth">Earth</string>
+    <string name="a_symbol_representing_earth">A symbol representing earth.</string>
+    <string name="assume_user_is_on_earth">Assume user is on earth</string>
+    <string name="account_for_leap_second_smearing">Account for leap second smearing</string>
+    <string name="enable_multiple_epochs">Enable multiple epochs</string>
+    <string name="icons_by_ben_davis_at_the_noun_project_https_thenounproject_com_smashicons">Icons by Ben Davis at the Noun Project: https://thenounproject.com/smashicons/</string>
+    <string name="icons_by_chameleon_design">Icons by Chameleon Design at the Noun Project: https://thenounproject.com/chamedesign/</string>
+    <string name="mars_photo_by_nicolas_lobos_on_unsplash">Mars Photo by Nicolas Lobos on Unsplash</string>
+    <string name="earth_photo_by_nasa_on_unsplash">Earth Photo by NASA on Unsplash</string>
+    <string name="venus_photo_by_daria_sheveleva_on_unsplash">Venus Photo by Daria Sheveleva on Unsplash</string>
+    <string name="mercury_photo_by_jon_butterworth_on_unsplash">Mercury Photo by Jon Butterworth on Unsplash</string>
+    <string name="other_photo_by_roman_manukyan_on_unsplash">Other Photo by roman manukyan on Unsplash</string>
+    <string name="an_icon_representing_this_planet">An icon representing this planet.</string>
+    <string name="unknown">Unknown</string>
 </resources>

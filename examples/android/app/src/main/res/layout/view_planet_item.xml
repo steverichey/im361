@@ -8,6 +8,7 @@
 
     <ImageView
         android:id="@+id/planet_background_view"
+        tools:ignore="ContentDescription"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:alpha="0.25"
@@ -26,6 +27,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/an_icon_representing_this_planet"
         android:scaleType="fitStart"
         android:src="@drawable/ic_memory_black_24dp"
         android:tint="@color/colorPrimaryDark"
@@ -41,7 +43,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Default Text"
+        android:text="@string/unknown"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"

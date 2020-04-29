@@ -12,7 +12,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
-    lateinit var viewPager: ViewPager2
+    private lateinit var viewPager: ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,20 +28,21 @@ class MainActivity : AppCompatActivity() {
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             if (position == 0) {
-                tab.text = "Planets"
+                tab.text = getString(R.string.tab_planets)
                 tab.setIcon(R.drawable.ic_list_black_24dp)
             }
 
             if (position == 1) {
-                tab.text = "Current"
+                tab.text = getString(R.string.tab_current)
                 tab.setIcon(R.drawable.ic_my_location_black_24dp)
             }
 
             if (position == 2) {
-                tab.text = "Settings"
+                tab.text = getString(R.string.tab_settings)
                 tab.setIcon(R.drawable.ic_settings_black_24dp)
             }
 
+            @Suppress("DEPRECATION")
             tab.icon?.setColorFilter(primaryColor, PorterDuff.Mode.SRC_ATOP)
         }.attach()
     }
