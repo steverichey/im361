@@ -1,11 +1,14 @@
 package com.steverichey.interplanetarycalendar
 
 import android.content.Context
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.concurrent.fixedRateTimer
 
 /**
  * A class to manage the connection between a linear recycler view and data.
@@ -22,10 +25,23 @@ class GeneralRecycler<TView: View, TItem>(
     data: List<TItem>,
     private val onViewBind: (view: TView, item: TItem) -> Unit
 ) {
+    var dataHash = data.hashCode()
+
     init {
         // this sets up the connection between the recycler view, an adapter, and a layout manager
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = GeneralListAdapter<TView, TItem>(data, this, itemLayout)
+
+        // create a timer to check the data for changes every half second
+        // this is not efficient, but it's ok for a student app
+        fixedRateTimer(GeneralRecycler<*,*>::javaClass.name, true, 0, 500) {
+            if (dataHash != data.hashCode()) {
+                runOnMain {
+                    recyclerView.adapter?.notifyDataSetChanged()
+                }
+                dataHash = data.hashCode()
+            }
+        }
     }
 
     /**
@@ -38,6 +54,20 @@ class GeneralRecycler<TView: View, TItem>(
         // this is technically an unchecked cast; but we know the types we expect here
         @Suppress("UNCHECKED_CAST")
         onViewBind.invoke(view as TView, item as TItem)
+    }
+
+    /**
+     * An internal function to run code on the main thread, where UI updates must happen.
+     * This is to ensure that we can update the recycler safely.
+     * You should not need to call this in your code.
+     * @param call: The method to call on the main thread.
+     */
+    private fun runOnMain(call: () -> Unit) {
+        val handler = Handler(Looper.getMainLooper())
+        val runnable = Runnable {
+            call.invoke()
+        }
+        handler.post(runnable)
     }
 
     /**
